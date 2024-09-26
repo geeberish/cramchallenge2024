@@ -1,0 +1,268 @@
+from PySide6.QtWidgets import (
+    QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QStackedWidget
+)
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QPalette, QColor, QFont
+import shutil
+import sys
+import os
+import csv
+import random  # For generating random scores
+import hashlib  # For hashing the CSV file
+
+class SystemEvaluationApp(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        # Initialize the submitted_pdfs list before calling any methods that use it
+        self.submitted_pdfs = self.load_submissions()  # Load previously submitted PDFs
+
+        # Set window title and size
+        self.setWindowTitle("System Evaluation App")
+        self.setFixedSize(700, 600)
+
+        # Set background color to dark gray and text color to white
+        palette = self.palette()
+        palette.setColor(QPalette.Window, QColor(45, 45, 45))  # Dark gray
+        palette.setColor(QPalette.WindowText, QColor(255, 255, 255))  # White text
+        self.setPalette(palette)
+
+        # Set font to Helvetica at point 12
+        self.font = QFont("Helvetica", 12)
+        self.setFont(self.font)
+
+        # Set up a stacked widget to switch between the main and previous submissions view
+        self.stacked_widget = QStackedWidget(self)
+
+        # Create the main submission view
+        self.main_view = self.create_main_view()
+
+        # Create the previous submissions view
+        self.previous_submissions_view = self.create_previous_submissions_view()
+
+        # Add the views to the stacked widget
+        self.stacked_widget.addWidget(self.main_view)
+        self.stacked_widget.addWidget(self.previous_submissions_view)
+
+        # Set the main layout for the app
+        layout = QVBoxLayout(self)
+        layout.addWidget(self.stacked_widget)
+
+        # Variable to store the selected PDF path
+        self.selected_pdf = None
+
+    def create_main_view(self):
+        # Create a QWidget for the main submission view
+        main_widget = QWidget()
+
+        # Create a label for instructions (top-left corner)
+        self.label = QLabel("Please submit a PDF file:")
+        self.label.setFont(self.font)  # Apply font to the label
+        self.label.setStyleSheet("color: white;")
+        self.label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        # Create a label to show the selected PDF name
+        self.pdf_name_label = QLabel("")
+        self.pdf_name_label.setFont(self.font)
+        self.pdf_name_label.setStyleSheet("color: white;")
+        self.pdf_name_label.setAlignment(Qt.AlignLeft)
+
+        # Create a label to show the score after submission
+        self.score_label = QLabel("")
+        self.score_label.setFont(self.font)
+        self.score_label.setStyleSheet("color: white;")
+        self.score_label.setAlignment(Qt.AlignLeft)
+
+        # Create a layout for the main view
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.pdf_name_label)  # Display PDF name here
+        layout.addWidget(self.score_label)      # Display score here
+
+        # Create a button layout for Select and Submit buttons
+        button_layout = QHBoxLayout()  # Horizontal layout for Select and Submit buttons
+        
+        # Create a button to select PDF
+        self.pdf_button = QPushButton("Select PDF")
+        self.pdf_button.setFont(self.font)
+        self.pdf_button.setFixedSize(150, 30)  # Fixed button size
+        self.pdf_button.clicked.connect(self.open_file_dialog)
+        button_layout.addWidget(self.pdf_button)
+
+        # Create a submit button for PDFs
+        self.submit_button = QPushButton("Submit PDF")
+        self.submit_button.setFont(self.font)
+        self.submit_button.setFixedSize(150, 30)  # Fixed button size
+        self.submit_button.clicked.connect(self.submit_pdf)
+        button_layout.addWidget(self.submit_button)
+
+        # Add the button layout to the main layout
+        layout.addLayout(button_layout)
+
+        # Create a button to view previous submissions (switches view)
+        self.view_previous_button = QPushButton("View Previous Submissions")
+        self.view_previous_button.setFont(self.font)
+        self.view_previous_button.setFixedSize(270, 35)  # Slightly bigger button
+        self.view_previous_button.clicked.connect(self.switch_to_previous_submissions_view)
+        layout.addWidget(self.view_previous_button)
+
+        # Align everything to the top-left
+        layout.setAlignment(Qt.AlignTop | Qt.AlignLeft)
+
+        # Set layout for the main widget
+        main_widget.setLayout(layout)
+
+        return main_widget
+
+    def create_previous_submissions_view(self):
+        # Create a QWidget for the previous submissions view
+        previous_submissions_widget = QWidget()
+
+        # Create a list widget to display submissions and scores
+        self.list_widget = QListWidget(self)
+        self.list_widget.setStyleSheet("color: white; background-color: #2E2E2E;")
+        self.list_widget.setFont(self.font)
+
+        # Add submissions to the list widget (only showing file names)
+        self.update_previous_submissions_view()
+
+        # Create a download button
+        self.download_button = QPushButton("Download Selected PDF")
+        self.download_button.setFont(self.font)
+        self.download_button.clicked.connect(self.download_pdf)
+
+        # Create a delete button to remove selected submissions
+        self.delete_button = QPushButton("Delete Selected Submission")
+        self.delete_button.setFont(self.font)
+        self.delete_button.clicked.connect(self.delete_pdf)
+
+        # Create a button to go back to the main view
+        self.back_button = QPushButton("Back to Main Menu")
+        self.back_button.setFont(self.font)
+        self.back_button.clicked.connect(self.switch_to_main_view)
+
+        # Create a layout for the previous submissions view
+        layout = QVBoxLayout()
+        layout.addWidget(self.list_widget)
+        layout.addWidget(self.download_button)
+        layout.addWidget(self.delete_button)
+        layout.addWidget(self.back_button)
+
+        # Set the layout for the previous submissions widget
+        previous_submissions_widget.setLayout(layout)
+
+        return previous_submissions_widget
+
+    def open_file_dialog(self):
+        # Open a file dialog to select a PDF
+        file_dialog = QFileDialog(self)
+        file_dialog.setNameFilter("PDF files (*.pdf)")
+        if file_dialog.exec():
+            self.selected_pdf = file_dialog.selectedFiles()[0]
+            self.pdf_name_label.setText(f"Selected: {os.path.basename(self.selected_pdf)}")  # Show PDF name
+
+    def submit_pdf(self):
+        # Handle PDF submission
+        if self.selected_pdf:
+            score = random.randint(60, 100)  # Simulate a random score between 60 and 100
+            self.submitted_pdfs.append((self.selected_pdf, f"Score: {score}"))  # Append PDF and score
+            self.score_label.setText(f"PDF submitted successfully! Score: {score}")
+            # Update the submissions view with the new PDF
+            self.update_previous_submissions_view()
+            self.save_submissions()  # Save submissions to CSV file
+            self.hash_submissions()   # Hash the CSV file
+        else:
+            self.pdf_name_label.setText("No PDF selected. Please select a PDF to submit.")
+
+    def update_previous_submissions_view(self):
+        # Clear and update the list widget in the previous submissions view
+        self.list_widget.clear()
+        for pdf, score in self.submitted_pdfs:
+            file_name = os.path.basename(pdf)
+            self.list_widget.addItem(f"PDF: {file_name} - {score}")
+
+    def download_pdf(self):
+        # Get the selected item from the list
+        selected_item = self.list_widget.currentItem()
+        if selected_item:
+            # Extract the PDF name from the selected item's text
+            pdf_name = selected_item.text().split(' - ')[0].replace('PDF: ', '')
+
+            # Find the original file path
+            for pdf, _ in self.submitted_pdfs:
+                if os.path.basename(pdf) == pdf_name:
+                    pdf_path = pdf
+                    break
+
+            # Open a file dialog to select the download destination
+            save_path = QFileDialog.getSaveFileName(self, "Save PDF", pdf_name, "PDF files (*.pdf)")[0]
+
+            if save_path:
+                try:
+                    # Copy the file to the selected destination, keeping the same name
+                    shutil.copy(pdf_path, save_path)
+                    print(f"PDF downloaded to {save_path}")
+                except Exception as e:
+                    print(f"Error downloading PDF: {e}")
+
+    def delete_pdf(self):
+        # Get the selected item from the list
+        selected_item = self.list_widget.currentItem()
+        if selected_item:
+            # Extract the PDF name from the selected item's text
+            pdf_name = selected_item.text().split(' - ')[0].replace('PDF: ', '')
+            pdf_score = selected_item.text().split('- ')[1]  # Get the associated score
+
+            # Find the original file path
+            for pdf, score in self.submitted_pdfs:
+                if os.path.basename(pdf) == pdf_name and score == pdf_score:
+                    self.submitted_pdfs.remove((pdf, score))  # Remove only the selected one
+                    break
+
+            # Update the submissions view
+            self.update_previous_submissions_view()
+            self.save_submissions()  # Save updated submissions to CSV file
+
+    def switch_to_previous_submissions_view(self):
+        # Switch to the previous submissions view
+        self.stacked_widget.setCurrentWidget(self.previous_submissions_view)
+
+    def switch_to_main_view(self):
+        # Switch to the main submission view
+        self.stacked_widget.setCurrentWidget(self.main_view)
+
+    def save_submissions(self):
+        # Save the submitted PDFs and scores to a CSV file
+        with open("submissions.csv", "w", newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(["PDF", "Score"])  # Write header
+            writer.writerows(self.submitted_pdfs)
+
+    def load_submissions(self):
+        # Load previously submitted PDFs from a CSV file
+        if os.path.exists("submissions.csv"):
+            with open("submissions.csv", "r") as f:
+                reader = csv.reader(f)
+                next(reader)  # Skip header
+                return [(row[0], row[1]) for row in reader]  # Return list of tuples (pdf, score)
+        return []
+
+    def hash_submissions(self):
+        # Hash the CSV file using SHA-256
+        hasher = hashlib.sha256()
+        with open("submissions.csv", "rb") as f:
+            while chunk := f.read(8192):
+                hasher.update(chunk)
+
+        # Output the hash value
+        print(f"CSV file hashed. SHA-256: {hasher.hexdigest()}")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    # Create and show the app window
+    window = SystemEvaluationApp()
+    window.show()
+
+    # Run the event loop
+    sys.exit(app.exec())
