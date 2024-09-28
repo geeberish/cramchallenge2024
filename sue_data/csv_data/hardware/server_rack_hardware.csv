@@ -1,10 +1,8 @@
-﻿Make,Model Number,Description
-Cisco,4125 NGFW,"Next Generation Firewall (NGFW) with Intrusion Protection Systems (IPS), rack mountable, 1U"
-Cisco,MS425-32,Meraki Layer 3 Switch (Router)
+Make,Model Number,Description
 Cisco,Catalyst 2960-X,Layer 2 Gigabit Ethernet Network Switch
-Tripp Lite,B030-008-17-IP,"Rack Mounted Monitor, Keyboard, and Touchpad"
 Dell,PowerEdge R750,"Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
-Dell,PowerVault ME5024,Storage Area Network (SAN)
 Tripp Lite,N052-048-1U,"48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+Cisco,MS425-32,"Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+Dell,PowerVault ME5024,Storage Area Network (SAN)
 APC,SMT3000RM2UC,"Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
 Miscellaneous,Miscellaneous,"Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"

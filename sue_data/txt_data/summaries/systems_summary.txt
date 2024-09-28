@@ -93,24 +93,66 @@ just the operating systems and specific commercial tools used for cybersecurity.
   cybersecurity work area separated and is implemented on a dedicated Boundary Defense and System
   Administration Rack (section 1). The Server Rack contains multiple PowerEdge R750 ESXi Servers 
   and PowerVault Storage Area Network (SANS) servers and they will be used within the facility to:
-    a. Provides the product design, development, and test tools.
-    b. Process and display technical data library artifacts that describe the systems and products 
-    under development and test within the organization to include sensitive Intellectual Property 
-    (IP) information.
-    c. Product Help Desk Response Ticketing System application software and record database 
-    software. The engineering and production work area will provide a Help Desk to respond to 
-    customer questions and comments. The Help Desk operators will access the Ticketing System from 
-    their workstations.
-    d. Virtualized product under development Test and Analysis Environment for software products.
-    e. Company training environment that will be used to develop workforce knowledge and skills.
-    f. Provide computer resources for company management functions (e.g., Human Resources, Payroll, 
-    Legal, Contracts, project managers, personnel managers, company vice president, and company 
-    president).
+    - Provides the product design, development, and test tools.
+    - Process and display technical data library artifacts that describe the systems and products 
+      under development and test within the organization to include sensitive Intellectual Property 
+      (IP) information.
+    - Product Help Desk Response Ticketing System application software and record database 
+      software. The engineering and production work area will provide a Help Desk to respond to 
+      customer questions and comments. The Help Desk operators will access the Ticketing System 
+      from their workstations.
+    - Virtualized product under development Test and Analysis Environment for software products.
+    - Company training environment that will be used to develop workforce knowledge and skills.
+    - Provide computer resources for company management functions (e.g., Human Resources, Payroll, 
+      Legal, Contracts, project managers, personnel managers, company vice president, and company 
+      president).
   The rack also includes Cisco Catalyst Ethernet Switches that will interconnect the servers and 
   SANS storage servers and a Cisco Meraki Layer 3 network switch will connect the server rack to 
   any other server racks if they are installed in the future (not currently used). A patch panel is 
   provided to allow for easier reconfiguration of the rack interconnect if it becomes necessary. An 
   Uninterruptible Power Supply (UPS) will be included within the Server Rack that will provide 
   temporary emergency power when the primary facility power circuit is interrupted allowing for a 
-  graceful shutdown or until any backup emergency power source is engaged. Files xxxx and 
-  xxxx provide the hardware and software list, respectively, for the Server Rack.
+  graceful shutdown or until any backup emergency power source is engaged. Files 
+  server_rack_hardware.csv and server_rack_software.csv provide the hardware and software list, 
+  respectively, for the Server Rack.
+
+  3. Bulk Data Storage Rack
+  The Bulk Data Storage Rack contains multiple Dell PowerVault Storage Area Network (SAN) units. 
+  This rack provides the archive storage the facility engineering and production, test engineering, 
+  IT and cybersecurity, and company management work areas. The IT cybersecurity data will be 
+  encrypted at rest on dedicated SANS drives. The company products technical data and test data 
+  assessed as sensitive Intellectual Property data and any other company sensitive data will be 
+  encrypted at rest and stored on dedicated SANS drives. The company also implements automatic 
+  archive replication to a backup SANS within the same equipment rack in the event of the primary 
+  archive failure. The SANS storage on the rack includes:
+    - Provide the bulk data storage location for all data collected during IT operations and 
+      cybersecurity monitoring and cyber incident response.
+    - Store product Intellectual Property and any other company sensitive data, such as financial 
+      records and contract agreements.
+    - Store product test and analysis data and test reports.
+    - Store company sensitive financial data, legal data to include contracts data, human resources 
+      data, payroll data, and any other company sensitive data.
+  The Cisco Catalyst Layer 2 (Ethernet) switches interconnect the SAN components and connect to the 
+  Layer 3 switch (router) in the Boundary Defense and System Administration Rack. A patch panel 
+  will   provide a central cable management point for all the internal equipment interconnection in 
+  the rack. It will also allow for easier reconfiguration of the rack interconnect if it becomes 
+  necessary. An Uninterruptible Power Supply (UPS) will be included within the Bulk Data Storage 
+  Rack that will provide temporary emergency power when the primary facility power circuit is 
+  interrupted allowing for a graceful shutdown of the equipment within the rack or until any backup 
+  emergency power source is engaged. Tables bulk_data_storage_rack_hardware.csv and 
+  bulk_data_storage_rack_software.csv provide the hardware and software list, respectively, for the 
+  Bulk Data Storage Rack.
+
+  4. Workstations and Laptops
+  The company implements the common workstation configuration depicted in the file 
+  workstation_hardware.csv for the engineering and production and company management work areas. 
+  The test engineering work area uses the laptop configuration depicted in the file 
+  test_laptop_hardware.csv. Laptops are used to allow for testing of the product items on the Test 
+  Lab table as well as on the production floor and in the field. The laptops will use a direct 
+  attached bulk storage tower when testing on the production floor or in the field. The collected 
+  test data will then be transferred onto the Test SANS once the laptops are reconnected to the 
+  company information system. The company does not have any kind of asset control process for the 
+  hard drives used within the direct attached bulk storage tower. Files workstation_hardware.csv 
+  and workstation_software.csv provide the company workstation hardware and software configuration, 
+  respectively. Files test_laptop_hardware.csv and test_laptop_software.csv provide the test laptop 
+  hardware and software configuration, respectively.
