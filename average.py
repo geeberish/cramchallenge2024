@@ -1,4 +1,5 @@
-# cvss_runner.py
+# cvss_runner.py  
+import math
 import sys
 sys.path.append(".")
 from cvss_calculation import *
