@@ -1,0 +1,13 @@
+﻿Node,Software Make,Software Description,Software Version
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7
+Layer 3 Switch (Router),Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014
+Layer 2 Switch (Ethernet),Cisco,Catalyst 2960-X IOS,IOS 15.2(1)E
+Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0
+Cybersecurity Capability & Tools Server,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Cybersecurity Capability & Tools Server,McAfee,VirusScan Enterprise,2
+Cybersecurity Capability & Tools Server,Tenable,Nessus Vulnerability Scanner,8.10.0
+Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6
+Audit Log Server,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0
+Cybersecurity Capability & Tools SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Audit Log SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1

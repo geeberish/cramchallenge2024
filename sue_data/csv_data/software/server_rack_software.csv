@@ -1,0 +1,13 @@
+Node,Software Make,Software Description,Software Version
+"Layer 2 Switches (Ethernet), Qty. 2",Cisco,Catalyst 2960-X IOS,IOS 15.2(1)E
+Servers SR1 and SR2,RedHat,RedHat Enterprise Linux,RHEL 5.0
+Servers SR3 and SR4,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0
+Servers SR7 and SR8,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Severs SR9 and SR10,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2
+Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0
+Engineering & Production SAN 2,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Engineering & Production SAN 3,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Test SAN,RedHat,RedHat Enterprise Linux,RHEL 7.1
+Company Management SAN,RedHat,RedHat Enterprise Linux,RHEL 5.0

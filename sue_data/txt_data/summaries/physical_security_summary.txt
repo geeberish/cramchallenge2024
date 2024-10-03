@@ -1,0 +1,45 @@
+It consists of discrete spaces for the work areas: (a) Engineering and Production management, (b) 
+Test Engineering, (c) Production floor (not part of this challenge evaluation), (d) Information 
+Technology and Cybersecurity, and (e) Company Management. The facility also has a Main Lobby area 
+for visitors and during normal business hours there is a Security Guard to control visitor access 
+to the facility. There may be some problems with the facility layout that could impact the 
+company’s cyber resiliency in the event of an outsider threat or insider threat event. Competitor 
+companies and foreign governments very much was access to MRZTech’s products design artifacts and 
+test data as well as the unique Intellectual Property (IP) information that the company has created.
+
+Some additional company facility and information system characteristics to consider are:
+  a. Company facility is next to a river and is in the flood plain.
+  b. Company facility implements some physical security measures to include a Security Guard desk 
+    at the main     entrance that is staffed Monday-Friday 8:00 AM to 5:00 PM. The main entrance is 
+    locked when the Guard is not on duty but allows employees to exit if they work late (sometimes 
+    the door does not close all the way if employees do not make sure it catches). The production 
+    staff are responsible for opening the production floor door in the morning and locking it at 
+    the end of each day using a key lock, and all production staff have the key. An after-hours 
+    alarm system that only monitors the main entrance door and the production floor door is 
+    implemented and it is monitored by a commercial service over a telephone line link. All 
+    employees know the alarm code in the event they need to work late or have to come into work 
+    over the weekend. The last employee leaving the facility in the evening is responsible for 
+    activating the alarm.
+  c. Company has an equipment room that contains all the Information Technology (IT) equipment 
+    racks and the room has a single door with a key lock. All the IT staff have the door key and 
+    the door is usually left unlock during normal business hours but it is supposed to be locked 
+    whenever there is no IT staff present in the room per the company policy. The IT staff does not 
+    always lock the door if they step out and “expect” to be back in 15 minutes or less. The 
+    equipment racks in the space do not have locks and neither does the equipment spares cabinet.
+  d. Company has a room for the Engineering and Production staff and it has a single entrance door 
+    but there is not door lock or any other physical access control mechanism. The believe is that 
+    the Security Guard at the main entrance will control visitors and all the company staff is 
+    trusted.
+  e. Company has a room for the product test and evaluation, and it has a single door but it is 
+    accessed through the Engineering and Production room. It also does not have a key lock or any 
+    other physical access control mechanism.
+  f. Company Management offices are comprised of a suite of rooms that are accessed from a single 
+    door. That door has a key lock to secure the office space after hours. The door is unlocked 
+    during normal business hours but a PIN keypad is used to gain access. The individual offices in 
+    the management suite do not have locks on their doors.
+  g. Assume the company Product floor is all Industrial Control System (ICS) components that is 
+    standalone with no computer network connections to the company information system under 
+    evaluation. The production ICS is not part of this challenge. There is a door between the 
+    Engineering and Production space and the Production floor. It has a key lock but no one really 
+    uses it (and they can’t find the key) and there is no other physical access control mechanism 
+    being used.
