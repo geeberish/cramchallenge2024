@@ -68,6 +68,7 @@ def main():
         total_score += overall_cvss
     
     # Calculate average score
+    
     average_cvss = total_score / num_iterations
     print(f"\nAverage CVSS Score after {num_iterations} iterations: {average_cvss}")
 
