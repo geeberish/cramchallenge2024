@@ -83,15 +83,14 @@ class SystemEvaluationApp(QWidget):
         self.score_label.setStyleSheet("color: white;")
         self.score_label.setAlignment(Qt.AlignLeft)
 
-        # Create a layout for the main view
+            # Create a layout for the main view
         layout = QVBoxLayout()
         layout.addWidget(self.label)
         layout.addWidget(self.file_name_label)  # Display file name here
         layout.addWidget(self.score_label)      # Display score here
 
-        # Create a vertical layout for buttons
-        button_layout = QHBoxLayout()  # Vertical layout for buttons
-        v_button_layout = QVBoxLayout()
+        # Create a horizontal layout for buttons
+        button_layout = QHBoxLayout()
 
         # Create a button to select a file
         self.file_button = QPushButton("Select File")
@@ -107,16 +106,21 @@ class SystemEvaluationApp(QWidget):
         self.submit_button.clicked.connect(self.submit_file)
         button_layout.addWidget(self.submit_button)
 
-        # Create a button to view previous submissions (switches view)
+        # Align the buttons to the left
+        button_layout.setAlignment(Qt.AlignLeft)
+
+        # Create a vertical layout for the "View Previous Submissions" button
+        v_button_layout = QVBoxLayout()
         self.view_previous_button = QPushButton("View Previous Submissions")
         self.view_previous_button.setFont(self.font)
-        self.view_previous_button.setFixedSize(406, 40)  # Set same size for all buttons
+        self.view_previous_button.setFixedSize(415, 40)  # Set same size for all buttons
         self.view_previous_button.clicked.connect(self.switch_to_previous_submissions_view)
         v_button_layout.addWidget(self.view_previous_button)
 
-        # Add the button layout to the main layout
+        # Add the button layouts to the main layout
         layout.addLayout(button_layout)
         layout.addLayout(v_button_layout)
+
 
         # Create horizontal layout for bar graphs
         bar_graph_layout = QHBoxLayout()
