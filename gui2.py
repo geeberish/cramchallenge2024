@@ -6,8 +6,11 @@ from PySide6.QtGui import QPalette, QColor, QFont
 import shutil
 import sys
 import os
+import csv
+import hashlib  # For hashing the CSV file
+from average import *
 import average as avg
-import matplotlib.pyplot as plt
+import os
 
 class SystemEvaluationApp(QWidget):
     def __init__(self):
@@ -23,7 +26,7 @@ class SystemEvaluationApp(QWidget):
 
         # Set window title and size
         self.setWindowTitle("System Evaluation App")
-        self.setFixedSize(900, 500)  # Increased canvas width
+        self.setFixedSize(700, 500)  # Canvas height reduced to 500px
 
         # Set background color to dark gray and text color to white
         palette = self.palette()
@@ -118,15 +121,6 @@ class SystemEvaluationApp(QWidget):
         layout.addLayout(button_layout)
         layout.addLayout(v_button_layout)
 
-        # Create horizontal layout for bar graphs
-        bar_graph_layout = QHBoxLayout()
-
-        # Create the bar graphs
-        self.create_bar_graphs(bar_graph_layout)
-
-        # Add the bar graph layout to the main layout
-        layout.addLayout(bar_graph_layout)
-
         # Align everything to the top-left
         layout.setAlignment(Qt.AlignTop | Qt.AlignLeft)
 
@@ -134,43 +128,6 @@ class SystemEvaluationApp(QWidget):
         main_widget.setLayout(layout)
 
         return main_widget
-
-    def create_bar_graphs(self, layout):
-        # Initialize scores to zero
-        base_scores = [0, 0, 0]  # For Base Score, Impact Score, Exploitability Score
-        base_labels = ["Base Score", "Impact Score", "Exploitability Score"]
-        self.add_bar_graph(layout, base_scores, base_labels, "Base Scores")
-
-        # Temporal score bar graph
-        temporal_score = [0]  # For Temporal Score
-        temporal_labels = ["Temporal Score"]
-        self.add_bar_graph(layout, temporal_score, temporal_labels, "Temporal Scores")
-
-        # Environmental score bar graph
-        environmental_scores = [0]  # For Environmental Score
-        environmental_labels = ["Environmental Score"]
-        self.add_bar_graph(layout, environmental_scores, environmental_labels, "Environmental Scores")
-
-        # Overall CVSS score bar graph
-        overall_score = [0]  # For Overall CVSS Score
-        overall_labels = ["Overall CVSS Score"]
-        self.add_bar_graph(layout, overall_score, overall_labels, "Overall CVSS Score")
-
-    def add_bar_graph(self, layout, scores, labels, title):
-        """Add a bar graph to the layout."""
-        fig, ax = plt.subplots()
-        ax.bar(labels, scores, color='blue')
-        ax.set_ylim(0, 10)  # Set y-axis limit from 0.0 to 10.0
-        ax.set_title(title)
-        ax.set_xlabel('Metrics')
-        ax.set_ylabel('Scores')
-
-        # Create a canvas to embed the plot in the PyQt app
-        from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-        canvas = FigureCanvas(fig)
-
-        # Add the canvas to the layout
-        layout.addWidget(canvas)
 
     def create_previous_submissions_view(self):
         # Create a QWidget for the previous submissions view
@@ -214,114 +171,171 @@ class SystemEvaluationApp(QWidget):
         self.delete_button.clicked.connect(self.delete_file)
 
         # Create a button to go back to the main view
-        self.back_button = QPushButton("Back to Main View")
+        self.back_button = QPushButton("Back to Main Menu")
         self.back_button.setFont(self.font)
         self.back_button.clicked.connect(self.switch_to_main_view)
 
-        # Add all components to the layout
-        layout.addWidget(self.filter_button_alpha)
-        layout.addWidget(self.filter_button_score)
-        layout.addWidget(scroll_area)
+        # Add the filter buttons, scroll area, and other buttons to the layout
+        layout.addWidget(self.filter_button_alpha)  # Alphabetical filter button
+        layout.addWidget(self.filter_button_score)   # Score filter button
+        layout.addWidget(scroll_area)  # Add scroll area
         layout.addWidget(self.download_button)
         layout.addWidget(self.delete_button)
         layout.addWidget(self.back_button)
 
-        # Set layout for the previous submissions widget
+        # Set the layout for the previous submissions widget
         previous_submissions_widget.setLayout(layout)
 
         return previous_submissions_widget
 
     def open_file_dialog(self):
-        """Open a file dialog to select a file."""
-        file_name, _ = QFileDialog.getOpenFileName(self, "Select a File", "", "All Files (*)")
-        if file_name:
-            self.selected_file = file_name
-            self.file_name_label.setText(os.path.basename(file_name))
+        # Open a file dialog to select a file
+        file_dialog = QFileDialog(self)
+        file_dialog.setNameFilter("Files (*.pdf *.txt *.csv)")  # Allow PDF, TXT, and CSV files
+        if file_dialog.exec():
+            self.selected_file = file_dialog.selectedFiles()[0]
+            self.file_name_label.setText(f"Selected: {os.path.basename(self.selected_file)}")  # Show file name
 
     def submit_file(self):
-        """Handle file submission and scoring."""
+        # Handle file submission
         if self.selected_file:
-            # Call the function to score the file
-            base_score, impact_score, exploitability_score, temporal_score, environmental_score, overall_score = avg.score_file(self.selected_file)
+            file_name = os.path.basename(self.selected_file)  # Get only the file name
+            score = avg.main()  # Calculate score
+            print(score)
 
-            # Update bar graphs with new scores
-            self.update_bar_graphs(base_score, impact_score, exploitability_score, temporal_score, environmental_score, overall_score)
+            # Define the destination path in the submissions folder
+            dest_path = os.path.join(self.submissions_folder, file_name)
+            
+            # Copy the file to the submissions folder
+            shutil.copy(self.selected_file, dest_path)
 
-            # Store the submitted file
-            self.store_submitted_file(self.selected_file)
+            # Store the file and score in the submitted files list
+            self.submitted_files.append((file_name, f"Score: {score}"))
 
-            # Update the score label with the results
-            self.score_label.setText(f"Scores - Base: {base_score}, Impact: {impact_score}, Exploitability: {exploitability_score}, Temporal: {temporal_score}, Environmental: {environmental_score}, Overall: {overall_score}")
+            # Update the UI with submission status
+            self.score_label.setText(f"File submitted successfully! Score: {score}")
+
+            # Update the previous submissions view
+            self.update_previous_submissions_view()
+
+            # Save submissions to CSV and hash the submissions
+            self.save_submissions()
+            self.hash_submissions()
         else:
-            self.label.setText("No file selected. Please select a file first.")
-
-    def update_bar_graphs(self, base_score, impact_score, exploitability_score, temporal_score, environmental_score, overall_score):
-        """Update the bar graphs with new scores."""
-        print(f"Updated Scores - Base: {base_score}, Impact: {impact_score}, Exploitability: {exploitability_score}, Temporal: {temporal_score}, Environmental: {environmental_score}, Overall: {overall_score}")
-
-        # Logic to refresh the bar graphs with the new scores
-        # You might need to clear existing graphs and re-create them or directly update the existing ones
-
-    def load_submissions(self):
-        """Load previously submitted files."""
-        if os.path.exists(self.submissions_folder):
-            return os.listdir(self.submissions_folder)
-        return []
-
-    def store_submitted_file(self, file_path):
-        """Store the submitted file in the submissions folder."""
-        file_name = os.path.basename(file_path)
-        destination = os.path.join(self.submissions_folder, file_name)
-        shutil.copy(file_path, destination)
+            self.file_name_label.setText("No file selected. Please select a file to submit.")
 
     def update_previous_submissions_view(self):
-        """Update the previous submissions view."""
+        # Clear and update the list widget in the previous submissions view
         self.list_widget.clear()
-        for file_name in self.submitted_files:
-            self.list_widget.addItem(file_name)
+        for file, score in self.submitted_files:
+            self.list_widget.addItem(f"{file} - {score}")  # Removed "PDF:" prefix
 
     def toggle_filter_alpha(self):
-        """Toggle the filter for alphabetical ordering."""
-        self.filter_state_alpha = 1 - self.filter_state_alpha  # Toggle between 0 and 1
-        if self.filter_state_alpha:
-            self.submitted_files.sort()
+        # Toggle the alphabetical filtering state
+        if self.filter_state_alpha == 0:
+            # Apply alphabetical filter (ascending)
+            self.submitted_files = sorted(self.submitted_files, key=lambda x: x[0])
+            self.filter_state_alpha = 1
+        elif self.filter_state_alpha == 1:
+            # Apply alphabetical filter (descending)
+            self.submitted_files = sorted(self.submitted_files, key=lambda x: x[0], reverse=True)
+            self.filter_state_alpha = 2
         else:
-            self.submitted_files = self.load_submissions()  # Reload unsorted files
+            # Reset alphabetical filter
+            self.submitted_files = self.load_submissions()
+            self.filter_state_alpha = 0
         self.update_previous_submissions_view()
 
     def toggle_filter_score(self):
-        """Toggle the filter for score ordering."""
-        self.filter_state_score = 1 - self.filter_state_score  # Toggle between 0 and 1
-        # Add logic for filtering by score if needed
+        # Toggle the score filtering state
+        if self.filter_state_score == 0:
+            # Apply score filter (ascending)
+            self.submitted_files = sorted(self.submitted_files, key=lambda x: float(x[1].split()[1]))
+            self.filter_state_score = 1
+        elif self.filter_state_score == 1:
+            # Apply score filter (descending)
+            self.submitted_files = sorted(self.submitted_files, key=lambda x: float(x[1].split()[1]), reverse=True)
+            self.filter_state_score = 2
+        else:
+            # Reset score filter
+            self.submitted_files = self.load_submissions()
+            self.filter_state_score = 0
         self.update_previous_submissions_view()
 
     def switch_to_previous_submissions_view(self):
-        """Switch to the previous submissions view."""
+        # Switch to the previous submissions view
         self.stacked_widget.setCurrentIndex(1)
 
     def switch_to_main_view(self):
-        """Switch to the main view."""
+        # Switch to the main view
         self.stacked_widget.setCurrentIndex(0)
 
-    def download_file(self):
-        """Download the selected file from previous submissions."""
-        selected_items = self.list_widget.selectedItems()
-        if selected_items:
-            selected_file = selected_items[0].text()
-            source = os.path.join(self.submissions_folder, selected_file)
-            destination, _ = QFileDialog.getSaveFileName(self, "Save File", selected_file)
-            if destination:
-                shutil.copy(source, destination)
-
     def delete_file(self):
-        """Delete the selected submission from the list."""
+        # Delete the selected file from the list and submissions folder
         selected_items = self.list_widget.selectedItems()
         if selected_items:
-            selected_file = selected_items[0].text()
-            os.remove(os.path.join(self.submissions_folder, selected_file))
-            self.submitted_files.remove(selected_file)
+            selected_item = selected_items[0].text()
+            file_name, score = selected_item.split(" - ")  # Extract file name and score
+            
+            # Find the exact index of the selected submission in the submitted_files list
+            for index, (f, s) in enumerate(self.submitted_files):
+                if f == file_name and s == score:
+                    # Remove the selected submission
+                    del self.submitted_files[index]
+                    break  # Stop after deleting the selected submission
+            
+            # Update the list view and save changes
             self.update_previous_submissions_view()
+            self.save_submissions()
+            print(f"Submission {file_name} with {score} has been deleted.")
 
+
+    def download_file(self):
+        # Download the selected file
+        selected_items = self.list_widget.selectedItems()
+        if selected_items:
+            selected_item = selected_items[0].text()
+            file_name = selected_item.split(" - ")[0]  # Extract the file name
+
+            # Define the source path in the submissions folder
+            source_path = os.path.join(self.submissions_folder, file_name)
+
+            # Define the destination path for the download (e.g., current working directory or a 'downloads' folder)
+            download_path = os.path.join(os.getcwd(), "downloads", file_name)
+            os.makedirs(os.path.dirname(download_path), exist_ok=True)  # Ensure the 'downloads' folder exists
+
+            # Copy the file to the downloads folder
+            shutil.copy(source_path, download_path)
+
+            print(f"{file_name} has been downloaded to {download_path}.")  # Output for debugging
+
+    def save_submissions(self):
+        # Save the submitted files and scores to a CSV file
+        with open("submissions.csv", "w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            for file, score in self.submitted_files:
+                writer.writerow([file, score])
+
+    def load_submissions(self):
+        # Load submissions from a CSV file
+        submissions = []
+        try:
+            with open("submissions.csv", "r") as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    submissions.append((row[0], row[1]))  # (File name, Score)
+        except FileNotFoundError:
+            print("No previous submissions found.")
+        return submissions
+
+    def hash_submissions(self):
+        # Hash the submissions CSV file
+        with open("submissions.csv", "rb") as file:
+            file_data = file.read()
+            file_hash = hashlib.sha256(file_data).hexdigest()
+            print(f"CSV File Hash: {file_hash}")
+
+# Run the app
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = SystemEvaluationApp()
