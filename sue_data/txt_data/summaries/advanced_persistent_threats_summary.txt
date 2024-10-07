@@ -1,0 +1,8 @@
+Participants can choose to include any desired information on APTs that is publicly available. 
+MITRE hosts a list of APTs at Groups | MITRE ATT&CK® and details known tactics, techniques, and 
+procedures (TTPs). An example list of possibly applicable APTs is provided below, but the list of 
+possibly applicable APTs is not exhaustive. The APTs selected do not represent specific areas of 
+concern, and no specific interest in the SUE is expected. However, information from these APTs 
+should be included as examples of commonly known TTPs. As such, the initial demonstration run 
+should include at a minimum TTPs from these groups. The initial demonstration run may also include 
+adding or removing an APT and their TTPs.
