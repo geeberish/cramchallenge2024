@@ -1,0 +1,82 @@
+[
+    {
+        "RiskID": "A01",
+        "Risk": "Broken Access Control",
+        "Description": "Restrictions on what authenticated users are allowed to do are not properly enforced.",
+        "PotentialImpact": "Unauthorized access to sensitive data or actions.",
+        "Mitigations": "Implement role-based access control (RBAC),Perform regular access control audits,Use the principle of least privilege",
+        "Compliant": "false"
+    },
+    {
+        "RiskID": "A02",
+        "Risk": "Cryptographic Failures",
+        "Description": "Sensitive data is not adequately protected with encryption.",
+        "PotentialImpact": "Data theft or exposure of sensitive information (e.g., passwords, personal data).",
+        "Mitigations": "Encrypt all sensitive data both at rest and in transit,Use strong encryption algorithms,Implement proper key management",
+        "Compliant": "true"
+    },
+    {
+        "RiskID": "A03",
+        "Risk": "Injection",
+        "Description": "Untrusted data is sent to an interpreter as part of a command or query.",
+        "PotentialImpact": "Data leakage, corruption, or even total system compromise.",
+        "Mitigations": "Use parameterized queries,Use input validation,Sanitize all user inputs",
+        "Compliant": "false"
+    },
+    {
+        "RiskID": "A04",
+        "Risk": "Insecure Design",
+        "Description": "Security weaknesses due to design flaws in software or system architecture.",
+        "PotentialImpact": "Exposure to attacks and vulnerabilities due to improper security design.",
+        "Mitigations": "Adopt a secure development lifecycle,Implement threat modeling during design,Use security-focused design principles",
+        "Compliant": "false"
+    },
+    {
+        "RiskID": "A05",
+        "Risk": "Security Misconfiguration",
+        "Description": "Improperly configured security controls can expose systems to attack.",
+        "PotentialImpact": "Exploitation of default configurations or unnecessary features.",
+        "Mitigations": "Harden server and application configurations,Disable unnecessary features or services,Regularly review security configurations",
+        "Compliant": "true"
+    },
+    {
+        "RiskID": "A06",
+        "Risk": "Vulnerable and Outdated Components",
+        "Description": "Using components with known vulnerabilities in software or infrastructure.",
+        "PotentialImpact": "Application compromise or exploitation due to unpatched software or outdated libraries.",
+        "Mitigations": "Use software composition analysis tools,Keep dependencies and libraries up to date,Patch known vulnerabilities promptly",
+        "Compliant": "false"
+    },
+    {
+        "RiskID": "A07",
+        "Risk": "Identification and Authentication Failures",
+        "Description": "Failures in managing user identities, authentication, or session management.",
+        "PotentialImpact": "Attackers gaining unauthorized access to accounts or systems.",
+        "Mitigations": "Use multi-factor authentication,Ensure secure password storage,Invalidate session tokens after logout",
+        "Compliant": "true"
+    },
+    {
+        "RiskID": "A08",
+        "Risk": "Software and Data Integrity Failures",
+        "Description": "Insecure software updates, critical data corruption, or unauthorized changes to critical systems.",
+        "PotentialImpact": "Application compromise or unauthorized system changes.",
+        "Mitigations": "Digitally sign and verify software updates,Use integrity checks on critical data,Implement CI/CD pipelines with security controls",
+        "Compliant": "false"
+    },
+    {
+        "RiskID": "A09",
+        "Risk": "Security Logging and Monitoring Failures",
+        "Description": "Inadequate logging or monitoring can lead to undetected security incidents.",
+        "PotentialImpact": "Delayed or missed detection of malicious activity.",
+        "Mitigations": "Implement centralized logging,Ensure all critical events are logged,Monitor logs for suspicious activities",
+        "Compliant": "true"
+    },
+    {
+        "RiskID": "A10",
+        "Risk": "Server-Side Request Forgery (SSRF)",
+        "Description": "The server can be tricked into accessing unintended resources.",
+        "PotentialImpact": "Access to internal systems or sensitive data.",
+        "Mitigations": "Sanitize and validate all inputs,Disable unnecessary URL fetch capabilities,Use network segmentation to limit internal access",
+        "Compliant": "true"
+    }
+]
