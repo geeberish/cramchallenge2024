@@ -1,3 +1,5 @@
+
+
 from PySide6.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QStackedWidget, QScrollArea
 )
@@ -10,7 +12,6 @@ import csv
 import hashlib  # For hashing the CSV file
 from average import *
 import average as avg
-import os
 
 class SystemEvaluationApp(QWidget):
     def __init__(self):
