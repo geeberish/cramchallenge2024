@@ -1,0 +1,226 @@
+[
+  {
+    "Node": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Servers SR1 and SR2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Servers SR1 and SR2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Servers SR1 and SR2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Servers SR3 and SR4",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Servers SR5 and SR6",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node": "Servers SR5 and SR6",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Servers SR5 and SR6",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Servers SR7 and SR8",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Severs SR9 and SR10",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2017-8543",
+    "NVD Score": 9.8
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0301",
+    "NVD Score": 9.3
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0323",
+    "NVD Score": 6.6
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0315",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5058",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5056",
+    "NVD Score": 9.3
+  },
+  {
+    "Node": "Engineering & Production SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Engineering & Production SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN 3",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  }
+]

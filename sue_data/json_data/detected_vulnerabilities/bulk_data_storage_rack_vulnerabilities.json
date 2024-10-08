@@ -1,0 +1,106 @@
+[
+  {
+    "Node": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Engineering & Production SAN Archive 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN Archive 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN Archive 1 Backup",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Engineering & Production SAN Archive 2 Backup",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test SAN Archive",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test SAN Archive Backup",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools SAN Archive Backup",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Company Management SAN Archive",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Company Management SAN Archive Backup",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  }
+]
