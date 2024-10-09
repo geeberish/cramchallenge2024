@@ -4,46 +4,46 @@ sys.path.append(".")
 from cvss_calculation import *
 import cvss_calculation as cvss
 
-impact_conf = 0
-impact_integ = 0
-impact_avail = 0
-scope_changed = 0
+# impact_conf = 0
+# impact_integ = 0
+# impact_avail = 0
+# scope_changed = 0
 
-attack_vector = 0
-attack_complexity = 0
-privilege_required = 0
-user_interaction = 0
+# attack_vector = 0
+# attack_complexity = 0
+# privilege_required = 0
+# user_interaction = 0
 
-exploit_code_maturity = 0
-remediation_level = 0
-report_confidence =0
+# exploit_code_maturity = 0
+# remediation_level = 0
+# report_confidence =0
 
-# Modified environmental inputs
-m_impact_conf = 0
-cr = 1.0
-m_impact_integ = 0
-ir = 1.0
-m_impact_avail = 0
-ar = 1.0
-m_attack_vector = 0
-m_attack_complexity = 0
-m_privilege_required = 0
-m_user_interaction = 0
+# # Modified environmental inputs
+# m_impact_conf = 0
+# cr = 1.0
+# m_impact_integ = 0
+# ir = 1.0
+# m_impact_avail = 0
+# ar = 1.0
+# m_attack_vector = 0
+# m_attack_complexity = 0
+# m_privilege_required = 0
+# m_user_interaction = 0
 
-criticality = 0
-physical_security = 0
-personnel_training = 0
-policies = 0
+# criticality = 0
+# physical_security = 0
+# personnel_training = 0
+# policies = 0
 
-# Calculate the CVSS scores
-impact_sub = 0
-exploitability_sub = 0
-base = 0
-temporal = 0
-modified_impact_sub = 0
-modified_exploitability_sub = 0
-environmental = 0
-average_cvss =0
+# # Calculate the CVSS scores
+# impact_sub = 0
+# exploitability_sub = 0
+# base = 0
+# temporal = 0
+# modified_impact_sub = 0
+# modified_exploitability_sub = 0
+# environmental = 0
+# average_cvss =0
 
 def get_user_input(prompt, default=None):
     try:
@@ -64,37 +64,37 @@ def get_valid_iterations(prompt):
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
 
-def rtntemporal_score():
-    # Example calculation of temporal score
-    return temporal  # Adjust as needed
+# def rtntemporal_score():
+#     # Example calculation of temporal score
+#     return temporal  # Adjust as needed
 
-def rtnenvironmental_score():
-    # Example calculation of environmental score
-    return environmental  # Adjust as needed
+# def rtnenvironmental_score():
+#     # Example calculation of environmental score
+#     return environmental  # Adjust as needed
 
-def rtnimpact_subscore():
-    return impact_sub
+# def rtnimpact_subscore():
+#     return impact_sub
 
-def rtnexploitability_sub():
-    return exploitability_sub
+# def rtnexploitability_sub():
+#     return exploitability_sub
 
-def rtnbase_score():
-    return base
+# def rtnbase_score():
+#     return base
 
-def rtnphysical_security():
-    return physical_security
+# def rtnphysical_security():
+#     return physical_security
 
-def rtncriticality():
-    return criticality
+# def rtncriticality():
+#     return criticality
 
-def rtnpersonnel():
-    return personnel_training
+# def rtnpersonnel():
+#     return personnel_training
 
-def rtnpolicies():
-    return policies
+# def rtnpolicies():
+#     return policies
 
-def rtnoverall():
-    return average_cvss
+# def rtnoverall():
+#     return average_cvss
 
 def main():
     # Get the number of iterations with input validation
@@ -152,11 +152,11 @@ def main():
         print(f"Overall CVSS Score for iteration {i+1}: {overall_cvss}")
         total_score += overall_cvss
 
-    # Calculate average score
-    average_cvss = total_score / num_iterations
-    print(f"\nAverage CVSS Score after {num_iterations} iterations: {average_cvss}")
-    return average_cvss
-
+        # Calculate average score
+        average_cvss = total_score / num_iterations
+        print(f"\nAverage CVSS Score after {num_iterations} iterations: {average_cvss}")
+        #return average_cvss
+        return base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss
 
 if __name__ == "__main__":
     main()
