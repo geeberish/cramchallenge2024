@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QStackedWidget, QScrollArea
+    QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPalette, QColor, QFont, QIcon
@@ -50,6 +50,9 @@ class SystemEvaluationApp(QWidget):
         self.previous_submissions_view = self.create_previous_submissions_view()
         self.stacked_widget.addWidget(self.previous_submissions_view)
 
+        self.select_file_view = self.create_file_select_view()
+        self.stacked_widget.addWidget(self.select_file_view)
+
         layout = QVBoxLayout(self)
         layout.addWidget(self.stacked_widget)
 
@@ -85,17 +88,18 @@ class SystemEvaluationApp(QWidget):
 
         button_layout = QHBoxLayout()
 
-        self.file_button = QPushButton("Select File")
+        self.file_button = QPushButton("Select Files")
         self.file_button.setFont(self.font)
-        self.file_button.setFixedSize(200, 30)
-        self.file_button.clicked.connect(self.open_file_dialog)
+        # self.file_button.setFixedSize(200, 30)
+        self.file_button.setFixedSize(406, 40)
+        self.file_button.clicked.connect(self.switch_to_file_select_view)
         button_layout.addWidget(self.file_button)
 
-        self.submit_button = QPushButton("Submit File")
-        self.submit_button.setFont(self.font)
-        self.submit_button.setFixedSize(200, 30)
-        self.submit_button.clicked.connect(self.submit_file)
-        button_layout.addWidget(self.submit_button)
+        # self.submit_button = QPushButton("Submit File")
+        # self.submit_button.setFont(self.font)
+        # self.submit_button.setFixedSize(200, 30)
+        # self.submit_button.clicked.connect(self.submit_file)
+        # button_layout.addWidget(self.submit_button)
 
         button_layout.setAlignment(Qt.AlignLeft)
         v_button_layout = QVBoxLayout()
@@ -222,6 +226,146 @@ class SystemEvaluationApp(QWidget):
 
         return previous_submissions_widget
     
+    def create_file_select_view(self):
+        # Create a QWidget for the previous submissions view
+        file_select_widget = QWidget()
+
+        # Create a layout for the previous submissions view
+        layout = QVBoxLayout()
+
+        self.cf_file_name_label = QLabel("")
+        self.cf_file_name_label.setFont(self.font)
+        self.cf_file_name_label.setStyleSheet("color: white;")
+        self.cf_file_name_label.setAlignment(Qt.AlignLeft)
+        self.cf_file_name_label.setWordWrap(True)
+        self.cf_file_name_label.setFixedWidth(400)
+
+        self.dv_file_name_label = QLabel("")
+        self.dv_file_name_label.setFont(self.font)
+        self.dv_file_name_label.setStyleSheet("color: white;")
+        self.dv_file_name_label.setAlignment(Qt.AlignLeft)
+        self.dv_file_name_label.setWordWrap(True)
+        self.dv_file_name_label.setFixedWidth(400)
+
+        self.h_file_name_label = QLabel("")
+        self.h_file_name_label.setFont(self.font)
+        self.h_file_name_label.setStyleSheet("color: white;")
+        self.h_file_name_label.setAlignment(Qt.AlignLeft)
+        self.h_file_name_label.setWordWrap(True)
+        self.h_file_name_label.setFixedWidth(400)
+
+        self.s_file_name_label = QLabel("")
+        self.s_file_name_label.setFont(self.font)
+        self.s_file_name_label.setStyleSheet("color: white;")
+        self.s_file_name_label.setAlignment(Qt.AlignLeft)
+        self.s_file_name_label.setWordWrap(True)
+        self.s_file_name_label.setFixedWidth(400)
+
+        self.sum_file_name_label = QLabel("")
+        self.sum_file_name_label.setFont(self.font)
+        self.sum_file_name_label.setStyleSheet("color: white;")
+        self.sum_file_name_label.setAlignment(Qt.AlignLeft)
+        self.sum_file_name_label.setWordWrap(True)
+        self.sum_file_name_label.setFixedWidth(400)
+
+        # Create a button to go back to the main view
+        self.back_button = QPushButton("Back to Main Menu")
+        self.back_button.setFont(self.font)
+        self.back_button.setFixedSize(203, 30)  # Half the original size
+        self.back_button.clicked.connect(self.switch_to_main_view)
+
+
+        self.label2 = QLabel("Please submit a file for Critical Functions (CSV, JSON):")
+        self.label2.setFont(self.font)
+        self.label2.setStyleSheet("color: white;")
+        self.label2.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_cf_button = QPushButton("Select File")
+        self.select_cf_button.setFont(self.font)
+        self.select_cf_button.setFixedSize(203, 30)  # Half the original size
+        self.select_cf_button.clicked.connect(lambda: self.open_file_dialog("cf"))
+
+        self.label3 = QLabel("Please submit a file for Detected Vulnerabilities (CSV, JSON):")
+        self.label3.setFont(self.font)
+        self.label3.setStyleSheet("color: white;")
+        self.label3.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_dv_button = QPushButton("Select File")
+        self.select_dv_button.setFont(self.font)
+        self.select_dv_button.setFixedSize(203, 30)  # Half the original size
+        self.select_dv_button.clicked.connect(lambda: self.open_file_dialog("dv"))
+
+        self.label4 = QLabel("Please submit a file for Hardware (CSV, JSON):")
+        self.label4.setFont(self.font)
+        self.label4.setStyleSheet("color: white;")
+        self.label4.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_h_button = QPushButton("Select File")
+        self.select_h_button.setFont(self.font)
+        self.select_h_button.setFixedSize(203, 30)  # Half the original size
+        self.select_h_button.clicked.connect(lambda: self.open_file_dialog("h"))
+
+        self.label5 = QLabel("Please submit a file for Software (CSV, JSON):")
+        self.label5.setFont(self.font)
+        self.label5.setStyleSheet("color: white;")
+        self.label5.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_s_button = QPushButton("Select File")
+        self.select_s_button.setFont(self.font)
+        self.select_s_button.setFixedSize(203, 30)  # Half the original size
+        self.select_s_button.clicked.connect(lambda: self.open_file_dialog("s"))
+
+        self.label6 = QLabel("Please submit a file for Summaries (TXT):")
+        self.label6.setFont(self.font)
+        self.label6.setStyleSheet("color: white;")
+        self.label6.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_sum_button = QPushButton("Select File")
+        self.select_sum_button.setFont(self.font)
+        self.select_sum_button.setFixedSize(203, 30)  # Half the original size
+        self.select_sum_button.clicked.connect(lambda: self.open_file_dialog("sum"))
+
+        self.submit_button = QPushButton("Submit File")
+        self.submit_button.setFont(self.font)
+        self.submit_button.setFixedSize(200, 30)
+        self.submit_button.clicked.connect(self.submit_file)
+
+        # Add labels and buttons to the layout
+        
+        layout.addWidget(self.label2)
+        layout.addWidget(self.cf_file_name_label)
+        layout.addWidget(self.select_cf_button)
+        layout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        layout.addWidget(self.label3)
+        layout.addWidget(self.dv_file_name_label)
+        layout.addWidget(self.select_dv_button)
+        layout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        layout.addWidget(self.label4)
+        layout.addWidget(self.h_file_name_label)
+        layout.addWidget(self.select_h_button)
+        layout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        layout.addWidget(self.label5)
+        layout.addWidget(self.s_file_name_label)
+        layout.addWidget(self.select_s_button)
+        layout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        layout.addWidget(self.label6)
+        layout.addWidget(self.sum_file_name_label)
+        layout.addWidget(self.select_sum_button)
+        layout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        # Add the submit button without additional spacing
+        layout.addWidget(self.submit_button)
+        layout.addWidget(self.back_button)
+
+        # Set the layout for the previous submissions widget
+        file_select_widget.setLayout(layout)
+
+        return file_select_widget
+    
     def update_bar_graph(self, name, scores):
         print(f"Updating {name} graph with scores: {scores}")  # Debugging print
         fig_data = self.figures[name]
@@ -241,40 +385,105 @@ class SystemEvaluationApp(QWidget):
         fig_data['canvas'].flush_events()
 
 
-    def open_file_dialog(self):
-        # Open a file dialog to select a file
+    def open_file_dialog(self, file_type):
+        # Open a file dialog to select a file based on the type
         file_dialog = QFileDialog(self)
         file_dialog.setNameFilter("Files (*.pdf *.txt *.csv *.json)")  # Allow PDF, TXT, and CSV files
         if file_dialog.exec():
-            self.selected_file = file_dialog.selectedFiles()[0]
-            self.file_name_label.setText(f"Selected: {os.path.basename(self.selected_file)}")  # Show file name
+            selected_file = file_dialog.selectedFiles()[0]
+            file_name = os.path.basename(selected_file)
+
+            # Set the selected file based on the provided type
+            if file_type == "cf":
+                self.selected_cf_button = selected_file
+                self.cf_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "dv":
+                self.selected_dv_button = selected_file
+                self.dv_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "h":
+                self.selected_h_button = selected_file
+                self.h_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "s":
+                self.selected_s_button = selected_file
+                self.s_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "sum":
+                self.selected_sum_button = selected_file
+                self.sum_file_name_label.setText(f"Selected: {file_name}")
+
 
     def submit_file(self):
-        if self.selected_file:
-            file_name = os.path.basename(self.selected_file)
-            #score = avg.main()
-            base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main()
+        # Check for required files except for Detected Vulnerabilities
+        if not self.select_cf_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
+            missing_files = []
+            if not self.selected_cf_button:
+                missing_files.append("Critical Functions")
+            if not self.selected_h_button:
+                missing_files.append("Hardware")
+            if not self.selected_s_button:
+                missing_files.append("Software")
+            if not self.selected_sum_button:
+                missing_files.append("Summaries")
+            
+            QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
+            return  # Exit the function if there are missing files
+
+        # Process the submitted files here (e.g., copy files to the submissions folder, etc.)
+        files_to_submit = {
+            "Critical Functions": self.selected_cf_button,
+            "Detected Vulnerabilities": self.selected_dv_button,
+            "Hardware": self.selected_h_button,
+            "Software": self.selected_s_button,
+            "Summaries": self.selected_sum_button,
+        }
+
+        # Copy files to the submissions folder and collect them for the CSV
+        submitted_files = []
+        for file_name, file_path in files_to_submit.items():
+            if file_path:  # Only save if the file is selected
+                shutil.copy(file_path, self.submissions_folder)
+                submitted_files.append(file_name)  # Save the file name for later use in the CSV
+
+        # Assuming avg.main() function returns the required scores
+        base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main()
+
+        # Show success message
+        self.score_label.setText(f"Files submitted successfully! Score: {average_cvss}")
+        self.update_previous_submissions_view()
+        
+        # Save the submitted files and the scores to the submissions.csv file
+        with open("submissions.csv", "a", newline="") as csvfile:  # 'a' mode to append
+            writer = csv.writer(csvfile)
+            for file in submitted_files:
+                writer.writerow([file, f"Score: {average_cvss}"])  # Add file name and score to the CSV
+
+        # Hash the submissions
+        self.hash_submissions()
+
+        # Update the bar graphs with new scores
+        self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
+        self.update_bar_graph('temporal', [temporal])
+        self.update_bar_graph('environmental', [environmental])
+        self.update_bar_graph('security', [physical_security, personnel_training, policies])
+        self.update_bar_graph('overall', [average_cvss])
+
+        # Reset selections after submission
+        self.reset_file_selections()
 
 
-            dest_path = os.path.join(self.submissions_folder, file_name)
-            shutil.copy(self.selected_file, dest_path)
-            self.submitted_files.append((file_name, f"Score: {average_cvss}"))
-
-            self.score_label.setText(f"File submitted successfully! Score: {average_cvss}")
-            self.update_previous_submissions_view()
-            self.save_submissions()
-            self.hash_submissions()
-            print("HASH DONE")
-            # Update the bar graphs with new scores
-            self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
-            print("AFTER FIRST UPDATE CALL")
-            self.update_bar_graph('temporal', [temporal])
-            self.update_bar_graph('environmental', [environmental])
-            self.update_bar_graph('security', [physical_security, personnel_training, policies])
-            self.update_bar_graph('overall', [average_cvss])
-
-        else:
-            self.file_name_label.setText("No file selected. Please select a file to submit.")
+    def reset_file_selections(self):
+        # Clear the selections for all file types
+        self.selected_cf_file = None
+        self.selected_dv_file = None
+        self.selected_h_file = None
+        self.selected_s_file = None
+        self.selected_sum_file = None
+        
+        # Clear the labels in the UI
+        self.cf_file_name_label.setText("")
+        self.dv_file_name_label.setText("")
+        self.h_file_name_label.setText("")
+        self.s_file_name_label.setText("")
+        self.sum_file_name_label.setText("")
 
     def update_previous_submissions_view(self):
         # Clear and update the list widget in the previous submissions view
@@ -360,6 +569,11 @@ class SystemEvaluationApp(QWidget):
         # Save the submitted files and scores to a CSV file
         with open("submissions.csv", "w", newline="") as csvfile:
             writer = csv.writer(csvfile)
+            
+            # Write header for the CSV file
+            writer.writerow(["File Name", "Score"])
+            
+            # Write the submitted files and scores
             for file, score in self.submitted_files:
                 writer.writerow([file, score])
 
@@ -397,6 +611,10 @@ class SystemEvaluationApp(QWidget):
     def switch_to_previous_submissions_view(self):
         # Switch to the previous submissions view
         self.stacked_widget.setCurrentWidget(self.previous_submissions_view)
+
+    def switch_to_file_select_view(self):
+        # Switch to the previous submissions viewprevious_submissions_view
+        self.stacked_widget.setCurrentWidget(self.select_file_view)
 
     def calculate_cvss_score(self):
         # Execute the main method in average.py which handles input in the terminal

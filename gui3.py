@@ -334,7 +334,7 @@ class SystemEvaluationApp(QWidget):
             print(f"Submission {file_name} with {score} has been deleted.")
 
     def download_file(self):
-        # Download the selected file
+        # Get the selected item from the list widget
         selected_items = self.list_widget.selectedItems()
         if selected_items:
             selected_item = selected_items[0].text()
@@ -343,16 +343,26 @@ class SystemEvaluationApp(QWidget):
             # Define the source path in the submissions folder
             source_path = os.path.join(self.submissions_folder, file_name)
 
-            # Define the destination path for the download (user's Downloads folder)
-            download_path = os.path.join(os.path.expanduser("~"), "Downloads", file_name)
+            # Get the path to the Downloads folder
+            downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
 
-            # Copy the file to the Downloads folder
-            shutil.copy(source_path, download_path)
+            # Open the OS's native "Save As" dialog using QFileDialog.getSaveFileName
+            save_file_dialog = QFileDialog.getSaveFileName(self, 
+                                                        "Save File As", 
+                                                        os.path.join(downloads_folder, file_name),  # Default to Downloads folder
+                                                        "All Files (*)")
 
-            # Open the Downloads folder
-            subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
+            # If the user chooses a file path
+            if save_file_dialog[0]:
+                destination_path = save_file_dialog[0]  # Get the selected file path
 
-            print(f"{file_name} has been downloaded to {download_path}.")  # Output for debugging
+                # Copy the file to the destination path
+                shutil.copy(source_path, destination_path)
+
+                # Output success message
+                print(f"{file_name} has been saved to {destination_path}.")
+            else:
+                print("Download canceled by the user.")
         else:
             print("No file selected for download.")
     
