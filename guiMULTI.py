@@ -452,13 +452,18 @@ class SystemEvaluationApp(QWidget):
         # Prepare files to submit
         files_to_submit = {
             "Critical Functions": self.selected_cf_button,
+            "Detected Vulnerabilities": self.selected_dv_button,
             "Hardware": self.selected_h_button,
             "Software": self.selected_s_button,
             "Summaries": self.selected_sum_button,
         }
 
         # Invoke the model and perform score calculations in average.py
-        base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main(files_to_submit)
+        try:
+            base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main(files_to_submit)
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
+            return
 
         # Show success message and update GUI
         self.score_label.setText(f"Files submitted successfully! Score: {average_cvss}")
@@ -480,6 +485,7 @@ class SystemEvaluationApp(QWidget):
         # Reset file selections and show the download report button
         self.reset_file_selections()
         self.download_report_button.setVisible(True)
+
 
 
     def reset_file_selections(self):

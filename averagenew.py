@@ -1,10 +1,12 @@
+import os
 import sys
 import json
 from invoke_model import invoke_model  # Import the function to invoke the SageMaker model
 sys.path.append(".")
-from cvss_calculation import *
 import cvss_calculation as cvss
+from invoke_model import load_and_invoke_model
 
+# Function to load and invoke the model with the submitted files
 def get_model_output(files_to_submit, endpoint_name):
     """
     This function loads the submitted JSON files, invokes the SageMaker model,
@@ -13,12 +15,23 @@ def get_model_output(files_to_submit, endpoint_name):
     # Aggregate data from the submitted files
     input_data = {}
     for file_type, file_path in files_to_submit.items():
-        with open(file_path, 'r') as file:
-            input_data[file_type] = json.load(file)
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as file:
+                input_data[file_type] = json.load(file)
 
     # Invoke the SageMaker model and return the result
     return invoke_model(input_data, endpoint_name)
 
+# Function to generate a text report
+def generate_report(result, report_path="model_report.txt"):
+    """
+    Generate a text report from the model output and CVSS calculations.
+    """
+    with open(report_path, 'w') as report_file:
+        report_file.write(json.dumps(result, indent=4))
+    print(f"Report generated successfully! Results saved to {report_path}")
+
+# Main function to calculate CVSS scores and return the values
 def main(files_to_submit):
     """
     This function gets the model output, performs the CVSS score calculations,
@@ -70,4 +83,31 @@ def main(files_to_submit):
 
     overall_cvss = environmental if environmental > 0 else (temporal if temporal > 0 else base)
 
+    # Prepare the result to return and write to a report
+    result = {
+        "base": base,
+        "impact_sub": impact_sub,
+        "exploitability_sub": exploitability_sub,
+        "temporal": temporal,
+        "environmental": environmental,
+        "physical_security": physical_security,
+        "personnel_training": personnel_training,
+        "policies": policies,
+        "overall_cvss": overall_cvss
+    }
+
+    generate_report(result)  # Generate a text report with the results
+
     return base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, overall_cvss
+
+
+if __name__ == "__main__":
+    # Replace these paths with actual file selections from the GUI
+    files_to_submit = {
+        "Critical Functions": "path/to/critical_functions.json",
+        "Detected Vulnerabilities": "path/to/detected_vulnerabilities.json",
+        "Hardware": "path/to/hardware.json",
+        "Software": "path/to/software.json",
+        "Summaries": "path/to/summaries.json"
+    }
+    main(files_to_submit)

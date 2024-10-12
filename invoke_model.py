@@ -20,9 +20,7 @@ def invoke_model(input_data, endpoint_name):
     response_body = response['Body'].read().decode('utf-8')
     return json.loads(response_body)
 
-# Function to load JSON file content and pass to the model
-def load_and_invoke_model(file_path, endpoint_name):
-    with open(file_path, 'r') as f:
-        input_data = json.load(f)
-    
+# Function to load multiple JSON file contents and pass to the model
+def load_and_invoke_model(input_data, endpoint_name):
+    # Invoke the model with the combined data from multiple files
     return invoke_model(input_data, endpoint_name)
