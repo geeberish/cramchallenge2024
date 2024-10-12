@@ -1,0 +1,74 @@
+[
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7"
+  },
+  {
+    "Node": "Layer 3 Switch (Router)",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014"
+  },
+  {
+    "Node": "Layer 2 Switch (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X IOS",
+    "Software Version": "IOS 15.2(1)E"
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0"
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": 2
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0"
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": 8.6
+  },
+  {
+    "Node": "Audit Log Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Virtualization Manager SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0"
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Audit Log SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  }
+]
