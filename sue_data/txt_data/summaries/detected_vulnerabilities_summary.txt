@@ -1,13 +1,13 @@
-The five tables boundary_defense_and_system_administrator_rack_vulnerabilities.csv, 
-server_rack_vulnerabilities.csv, bulk_data_storage_rack_vulnerabilities.csv, 
-company_workstations_vulnerabilities.csv, and company_laptops_vulnerabilities.csv list the 
+The five tables,being boundary_defense_and_system_administrator_rack_vulnerabilities.json, 
+server_rack_vulnerabilities.json, bulk_data_storage_rack_vulnerabilities.json, 
+company_workstations_vulnerabilities.json, and company_laptops_vulnerabilities.json list the 
 vulnerabilities that are present on the company information system under evaluation. For the 
-purpose of this challenge, assume that all computer Ports, Protocols, and Services (PPS) needed to 
+purpose of this evaluation, assume that all computer Ports, Protocols, and Services (PPS) needed to 
 exploit each listed vulnerability are enabled on the endpoint and network devices. Also assume that 
 the company proprietary software applications that provide the functions described mapped in 
-company_critical_functions_definition.csv and company_critical_functions_mapping.csv do not have 
+company_critical_functions_definition.json and company_critical_functions_mapping.json do not have 
 any known vulnerabilities. The Common Vulnerability and Exposure (CVE) numbers provided in the 
-five table are reference numbers for a given vulnerability used on the MITRE CVE website. The 
+five tables are reference numbers for a given vulnerability used on the MITRE CVE website. The 
 National Institute of Standards and Technology (NIST) has a National Vulnerability Database (NVD) 
 that includes the CVEs and they assign a Common Vulnerability Scoring System (CVSS) score to each 
 vulnerability to recommend a severity rating if the vulnerability were successfully exploited. The 
@@ -15,10 +15,4 @@ NVD also provides a CVSS Calculator to allow cybersecurity engineers to adjust t
 score for a given vulnerability if it is deemed appropriate. Some of the NVD CVSS scores use the 
 Version 2 calculator while others use the Version 3.x calculator, so when both CVSS scores are 
 provided for a given vulnerability the Version 3.x calculator value should be used for this 
-exercise. Below are the links to the MITRE and NIST websites. The challenge participants may add 
-additional vulnerabilities for any additional system configurations they would like to demonstrate, 
-but the vulnerabilities listed in the tables should be demonstrated for the initial demonstration 
-run. This initial demonstration run may also include removing one or more vulnerabilities from the 
-assessment as would be done if the IT staff apply security software patches to the information 
-system in order to remediate vulnerabilities, and then a new cyber resiliency assessment score will 
-be calculated.
+evaluation.

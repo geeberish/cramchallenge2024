@@ -42,11 +42,11 @@ Some additional company facility and information system characteristics to consi
 
 The following subsections describe the information system equipment racks and the hardware and 
 software installed in the racks that will be part of the system under evaluation for this 
-challenge. The company has developed a suite of proprietary application software for their 
+evaluation. The company has developed a suite of proprietary application software for their 
 engineering and production, test engineering, and company management work areas. The company 
 asserts that the application software does not have any vulnerabilities, so the application 
-software will not be part of the system under evaluation for this challenge other than evaluating 
-the criticality of the functions the software performs. The challenge will be limited in scope to 
+software will not be part of the system under evaluation for this evaluation other than evaluating 
+the criticality of the functions the software performs. The evaluation will be limited in scope to 
 just the operating systems and specific commercial tools used for cybersecurity.
 
   1. Boundary Defense and System Administration Rack.
@@ -82,15 +82,14 @@ just the operating systems and specific commercial tools used for cybersecurity.
   System Administrator will also perform user account management from the Boundary Defense and 
   System Management rack through the IdM service. The System Administrator will validate all user 
   accounts are still valid and that each user has the appropriate roles assigned at least monthly 
-  per the company cybersecurity policy and procedures. Files 
-  boundary_defense_and_system_administrator_rack_hardware.csv and 
-  boundary_defense_and_system_administrator_rack_software.csv provide the hardware and software
-  list, respectively, for the Boundary Defense and System Administration Rack.
+  per the company cybersecurity policy and procedures. The file hardware.json and software.json 
+  provide the hardware and software list, respectively, for the Boundary Defense and System 
+  Administration Rack.
 
   2. Server Rack
   The Server Rack provides the common computing resources for the entire company to include the 
-  engineering and production, test engineering, and company management work areas. The IT and
-  cybersecurity work area separated and is implemented on a dedicated Boundary Defense and System
+  engineering and production, test engineering, and company management work areas. The IT and 
+  cybersecurity work area separated and is implemented on a dedicated Boundary Defense and System 
   Administration Rack (section 1). The Server Rack contains multiple PowerEdge R750 ESXi Servers 
   and PowerVault Storage Area Network (SANS) servers and they will be used within the facility to:
     - Provides the product design, development, and test tools.
@@ -112,9 +111,8 @@ just the operating systems and specific commercial tools used for cybersecurity.
   provided to allow for easier reconfiguration of the rack interconnect if it becomes necessary. An 
   Uninterruptible Power Supply (UPS) will be included within the Server Rack that will provide 
   temporary emergency power when the primary facility power circuit is interrupted allowing for a 
-  graceful shutdown or until any backup emergency power source is engaged. Files 
-  server_rack_hardware.csv and server_rack_software.csv provide the hardware and software list, 
-  respectively, for the Server Rack.
+  graceful shutdown or until any backup emergency power source is engaged. Files hardware.csv and 
+  software.csv provide the hardware and software list, respectively, for the Server Rack.
 
   3. Bulk Data Storage Rack
   The Bulk Data Storage Rack contains multiple Dell PowerVault Storage Area Network (SAN) units. 
@@ -134,25 +132,25 @@ just the operating systems and specific commercial tools used for cybersecurity.
       data, payroll data, and any other company sensitive data.
   The Cisco Catalyst Layer 2 (Ethernet) switches interconnect the SAN components and connect to the 
   Layer 3 switch (router) in the Boundary Defense and System Administration Rack. A patch panel 
-  will   provide a central cable management point for all the internal equipment interconnection in 
+  will provide a central cable management point for all the internal equipment interconnection in 
   the rack. It will also allow for easier reconfiguration of the rack interconnect if it becomes 
   necessary. An Uninterruptible Power Supply (UPS) will be included within the Bulk Data Storage 
   Rack that will provide temporary emergency power when the primary facility power circuit is 
   interrupted allowing for a graceful shutdown of the equipment within the rack or until any backup 
-  emergency power source is engaged. Tables bulk_data_storage_rack_hardware.csv and 
-  bulk_data_storage_rack_software.csv provide the hardware and software list, respectively, for the 
-  Bulk Data Storage Rack.
+  emergency power source is engaged. Tables hardware.csv and software.csv provide the hardware and 
+  software list, respectively, for the Bulk Data Storage Rack.
 
-  4. Workstations and Laptops
-  The company implements the common workstation configuration depicted in the file 
-  workstation_hardware.csv for the engineering and production and company management work areas. 
-  The test engineering work area uses the laptop configuration depicted in the file 
-  test_laptop_hardware.csv. Laptops are used to allow for testing of the product items on the Test 
-  Lab table as well as on the production floor and in the field. The laptops will use a direct 
-  attached bulk storage tower when testing on the production floor or in the field. The collected 
-  test data will then be transferred onto the Test SANS once the laptops are reconnected to the 
-  company information system. The company does not have any kind of asset control process for the 
-  hard drives used within the direct attached bulk storage tower. Files workstation_hardware.csv 
-  and workstation_software.csv provide the company workstation hardware and software configuration, 
-  respectively. Files test_laptop_hardware.csv and test_laptop_software.csv provide the test laptop 
-  hardware and software configuration, respectively.
+  4. Company Workstations
+  The company implements the common workstation configuration depicted in the file hardware.json 
+  for the engineering and production and company management work areas. Files hardware.json and 
+  software.json provide the company workstation hardware and software configuration, respectively. 
+
+  5. Company Laptops
+  The test engineering work area uses the laptop configuration depicted in the file hardware.json. 
+  Laptops are used to allow for testing of the product items on the Test Lab table as well as on 
+  the production floor and in the field. The laptops will use a direct attached bulk storage tower 
+  when testing on the production floor or in the field. The collected test data will then be 
+  transferred onto the Test SANS once the laptops are reconnected to the company information 
+  system. The company does not have any kind of asset control process for the hard drives used 
+  within the direct attached bulk storage tower. Files hardware.json and software.json provide the 
+  test laptop hardware and software configuration, respectively.
