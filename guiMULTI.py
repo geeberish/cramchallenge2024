@@ -19,11 +19,6 @@ class SystemEvaluationApp(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Create the submissions folder if it doesn't exist
-        self.submissions_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'submissions')
-        if not os.path.exists(self.submissions_folder):
-            os.makedirs(self.submissions_folder)
-
         # Initialize the submitted_files list before calling any methods that use it
         self.submitted_files = self.load_submissions()
         app_icon = QIcon('files/logo.png')
