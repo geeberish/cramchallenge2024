@@ -59,7 +59,7 @@ class SystemEvaluationApp(QWidget):
 
     def create_main_view(self):
         main_widget = QWidget()
-        self.label = QLabel("Please submit a file (PDF, TXT, CSV, JSON):")
+        self.label = QLabel("Please submit files (PDF, TXT, CSV, JSON):")
         self.label.setFont(self.font)
         self.label.setStyleSheet("color: white;")
         self.label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -641,16 +641,6 @@ class SystemEvaluationApp(QWidget):
     def switch_to_file_select_view(self):
         # Switch to the previous submissions viewprevious_submissions_view
         self.stacked_widget.setCurrentWidget(self.select_file_view)
-
-    def calculate_cvss_score(self):
-        # Execute the main method in average.py which handles input in the terminal
-        try:
-            score = avg.main()  # Make sure avg.main() returns the calculated score
-        except Exception as e:
-            print(f"An error occurred during CVSS score calculation: {e}")
-            score = 0.0
-
-        return round(score, 2)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
