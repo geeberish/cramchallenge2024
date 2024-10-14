@@ -1,20 +1,27 @@
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import requests
 
-model_name = "WhiteRabbitNeo/Llama-3.1-WhiteRabbitNeo-2-8B"
-tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16, device_map="auto")
+# Set up the API endpoint for the model
+API_URL = "https://api-inference.huggingface.co/models/QuantFactory/WhiteRabbitNeo-8B"
+# Replace 'YOUR_HUGGINGFACE_API_TOKEN' with your actual Hugging Face API token
+headers = {
+    "Authorization": "Bearer YOUR_HUGGINGFACE_API_TOKEN"
+}
 
-long_text = "The quick brown fox jumped over the lazy dog" * 300
+# Function to generate text and check context window
+def check_context_window(max_tokens=2000, increment=100, base_prompt="Once upon a time, in a land far away"):
+    for num_tokens in range(increment, max_tokens + 1, increment):
+        # Create a long input prompt by repeating the base prompt
+        prompt = base_prompt * (num_tokens // len(base_prompt))  # Adjusting the base prompt to reach num_tokens
 
-input_ids = tokenizer.encode(long_text, return_tensors="pt")
+        # Make a request to the Hugging Face Inference API
+        response = requests.post(API_URL, headers=headers, json={"inputs": prompt})
 
-num_tokens = input_ids.shape[1]
-print(f"number of tokens in input: {num_tokens}")
+        # Check the response
+        if response.status_code == 200:
+            generated_text = response.json()
+            print(f"Tokens used: {num_tokens}, Generated text: {generated_text[0]['generated_text'][:100]}...")  # Print first 100 characters
+        else:
+            print(f"Error with {num_tokens} tokens: {response.status_code} - {response.text}")
 
-max_length = min(16384, num_tokens + 50)
-output = model.generate(input_ids.to('cuda'), max_length=max_length, do_sample=True)
-
-generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
-
-print(f"Generated Text: {generated_text}")
+# Call the function
+check_context_window(max_tokens=16384, increment=512)  # You can adjust the max_tokens and increment
