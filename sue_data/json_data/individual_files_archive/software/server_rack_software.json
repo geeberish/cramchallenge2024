@@ -1,0 +1,74 @@
+[
+  {
+    "Node": "Layer 2 Switches (Ethernet), Qty. 2",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X IOS",
+    "Software Version": "IOS 15.2(1)E"
+  },
+  {
+    "Node": "Servers SR1 and SR2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0"
+  },
+  {
+    "Node": "Servers SR3 and SR4",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Servers SR5 and SR6",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0"
+  },
+  {
+    "Node": "Servers SR7 and SR8",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Severs SR9 and SR10",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Severs SR11 and SR12",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2"
+  },
+  {
+    "Node": "Engineering & Production SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0"
+  },
+  {
+    "Node": "Engineering & Production SAN 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Engineering & Production SAN 3",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Test SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1"
+  },
+  {
+    "Node": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0"
+  }
+]
