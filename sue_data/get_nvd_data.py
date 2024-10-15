@@ -38,7 +38,7 @@ with open('./sue_data/json_data/detected_vulnerabilities.json') as data_file:
                 current_metrics = vulnerability.metrics # create dictionary of current vulnerability metrics
 
                 # combine detected vulnerabilities list with score component data into combined list
-                if hasattr(current_metrics, "cvssMetricV31"):
+                if hasattr(vulnerability.metrics, "cvssMetricV31"):
                     # assign score component values
                     combined_list[index]["cvss_version"] = 3.1
                     combined_list[index]["vector_string"] = vulnerability.v31vector
@@ -54,7 +54,7 @@ with open('./sue_data/json_data/detected_vulnerabilities.json') as data_file:
                     # combined_list[index]["remediation_level"] = vulnerability.
                     # combined_list[index]["report_confidence"] = vulnerability.
                 
-                elif hasattr(current_metrics, "cvssMetricV30"):
+                elif hasattr(vulnerability.metrics, "cvssMetricV30"):
                     # assign score component values
                     combined_list[index]["cvss_version"] = 3.0
                     combined_list[index]["vector_string"] = vulnerability.v30vector
@@ -85,4 +85,4 @@ with open('./sue_data/json_data/detected_vulnerabilities.json') as data_file:
                     # combined_list[index]["exploit_code_maturity"] = vulnerability.
                     # combined_list[index]["remediation_level"] = vulnerability.
                     # combined_list[index]["report_confidence"] = vulnerability.
-            # # print(combined_list)
+            print(combined_list)
