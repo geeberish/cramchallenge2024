@@ -67,11 +67,13 @@ def ai_predict_factors(combined_json_data, vulnerability):
     
     system_message = """
     You are a cybersecurity expert tasked with analyzing vulnerability information and determining criticality scores.
-    Based on the provided information, determine the following scores on a scale of 0 to 1:
+    Based on the provided information, determine the following scores on a scale of 0 to 1: 
+    1. Physical Security: How much does physical security impact this vulnerability?
+    2. Personnel Training: How much can personnel training mitigate this vulnerability?
+    3. Policies: How much can organizational policies help in addressing this vulnerability?
+
+    Based on the provided information regarding criticality mapping, determine the following score on a scale of 1 to 3:
     1. Criticality: How critical is this vulnerability to the system's operation?
-    2. Physical Security: How much does physical security impact this vulnerability?
-    3. Personnel Training: How much can personnel training mitigate this vulnerability?
-    4. Policies: How much can organizational policies help in addressing this vulnerability?
     
     Provide your response in the following format:
     Criticality: [score]
@@ -89,6 +91,7 @@ def ai_predict_factors(combined_json_data, vulnerability):
     """
     
     ai_response = generate(system_message, user_message)
+    print(ai_response)
     return parse_ai_response(ai_response)
 
 def parse_ai_response(response):
