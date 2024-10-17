@@ -4,3 +4,4 @@ torch
 PySide6
 matplotlib
 nvdlib
+pyinstaller
