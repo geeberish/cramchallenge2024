@@ -22,7 +22,7 @@ apt = 0.4
 
 overall = 0
 
-print("Overall: ", overall, "Base: ", base, "Physical: ", physical, "Personnel: ", personnel, "Policies: ", policies, "Criticality: ", criticality, "Apt: ", apt)
+#print("Overall: ", overall, "Base: ", base, "Physical: ", physical, "Personnel: ", personnel, "Policies: ", policies, "Criticality: ", criticality, "Apt: ", apt)
 
 def calculation():
     return overall

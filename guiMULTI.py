@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
+    QApplication, QWidget, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QPushButton, QProgressBar, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
 )
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QPalette, QColor, QFont, QIcon
+from PySide6.QtCore import Qt, QTimer, QSize
+from PySide6.QtGui import QPalette, QColor, QFont, QIcon, QMovie
 import shutil
 import sys
 import os
@@ -61,6 +61,7 @@ class SystemEvaluationApp(QWidget):
 
         self.select_file_view = self.create_file_select_view()
         self.stacked_widget.addWidget(self.select_file_view)
+
 
         layout = QVBoxLayout(self)
         layout.addWidget(self.stacked_widget)
@@ -257,12 +258,25 @@ class SystemEvaluationApp(QWidget):
         # Create a layout for the previous submissions view
         layout = QVBoxLayout()
 
+        # Create throbber
+        self.throbber_label = QLabel(self)
+        self.throbber_movie = QMovie("files/throbbergif.gif")
+        self.throbber_label.setMovie(self.throbber_movie)
+        self.throbber_label.setAlignment(Qt.AlignLeft)
+        throbber_size = QSize(50, 50)  # Set the size to make the GIF smaller
+        self.throbber_movie.setScaledSize(throbber_size)
+        self.throbber_label.setVisible(False)
+        #self.throbber_movie.start()
+
         # Text field for submission name
         self.submission_name_input = QLineEdit()
         self.submission_name_input.setPlaceholderText("Enter submission name")
         self.submission_name_input.setFont(self.font)
         self.submission_name_input.setStyleSheet("color: white; background-color: #3E3E3E;")
         layout.addWidget(self.submission_name_input)
+
+        # Add throbber to layout
+        layout.addWidget(self.throbber_label)
 
         self.cf_file_name_label = QLabel("")
         self.cf_file_name_label.setFont(self.font)
@@ -362,7 +376,7 @@ class SystemEvaluationApp(QWidget):
         self.submit_button.clicked.connect(self.submit_file)
 
         # Add labels and buttons to the layout
-        
+
         layout.addWidget(self.label2)
         layout.addWidget(self.cf_file_name_label)
         layout.addWidget(self.select_cf_button)
@@ -441,8 +455,19 @@ class SystemEvaluationApp(QWidget):
                 self.selected_sum_button = selected_file
                 self.sum_file_name_label.setText(f"Selected: {file_name}")
 
+    def start_throbber(self):
+        print("starting throbber")
+        self.throbber_label.setVisible(True)
+        self.throbber_movie.start()
+        self.layout().update()  # Force layout update
+
+    def stop_throbber(self):
+        self.throbber_movie.stop()
+        self.throbber_label.setVisible(False)
+        self.layout().update()  # Force layout update
 
     def submit_file(self):
+        self.start_throbber()
         # Check for required files
         if not self.selected_cf_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
             missing_files = []
@@ -469,16 +494,22 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
+        self.start_throbber()
         # tries for the anaylsis orchestration file
         try:
+            
             base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_dv_button, self.selected_sum_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
+            self.stop_throbber()
             return
 
+        # Process the results and update the GUI
+        #self.update_gui_with_results()
         # 7. Called score math to get the modified average
         average = sm.calculation()
 
+        self.stop_throbber()
         # Show success message and update GUI
         self.score_label.setText(f"Files submitted successfully! Score: {average}")
 
