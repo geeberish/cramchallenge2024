@@ -48,6 +48,3 @@ if __name__ == "__main__":
   # # Convert the string back to a dictionary using ast
   # combined_vulnerabilities_list = ast.literal_eval(combined_vulnerabilities_data)
   main(combined_vulnerabilities_data)
-else:
-  # main(sys.argv[1])
-  print("<> RUNNING 'average_nvd_data.py'; PLEASE STAND BY... <>")
