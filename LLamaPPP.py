@@ -136,7 +136,7 @@ def load_json_file(file_path):
         return json.load(file)
 
 # This function can be called from other scripts
-def get_security_analysis(best_practices_file, system_summaries_file):
+def get_security_scores(best_practices_file, system_summaries_file):
     best_practices = load_json_file(best_practices_file)
     system_summaries = load_json_file(system_summaries_file)
     
