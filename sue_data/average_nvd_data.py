@@ -1,12 +1,9 @@
-import json
+import sys
 
 # define main orchestration function
-def main(combined_vulnerabilities_data_location):
+def main(combined_vulnerabilities_data):
   # define score componets from vulnerabilities data to average
   score_components = ['NVD Score', 'base_score', 'impact_score', 'exploitability_score']
-
-  # call function to get vulnerabilites data from vulnerabilites data file location
-  combined_vulnerabilities_data = get_vulnerabilities_data(combined_vulnerabilities_data_location)
 
   # build dictionary of average component scores
   score_components_averages = build_score_components_averages_dictionary(
@@ -14,11 +11,7 @@ def main(combined_vulnerabilities_data_location):
     score_components # list of score components to average
   )
 
-# define function to get vulnerabilites data from vulnerabilites data file location
-def get_vulnerabilities_data(combined_vulnerabilities_data):
-  
-
-    return combined_vulnerabilities_data # return variable containing vulnerabilities data to main()
+  return score_components_averages
 
 def build_score_components_averages_dictionary(combined_vulnerabilities_data, score_components):
   vulnerability_counter = 0 # variable to keep track of number of vulnerabilities
@@ -28,17 +21,17 @@ def build_score_components_averages_dictionary(combined_vulnerabilities_data, sc
   for component in score_components:
     score_components_averages[component] = 0
 
+  print("Initialization of score_components_averages; all set to 0")
+  print(score_components_averages)
+  input()
+
   # iterate through all vulnerabilites within vulnerabilities data adding component scores
   for vulnerability in combined_vulnerabilities_data:
-    print(vulnerability)
-    input()
     vulnerability_counter += 1 # add 1 to counter for each vulnerability iterated through
 
     # iterate through all components of score components list
     for component in score_components:
-      score_components_averages[component] += combined_vulnerabilities_data[vulnerability][component]
-      print(combined_vulnerabilities_data[vulnerability][component])
-      input()
+      score_components_averages[component] += combined_vulnerabilities_data[vulnerability_counter-1].get(component)
   
   # divide each component score sum by total vulnerabilities
   for component_sum in score_components_averages:
@@ -53,8 +46,9 @@ if __name__ == "__main__":
   with open(combined_vulnerabilities_data_location) as vulnerabilities_file: # open file
     combined_vulnerabilities_data = vulnerabilities_file.read() # read file and save to variable
 
-  # Convert the string back to a dictionary using json.loads()
-  combined_vulnerabilities_dict = json.loads(combined_vulnerabilities_data)
+  # # Convert the string back to a dictionary using ast
+  # combined_vulnerabilities_list = ast.literal_eval(combined_vulnerabilities_data)
   main(combined_vulnerabilities_data)
 else:
-  main(sys.argv[0])
+  # main(sys.argv[1])
+  print("<> RUNNING 'average_nvd_data.py'; PLEASE STAND BY... <>")

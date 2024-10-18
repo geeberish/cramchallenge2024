@@ -166,4 +166,7 @@ if __name__ == "__main__":
     # print_vulnerability_data(combined_vulnerabilities_data)
     print(combined_vulnerabilities_data)
 else:
-    main(sys.argv[0], sys.argv[1])
+    # nvd_api_key_file_location = sys.argv[1]
+    # vulnerabilities_detected_file_location = sys.argv[2]
+    # main(nvd_api_key_file_location, vulnerabilities_detected_file_location)
+    print("<> RUNNING 'get_nvd_data.py'; PLEASE STAND BY... <>")
