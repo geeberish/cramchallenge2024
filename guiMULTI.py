@@ -13,6 +13,7 @@ import hashlib  # For hashing the CSV file
 #import average as avg
 from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
+from modifiedscore import get_base
 import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -474,9 +475,12 @@ class SystemEvaluationApp(QWidget):
         impact_sub = score_component_averages['impact_score']
         exploitability_sub = score_component_averages['exploitability_score']
 
+        # Send dictionary to modified score    
+        get_base(score_component_averages)
+
         # 3. Send files to API
 
-        # 4. API Sends to Calculator
+        # 4. API Sends to CVSS Calculator
 
         # 5. CVSS Sends scores back to API
 
