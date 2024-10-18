@@ -9,8 +9,10 @@ import os
 import csv
 import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
-from average import *
-import average as avg
+#from average import *
+#import average as avg
+from get_nvd_data import main as get_nvd_data_main
+from average_nvd_data import main as average_nvd_data_main
 import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -460,38 +462,28 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
-        # Define the directory where the temp files will be saved (same as the main file's directory)
-        main_file_dir = os.path.dirname(__file__)
-        temp_dir = os.path.join(main_file_dir, "temp_files")
+        # 1. send DV and API key
+        combined_vulnerabilities_data = get_nvd_data_main(
+            '../.aws/nvd_api_key.txt',
+            self.selected_dv_button
+        )
 
-        # Ensure the temp directory exists (create it if it doesn't)
-        os.makedirs(temp_dir, exist_ok=True)
+        # 2. Send dictionary back to GUI, extract base scores
+        score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
+        base = score_component_averages['base_score']
+        impact_sub = score_component_averages['impact_score']
+        exploitability_sub = score_component_averages['exploitability_score']
 
-        try:
-            temp_file_paths = {}
+        # 3. Send files to API
 
-            # Save each selected file path or file content into the temporary directory
-            for file_type, file_path in files_to_submit.items():
-                temp_file_path = os.path.join(temp_dir, f"{file_type.replace(' ', '_')}.txt")
+        # 4. API Sends to Calculator
 
-                # Copy the contents or just the path (depending on your needs)
-                with open(file_path, 'r') as original_file:
-                    content = original_file.read()
+        # 5. CVSS Sends scores back to API
 
-                # Write to the temporary file
-                with open(temp_file_path, 'w') as temp_file:
-                    temp_file.write(content)
+        # 6. API Sends scores to Modified scored to be calculated
 
-                # Store the path to the temporary file
-                temp_file_paths[file_type] = temp_file_path
+        # 7. Modified Score sends rest of scores to GUI
 
-            # Now pass the temp_file_paths to the external script for further processing
-            handle_files(temp_file_paths)
-        
-        finally:
-            # Clean up the temporary directory after use
-            if os.path.exists(temp_dir):
-                shutil.rmtree(temp_dir)
 
         # Invoke the model and perform score calculations in average.py
         try:
@@ -512,8 +504,8 @@ class SystemEvaluationApp(QWidget):
 
         # Update bar graphs with the calculated scores
         self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
-        self.update_bar_graph('temporal', [temporal])
-        self.update_bar_graph('environmental', [environmental])
+        #self.update_bar_graph('temporal', [temporal])
+        #self.update_bar_graph('environmental', [environmental])
         self.update_bar_graph('security', [physical_security, personnel_training, policies])
         self.update_bar_graph('overall', [average_cvss])
 
