@@ -13,7 +13,8 @@ import hashlib  # For hashing the CSV file
 #import average as avg
 from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
-from modifiedscore import get_base
+from modifiedscore import get_base, get_p
+from LLamaPPP import get_security_scores
 import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -463,28 +464,29 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
-        # 1. send DV and API key
+        # 1. send DV and API key to NVD Database
         combined_vulnerabilities_data = get_nvd_data_main(
             '../.aws/nvd_api_key.txt',
             self.selected_dv_button
         )
 
-        # 2. Send dictionary back to GUI, extract base scores
+        # 2. Send dictionary back to GUI from NVD databse, extract base scores
         score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
         base = score_component_averages['base_score']
         impact_sub = score_component_averages['impact_score']
         exploitability_sub = score_component_averages['exploitability_score']
 
-        # Send dictionary to modified score    
+        # 3. Send dictionary to modified score    
         get_base(score_component_averages)
 
-        # 3. Send files to API
+        # 4. Send files to API
+        security_best_prac = get_security_scores('frameworks\CSF_Best_Prac_KV.json', self.selected_sum_button)
+    
+        # 5. GUI Sends to modified score
+        get_p(security_best_prac)
 
-        # 4. API Sends to CVSS Calculator
+        # 6. GUI Sends scores to Modified scored to be calculated
 
-        # 5. CVSS Sends scores back to API
-
-        # 6. API Sends scores to Modified scored to be calculated
 
         # 7. Modified Score sends rest of scores to GUI
 
