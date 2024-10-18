@@ -1,5 +1,7 @@
 import json
+import re
 from groq import Groq
+from functools import lru_cache
 
 # Groq API configuration
 GROQ_API_KEY = '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'  # Replace with your actual API key
@@ -17,7 +19,7 @@ def generate(system_message, user_message, temperature=0.7):
     )
     return chat_completion.choices[0].message.content
 
-def chunk_data(data, chunk_size=1000):
+def chunk_data(data, chunk_size=2000):
     """Split data into chunks of approximately equal size."""
     if isinstance(data, dict):
         return [json.dumps(dict(list(data.items())[i:i+chunk_size])) for i in range(0, len(data), chunk_size)]
@@ -26,7 +28,7 @@ def chunk_data(data, chunk_size=1000):
     else:
         raise ValueError("Data must be either a dictionary or a list")
 
-def analyze_security_measures(best_practices, system_summaries):
+def analyze_security_measures(best_practices, system_summaries, max_retries=3):
     system_message = """
     You are a cybersecurity expert tasked with analyzing a system's security measures against best practices.
     Compare the provided system summaries to the security best practices and evaluate the system in three areas:
@@ -85,27 +87,41 @@ def analyze_security_measures(best_practices, system_summaries):
         Based on the above information, please provide scores, explanations, and recommendations for physical security, personnel, and policies.
         """
 
-        ai_response = generate(system_message, user_message)
-        chunk_results = parse_ai_response(ai_response)
+        chunk_results = None
+        for attempt in range(max_retries):
+            ai_response = generate(system_message, user_message)
+            #print(f"AI Response (Attempt {attempt + 1}):", ai_response)  # Debug print
+            
+            chunk_results = parse_ai_response(ai_response)
+            
+            # Check if all required fields are present and non-empty
+            if all(all(key in chunk_results[category] and chunk_results[category][key] 
+                       for key in ['score', 'explanation', 'recommendations']) 
+                   for category in results):
+                break
+        else:
+            print(f"Warning: Could not get complete results after {max_retries} attempts.")
+            continue  # Skip this chunk if we couldn't get complete results
 
-        # Aggregate results
-        for category in results:
-            results[category]['score'] += chunk_results[category]['score']
-            results[category]['explanation'] += chunk_results[category]['explanation'] + ' '
-            results[category]['recommendations'].extend(chunk_results[category]['recommendations'])
+        if chunk_results:
+            # Aggregate results
+            for category in results:
+                results[category]['score'] += chunk_results[category]['score']
+                results[category]['explanation'] += chunk_results[category]['explanation'] + ' '
+                results[category]['recommendations'].extend(chunk_results[category]['recommendations'])
 
     # Average scores and deduplicate recommendations
     num_chunks = len(best_practices_chunks)
     for category in results:
-        results[category]['score'] /= num_chunks
+        if num_chunks > 0:
+            results[category]['score'] /= num_chunks
         results[category]['explanation'] = results[category]['explanation'].strip()
         results[category]['recommendations'] = list(set(results[category]['recommendations']))[:3]
-    #print(results)
+
+    #print("Final Results:", results)  # Debug print
     return results
 
 def parse_ai_response(response):
-    import re
-
     categories = ['Physical Security', 'Personnel', 'Policies']
     results = {}
 
@@ -122,58 +138,60 @@ def parse_ai_response(response):
         results[category_key]['explanation'] = explanation_match.group(1).strip() if explanation_match else "No explanation provided."
 
         # Extract recommendations
-        recommendations_match = re.search(fr"{category} Recommendations:(.*?)(?=\n\n|\Z)", response, re.DOTALL | re.IGNORECASE)
+        recommendations_match = re.search(fr"{category} Recommendations:(.*?)(?=(?:\n\n[A-Z]|\Z))", response, re.DOTALL | re.IGNORECASE)
         if recommendations_match:
             recommendations = re.findall(r'\d+\.\s*(.+)', recommendations_match.group(1))
-            results[category_key]['recommendations'] = recommendations[:3]  # Ensure we only get top 3
+            results[category_key]['recommendations'] = recommendations[:3] if recommendations else ["No specific recommendation provided."]
         else:
-            results[category_key]['recommendations'] = ["No recommendation provided."] * 3
-    #print(results)
+            results[category_key]['recommendations'] = ["No recommendations found."]
+
+    #print("Parsed Results:", results)  # Debug print
     return results
 
 def load_json_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
-# This function can be called from other scripts
-def get_security_scores(best_practices_file, system_summaries_file):
+@lru_cache(maxsize=1)
+def get_cached_analysis(best_practices_file, system_summaries_file):
     best_practices = load_json_file(best_practices_file)
     system_summaries = load_json_file(system_summaries_file)
-    
     results = analyze_security_measures(best_practices, system_summaries)
-    
-    # Return only the scores
+    return results
+
+def get_security_scores(best_practices_file, system_summaries_file):
+    results = get_cached_analysis(best_practices_file, system_summaries_file)
     return {
         'physical_security_score': results['physical_security']['score'],
         'personnel_score': results['personnel']['score'],
         'policies_score': results['policies']['score']
     }
 
+def get_explanations(best_practices_file, system_summaries_file):
+    results = get_cached_analysis(best_practices_file, system_summaries_file)
+    return {
+        'physical_security_explanation': results['physical_security']['explanation'],
+        'personnel_explanation': results['personnel']['explanation'],
+        'policies_explanation': results['policies']['explanation']
+    }
+
+def get_recommendations(best_practices_file, system_summaries_file):
+    results = get_cached_analysis(best_practices_file, system_summaries_file)
+    return {
+        'physical_security_recommendations': results['physical_security']['recommendations'],
+        'personnel_recommendations': results['personnel']['recommendations'],
+        'policies_recommendations': results['policies']['recommendations']
+    }
+
 if __name__ == "__main__":
     best_practices_file = 'frameworks/CSF_Best_Prac_KV.json'
     system_summaries_file = 'sue_data/json_data/summaries.json'
     
-    results = get_security_scores(best_practices_file, system_summaries_file)
+    scores = get_security_scores(best_practices_file, system_summaries_file)
+    print("\nScores:", scores)
     
-    for category, data in results.items():
-        print(f"\n{category.replace('_', ' ').title()}:")
-        #print(f"Score: {data['score']:.2f}")
-        print(f"Explanation: {data['explanation']}")
-        print("Recommendations:")
-        for i, rec in enumerate(data['recommendations'], 1):
-            print(f"{i}. {rec}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    explanations = get_explanations(best_practices_file, system_summaries_file)
+    print("\nExplanations:", explanations)
+    
+    recommendations = get_recommendations(best_practices_file, system_summaries_file)
+    print("\nRecommendations:", recommendations)
