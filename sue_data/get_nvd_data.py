@@ -3,8 +3,12 @@ import sys # a module that provides access to system-specific parameters and fun
 import json # a module to work with JSON data
 
 # function to install a package
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# NEW VERSION
 def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
 
 install('nvdlib') # call function to install nvdlib
 
@@ -159,6 +163,7 @@ if __name__ == "__main__":
     nvd_api_key_file_location = '../.aws/nvd_api_key.txt' # sets NIST NVD API key location
     vulnerabilities_detected_file_location = './sue_data/json_data/detected_vulnerabilities.json' # sets vulnerabilities detected file location
     combined_vulnerabilities_data = main(nvd_api_key_file_location, vulnerabilities_detected_file_location) # passes both variables to main() to run script
-    print_vulnerability_data(combined_vulnerabilities_data)
+    # print_vulnerability_data(combined_vulnerabilities_data)
+    print(combined_vulnerabilities_data)
 else:
     main(sys.argv[0], sys.argv[1])
