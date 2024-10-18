@@ -30,6 +30,7 @@ def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
     with open(nvd_api_key_file_location) as key_file:
         nvd_api_key = key_file.read() # read API key file to variable
 
+
     vulnerabilities_list = list() # create an empty list to use for detected vulnerabilities data
     combined_vulnerabilities_data = []
 
@@ -57,7 +58,7 @@ def make_detected_vulnerabilities_data(vulnerabilities_detected_file_location):
 
 def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnerabilities_list):
         print(f"<TERMINAL MESSAGE> CONNECTING TO NIST NVD DATABASE; THIS COULD TAKE A WHILE...")
-        cves = set([item["Node Name"] for item in vulnerabilities_data]) # create distinct list of CVE's detected
+        cves = set([item["CVE Number"] for item in vulnerabilities_data]) # create distinct list of CVE's detected
 
         length_cves = len(cves) # count number of CVE's
         counter_cves = 0
