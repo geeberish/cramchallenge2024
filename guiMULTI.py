@@ -15,16 +15,23 @@ import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
 class SystemEvaluationApp(QWidget):
     def __init__(self):
         super().__init__()
 
         # Initialize the submitted_files list before calling any methods that use it
         self.submitted_files = self.load_submissions()
-        app_icon = QIcon('files/logo.png')
+
+        icon_path = resource_path("files\\logo.ico")  # Use resource_path to load icon
+        self.setWindowIcon(QIcon(icon_path))
 
         # Set window title and size
-        self.setWindowIcon(app_icon)
         self.setWindowTitle("ACRES")
         self.showMaximized()
 
@@ -135,11 +142,11 @@ class SystemEvaluationApp(QWidget):
 
     def create_bar_graphs(self, layout):
         self.figures = {}
-        self.figures['base'] = self.add_bar_graph(layout, [0, 0, 0], ["Base", "Impact", "Exploitability"], "Base Scores", (6, 4))
-        self.figures['temporal'] = self.add_bar_graph(layout, [0], ["Temporal"], "Temporal Scores", (4, 4))
-        self.figures['environmental'] = self.add_bar_graph(layout, [0], ["Environmental"], "Environmental Score", (4, 4))
+        self.figures['base'] = self.add_bar_graph(layout, [0, 0, 0], ["Base", "Impact", "Exploitability"], "Impact Metrics (CVSS)", (6, 4))
+        #self.figures['temporal'] = self.add_bar_graph(layout, [0], ["Temporal"], "Temporal Scores", (4, 4))
+        #self.figures['environmental'] = self.add_bar_graph(layout, [0], ["Environmental"], "Environmental Score", (4, 4))
         self.figures['security'] = self.add_bar_graph(layout, [0, 0, 0], ["Physical Security", "Personnel", "Policies"], "Security Best Practices Scores", (6, 4), y_limit=(0, 1))  # Set y limit to 0-1
-        self.figures['overall'] = self.add_bar_graph(layout, [0], ["Overall CVSS Score"], "Overall CVSS Score", (4, 4))
+        self.figures['overall'] = self.add_bar_graph(layout, [0], ["Adjusted Score"], "Adjusted Score", (4, 4))
 
     
     def add_bar_graph(self, layout, scores, labels, title, figsize, y_limit=(0, 10)):
@@ -453,6 +460,39 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
+        # Define the directory where the temp files will be saved (same as the main file's directory)
+        main_file_dir = os.path.dirname(__file__)
+        temp_dir = os.path.join(main_file_dir, "temp_files")
+
+        # Ensure the temp directory exists (create it if it doesn't)
+        os.makedirs(temp_dir, exist_ok=True)
+
+        try:
+            temp_file_paths = {}
+
+            # Save each selected file path or file content into the temporary directory
+            for file_type, file_path in files_to_submit.items():
+                temp_file_path = os.path.join(temp_dir, f"{file_type.replace(' ', '_')}.txt")
+
+                # Copy the contents or just the path (depending on your needs)
+                with open(file_path, 'r') as original_file:
+                    content = original_file.read()
+
+                # Write to the temporary file
+                with open(temp_file_path, 'w') as temp_file:
+                    temp_file.write(content)
+
+                # Store the path to the temporary file
+                temp_file_paths[file_type] = temp_file_path
+
+            # Now pass the temp_file_paths to the external script for further processing
+            handle_files(temp_file_paths)
+        
+        finally:
+            # Clean up the temporary directory after use
+            if os.path.exists(temp_dir):
+                shutil.rmtree(temp_dir)
+
         # Invoke the model and perform score calculations in average.py
         try:
             base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main(files_to_submit)
@@ -481,6 +521,7 @@ class SystemEvaluationApp(QWidget):
         self.reset_file_selections()
         self.download_report_button.setVisible(True)
 
+        
 
 
     def reset_file_selections(self):
@@ -645,6 +686,7 @@ class SystemEvaluationApp(QWidget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = SystemEvaluationApp()
+    app.setWindowIcon(QIcon("files/logo.ico"))
     window.show()  # Show the window first
     window.showMaximized()  # Then maximize it
     sys.exit(app.exec())

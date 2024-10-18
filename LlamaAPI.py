@@ -8,6 +8,18 @@ sys.path.append(".")
 from cvss_calculation import *
 import cvss_calculation as cvss
 
+def handle_files(files_to_submit):
+    for file_type, file_path in files_to_submit.items():
+        print(f"Handling {file_type}: {file_path}")
+        # You can add custom logic to process each file here
+        # For example, open and read the files, or pass them to another function
+        try:
+            with open(file_path, 'r') as f:
+                content = f.read()
+                print(f"Contents of {file_type}: {content[:100]}...")  # Print first 100 characters
+        except Exception as e:
+            print(f"Error handling {file_type}: {e}")
+
 # Groq API configuration
 GROQ_API_KEY = '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'  # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
