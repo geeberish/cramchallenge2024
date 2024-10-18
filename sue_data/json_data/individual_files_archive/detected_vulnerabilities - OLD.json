@@ -64,7 +64,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "System Administrator Terminal",
+    "Node Name": "Router",
     "Software Make": "Cisco",
     "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
     "Software Version": "9/23/2014",
@@ -73,7 +73,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "System Administrator Terminal",
+    "Node Name": "Router",
     "Software Make": "Cisco",
     "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
     "Software Version": "9/23/2014",
@@ -82,7 +82,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "System Administrator Terminal",
+    "Node Name": "Router",
     "Software Make": "Cisco",
     "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
     "Software Version": "9/23/2014",
@@ -91,7 +91,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "System Administrator Terminal",
+    "Node Name": "Router",
     "Software Make": "Cisco",
     "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
     "Software Version": "9/23/2014",
@@ -100,7 +100,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "System Administrator Terminal",
+    "Node Name": "Router",
     "Software Make": "Cisco",
     "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
     "Software Version": "9/23/2014",
@@ -172,7 +172,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 7.1",
@@ -181,7 +181,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "McAfee",
     "Software Description": "VirusScan Enterprise",
     "Software Version": 2,
@@ -190,7 +190,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "McAfee",
     "Software Description": "VirusScan Enterprise",
     "Software Version": 2,
@@ -199,7 +199,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "McAfee",
     "Software Description": "VirusScan Enterprise",
     "Software Version": 2,
@@ -208,7 +208,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Tenable",
     "Software Description": "Nessus Vulnerability Scanner",
     "Software Version": "8.10.0",
@@ -217,7 +217,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Tenable",
     "Software Description": "Nessus Vulnerability Scanner",
     "Software Version": "8.10.0",
@@ -226,7 +226,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Tenable",
     "Software Description": "Nessus Vulnerability Scanner",
     "Software Version": "8.10.0",
@@ -235,7 +235,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Splunk",
     "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
     "Software Version": 8.6,
@@ -244,7 +244,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Splunk",
     "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
     "Software Version": 8.6,
@@ -253,7 +253,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Splunk",
     "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
     "Software Version": 8.6,
@@ -262,7 +262,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Node Name": "Virtualization Manager Server",
     "Software Make": "Splunk",
     "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
     "Software Version": 8.6,
@@ -280,7 +280,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Virtualization Manager SAN Archive",
+    "Node Name": "Virtualization Manager SANS",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -289,7 +289,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Virtualization Manager SAN Archive",
+    "Node Name": "Virtualization Manager SANS",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -298,7 +298,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Virtualization Manager SAN Archive",
+    "Node Name": "Virtualization Manager SANS",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -307,7 +307,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Cybersecurity Capability & Tools SAN Archive",
+    "Node Name": "Cybersecurity Capability & Tools SANS",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 7.1",
@@ -316,7 +316,7 @@
   },
   {
     "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Audit Log SAN Archive",
+    "Node Name": "Audit Log SANS",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 7.1",
@@ -442,7 +442,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -451,7 +451,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -460,7 +460,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -469,7 +469,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -478,7 +478,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -487,7 +487,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -496,7 +496,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -505,7 +505,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 1)",
+    "Node Name": "Test Engineering, Laptop 1",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -514,7 +514,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -523,7 +523,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -532,7 +532,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 5.0",
@@ -541,7 +541,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -550,7 +550,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -559,7 +559,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -568,7 +568,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -577,7 +577,7 @@
   },
   {
     "Node Category": "company laptops",
-    "Node Name": "Test Engineering (Laptop 2)",
+    "Node Name": "Test Engineering, Laptop 2",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -586,7 +586,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -595,7 +595,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -604,7 +604,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -613,7 +613,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -622,7 +622,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -631,7 +631,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -640,7 +640,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -649,7 +649,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 1)",
+    "Node Name": "Engineering & Production (Workstations 1 thru 4)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -658,7 +658,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -667,7 +667,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -676,7 +676,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -685,7 +685,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -694,7 +694,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -703,7 +703,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -712,7 +712,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -721,295 +721,7 @@
   },
   {
     "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 2)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2017-12607",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-1935",
-    "NVD Score": 5.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2224",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2188",
-    "NVD Score": 4.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2023-47804",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2022-37401",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2021-33035",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2020-13958",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 3)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2017-12607",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-1935",
-    "NVD Score": 5.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2224",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2188",
-    "NVD Score": 4.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2023-47804",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2022-37401",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2021-33035",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2020-13958",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Engineering & Production (Workstation 4)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2017-12607",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-1935",
-    "NVD Score": 5.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2224",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2188",
-    "NVD Score": 4.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2023-47804",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2022-37401",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2021-33035",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2020-13958",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 5)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2017-12607",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-1935",
-    "NVD Score": 5.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2224",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2188",
-    "NVD Score": 4.7
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2023-47804",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2022-37401",
-    "NVD Score": 8.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2021-33035",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
-    "Software Make": "OpenOffice",
-    "Software Description": "Apache OpenOffice",
-    "Software Version": "4.1.1.4",
-    "CVE Number": "CVE-2020-13958",
-    "NVD Score": 7.8
-  },
-  {
-    "Node Category": "company workstations",
-    "Node Name": "Company Management (Workstation 6)",
+    "Node Name": "Company Management (Workstations 5 and 6)",
     "Software Make": "OpenOffice",
     "Software Description": "Apache OpenOffice",
     "Software Version": "4.1.1.4",
@@ -1054,7 +766,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Node Name": "Servers SR1 and SR2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 5.0",
@@ -1063,7 +775,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Node Name": "Servers SR1 and SR2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 5.0",
@@ -1072,7 +784,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Node Name": "Servers SR1 and SR2",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 5.0",
@@ -1081,34 +793,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #2 (SR2)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux (RHEL)",
-    "Software Version": "RHEL 5.0",
-    "CVE Number": "CVE-2012-2697",
-    "NVD Score": 4.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #2 (SR2)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux (RHEL)",
-    "Software Version": "RHEL 5.0",
-    "CVE Number": "CVE-2012-3440",
-    "NVD Score": 5.6
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #2 (SR2)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux (RHEL)",
-    "Software Version": "RHEL 5.0",
-    "CVE Number": "CVE-2010-0727",
-    "NVD Score": 4.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #3 (SR3)",
+    "Node Name": "Servers SR3 and SR4",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 7.1",
@@ -1117,16 +802,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #4 (SR4)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 7.1",
-    "CVE Number": "CVE-2015-7833",
-    "NVD Score": 4.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Node Name": "Servers SR5 and SR6",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -1135,7 +811,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Node Name": "Servers SR5 and SR6",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -1144,7 +820,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Node Name": "Servers SR5 and SR6",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 6.0",
@@ -1153,34 +829,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #6 (SR6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-1935",
-    "NVD Score": 5.7
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #6 (SR6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2224",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #6 (SR6)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 6.0",
-    "CVE Number": "CVE-2013-2188",
-    "NVD Score": 4.7
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #7 (SR7)",
+    "Node Name": "Servers SR7 and SR8",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 7.1",
@@ -1189,7 +838,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #8 (SR8)",
+    "Node Name": "Severs SR9 and SR10",
     "Software Make": "RedHat",
     "Software Description": "RedHat Enterprise Linux",
     "Software Version": "RHEL 7.1",
@@ -1198,25 +847,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #9 (SR9)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 7.1",
-    "CVE Number": "CVE-2015-7833",
-    "NVD Score": 4.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #10 (SR10)",
-    "Software Make": "RedHat",
-    "Software Description": "RedHat Enterprise Linux",
-    "Software Version": "RHEL 7.1",
-    "CVE Number": "CVE-2015-7833",
-    "NVD Score": 4.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",
@@ -1225,7 +856,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",
@@ -1234,7 +865,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",
@@ -1243,7 +874,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",
@@ -1252,7 +883,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",
@@ -1261,61 +892,7 @@
   },
   {
     "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #11 (SR11)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2013-5056",
-    "NVD Score": 9.3
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2017-8543",
-    "NVD Score": 9.8
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2014-0301",
-    "NVD Score": 9.3
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2014-0323",
-    "NVD Score": 6.6
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2014-0315",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
-    "Software Make": "Microsoft",
-    "Software Description": "Windows Server 2008 Service Pack 2",
-    "Software Version": "Windows Server 2008 SP2",
-    "CVE Number": "CVE-2013-5058",
-    "NVD Score": 6.9
-  },
-  {
-    "Node Category": "server rack",
-    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Node Name": "Severs SR11 and SR12",
     "Software Make": "Microsoft",
     "Software Description": "Windows Server 2008 Service Pack 2",
     "Software Version": "Windows Server 2008 SP2",

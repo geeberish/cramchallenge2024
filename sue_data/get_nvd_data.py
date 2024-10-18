@@ -11,10 +11,14 @@ def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
 
 install('nvdlib') # call function to install nvdlib
+install('tqdm')
 
 import nvdlib # a module to interface with the NIST NVD database to pull CVEs and CPEs as objects
+from tqdm import tqdm
+import time
 
 def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
+    print(f"<TERMINAL MESSAGE> RUNNING 'get_nvd_data.py'; PLEASE STAND BY...")
     # read the NIST NVD API key from the file
     with open(nvd_api_key_file_location) as key_file:
         nvd_api_key = key_file.read() # read API key file to variable
@@ -37,23 +41,39 @@ def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
     return combined_vulnerabilities_data
 
 def make_detected_vulnerabilities_data(vulnerabilities_detected_file_location):
+    print(f"<TERMINAL MESSAGE> GETTING DETECTED VULNEREABILITIES DATA FROM FILE...")
     # open detected vulnerabilities file and assign to data variable
     with open(vulnerabilities_detected_file_location) as vulnerabilities_detected_file:   
         vulnerability_data = json.load(vulnerabilities_detected_file) # load data from detected vulnerabilities json file
     return vulnerability_data
 
 def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnerabilities_list):
+        print(f"<TERMINAL MESSAGE> CONNECTING TO NIST NVD DATABASE; THIS COULD TAKE A WHILE...")
         cves = set([item["CVE Number"] for item in vulnerabilities_data]) # create distinct list of CVE's detected
+
+        length_cves = len(cves) # count number of CVE's
+        counter_cves = 0
+        progress_bar = tqdm(total=length_cves, desc="Downloading from NIST NVD Database", unit="CVE's")
 
         # iterate through CVE's detected and pull data for each CVE
         for cve_id in cves:
             cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=1.2)[0] # search current CVE
             # cve_search = nvdlib.searchCVE(cveId=cve_id)[0] # options for searching without an NVD API key
             vulnerabilities_list.append(cve_search) # append current CVE data to vulnerabilities list
+
+            if counter_cves < length_cves:
+                # Increment the counter
+                counter_cves += 1
+                
+                # Update the progress bar
+                progress_bar.update(1)
         
+        progress_bar.close()
+        print(f"<TERMINAL MESSAGE> DOWNLOAD COMPLETE...")
         return vulnerabilities_list # return filled vulnerabilities_list to main function
 
 def build_vulnerability_data(vulnerabilities_list, vulnerability_data):
+    print(f"<TERMINAL MESSAGE> ASSIGNING NVD METRICS TO DETECTED VULNERABILITIES...")
     combined_vulnerabilities_data = []
     # combined vulnerabilities discovered and CVE score components to combined list
     for vulnerability_detected in range(len(vulnerability_data)):
@@ -126,8 +146,6 @@ def select_cve_data(current_cve, vulnerabilities_list, score_component_version_n
             current_cve_metrics_dictionary['impact_score'] = getattr(metrics_version[0], 'impactScore')
             current_cve_metrics_dictionary['exploitability_score'] = getattr(metrics_version[0], 'exploitabilityScore')
 
-
-
             # append components not included within "cvssData" attribute for CVSSv2.0 only
             if getattr(current_cve_metrics_data, 'version') == '2.0':
                 current_cve_metrics_dictionary['user_interaction'] = getattr(metrics_version[0], 'userInteractionRequired')
@@ -162,11 +180,7 @@ def print_vulnerability_data(combined_vulnerabilities_data):
 if __name__ == "__main__":
     nvd_api_key_file_location = '../.aws/nvd_api_key.txt' # sets NIST NVD API key location
     vulnerabilities_detected_file_location = './sue_data/json_data/detected_vulnerabilities.json' # sets vulnerabilities detected file location
+    critical_functions_mapping = './sue_data/json_data/critical_functions_mapping.json # ' # sets vulnerabilities detected file location
     combined_vulnerabilities_data = main(nvd_api_key_file_location, vulnerabilities_detected_file_location) # passes both variables to main() to run script
     # print_vulnerability_data(combined_vulnerabilities_data)
     print(combined_vulnerabilities_data)
-else:
-    # nvd_api_key_file_location = sys.argv[1]
-    # vulnerabilities_detected_file_location = sys.argv[2]
-    # main(nvd_api_key_file_location, vulnerabilities_detected_file_location)
-    print("<> RUNNING 'get_nvd_data.py'; PLEASE STAND BY... <>")

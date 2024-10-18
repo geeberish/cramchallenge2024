@@ -2,6 +2,7 @@ import sys
 
 # define main orchestration function
 def main(combined_vulnerabilities_data):
+  print(f"<TERMINAL MESSAGE> RUNNING 'average_nvd_data.py'; PLEASE STAND BY...")
   # define score componets from vulnerabilities data to average
   score_components = ['NVD Score', 'base_score', 'impact_score', 'exploitability_score']
 
@@ -11,19 +12,17 @@ def main(combined_vulnerabilities_data):
     score_components # list of score components to average
   )
 
+  print(f"<TERMINAL MESSAGE> RETURNING NVD SCORE COMPONENT AVERAGES...")
   return score_components_averages
 
 def build_score_components_averages_dictionary(combined_vulnerabilities_data, score_components):
+  print(f"<TERMINAL MESSAGE> CALCULATING NVD SCORE AVERAGES...")
   vulnerability_counter = 0 # variable to keep track of number of vulnerabilities
   score_components_averages = {} # create empty dictionary to store score compoenent averages in
 
   # initialize score components averages dictionary with components and set values to 0
   for component in score_components:
     score_components_averages[component] = 0
-
-  print("Initialization of score_components_averages; all set to 0")
-  print(score_components_averages)
-  input()
 
   # iterate through all vulnerabilites within vulnerabilities data adding component scores
   for vulnerability in combined_vulnerabilities_data:
