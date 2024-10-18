@@ -13,7 +13,10 @@ import hashlib  # For hashing the CSV file
 #import average as avg
 from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
-from modifiedscore import get_base, get_p
+from scoremath import *
+import scoremath as sm
+from analysisorchestration import *
+import analysisorchestration as ao
 from LLamaPPP import get_security_scores
 import subprocess
 import datetime
@@ -441,10 +444,12 @@ class SystemEvaluationApp(QWidget):
 
     def submit_file(self):
         # Check for required files
-        if not self.selected_cf_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
+        if not self.selected_cf_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
             missing_files = []
             if not self.selected_cf_button:
                 missing_files.append("Critical Functions")
+            if not self.selected_dv_button:
+                missing_files.append("Detected Vulnerabilities")
             if not self.selected_h_button:
                 missing_files.append("Hardware")
             if not self.selected_s_button:
@@ -464,47 +469,23 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
-        # 1. send DV and API key to NVD Database
-        combined_vulnerabilities_data = get_nvd_data_main(
-            '../.aws/nvd_api_key.txt',
-            self.selected_dv_button
-        )
-
-        # 2. Send dictionary back to GUI from NVD databse, extract base scores
-        score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
-        base = score_component_averages['base_score']
-        impact_sub = score_component_averages['impact_score']
-        exploitability_sub = score_component_averages['exploitability_score']
-
-        # 3. Send dictionary to modified score    
-        get_base(score_component_averages)
-
-        # 4. Send files to API
-        security_best_prac = get_security_scores('frameworks\CSF_Best_Prac_KV.json', self.selected_sum_button)
-    
-        # 5. GUI Sends to modified score
-        get_p(security_best_prac)
-
-        # 6. GUI Sends scores to Modified scored to be calculated
-
-
-        # 7. Modified Score sends rest of scores to GUI
-
-
-        # Invoke the model and perform score calculations in average.py
+        # tries for the anaylsis orchestration file
         try:
-            base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main(files_to_submit)
+            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_dv_button, self.selected_sum_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
             return
 
+        # 7. Called score math to get the modified average
+        average = sm.calculation()
+
         # Show success message and update GUI
-        self.score_label.setText(f"Files submitted successfully! Score: {average_cvss}")
+        self.score_label.setText(f"Files submitted successfully! Score: {average}")
 
         # Store submission details and update view
         submission_name = self.submission_name_input.text().strip() or "Unnamed"
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        self.submitted_files.append((submission_name, current_time, average_cvss))
+        self.submitted_files.append((submission_name, current_time, average))
         self.save_submissions()
         self.update_previous_submissions_view()
 
@@ -512,15 +493,12 @@ class SystemEvaluationApp(QWidget):
         self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
         #self.update_bar_graph('temporal', [temporal])
         #self.update_bar_graph('environmental', [environmental])
-        self.update_bar_graph('security', [physical_security, personnel_training, policies])
-        self.update_bar_graph('overall', [average_cvss])
+        self.update_bar_graph('security', [physical, personnel, policies])
+        self.update_bar_graph('overall', [average])
 
         # Reset file selections and show the download report button
         self.reset_file_selections()
         self.download_report_button.setVisible(True)
-
-        
-
 
     def reset_file_selections(self):
         # Clear the selections for all file types
