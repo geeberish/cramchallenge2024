@@ -7,18 +7,14 @@ import scoremath as ms
 from LLamaPPP import get_security_scores
 
 
-
 def nvd(dv_file_path):
-        # 1. send DV and API key to NVD Database
-        combined_vulnerabilities_data = get_nvd_data_main(
-            '../.aws/nvd_api_key.txt',
-            dv_file_path
-        )
-
-        # 2. Send dictionary back to GUI from NVD databse, extract base scores
-        score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
-        return score_component_averages
-
+    combined_vulnerabilities_data = get_nvd_data_main(
+        '../.aws/nvd_api_key.txt',
+        dv_file_path,
+    )
+    
+    score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
+    return score_component_averages
 def api(sum_file_path):
         # 3. Send dictionary to modified score    
         #get_base(score_component_averages)
@@ -53,4 +49,5 @@ def main(dv_file_path, sum_file_path):
     personnel = security_best_prac['personnel_score']
     policies = security_best_prac['policies_score']
 
+    #return base, impact_sub, exploitability_sub, physical, personnel, policies
     return base, impact_sub, exploitability_sub, physical, personnel, policies
