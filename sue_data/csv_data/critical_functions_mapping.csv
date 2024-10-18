@@ -1,0 +1,42 @@
+﻿endpoint_node_name,function_F1,function_F2,function_F3,function_F4,function_F5,function_F6,function_F7,function_F8,function_F9,function_F10,function_F11,function_F12,function_F13,function_F14,function_F15
+System Administrator Terminal,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Virtualization Manager Server,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+Virtualization Manager SAN Archive,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0
+Cybersecurity Capability & Tools Server,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Cybersecurity Capability & Tools SAN Archive,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Cybersecurity Capability & Tools SAN Archive Backup,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Audit Log Server,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+Audit Log SAN Archive,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+"Server Rack, Server #1 (SR1)",1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+"Server Rack, Server #2 (SR2)",1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Server Rack, Server #3 (SR3)",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Server Rack, Server #4 (SR4)",0,0,0,1,0,0,0,1,1,0,0,0,0,0,0
+"Server Rack, Server #5 (SR5)",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"Server Rack, Server #6 (SR6)",0,0,0,0,0,0,0,0,0,1,0,0,1,0,0
+"Server Rack, Server #7 (SR7)",0,0,0,0,0,0,0,0,0,0,0,1,0,1,0
+"Server Rack, Server #8 (SR8)",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"Server Rack, Server #9 (SR9)",0,0,0,1,0,0,0,0,1,0,0,1,0,0,0
+"Server Rack, Server #10 (SR10)",0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"Server Rack, Server #11 (SR11)",0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Server Rack, Server #12 (SR12)",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Engineering & Production SAN 1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production SAN Archive 1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production SAN Archive 1 Backup,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Engineering & Production SAN 2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production SAN Archive 2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production SAN Archive 2 Backup,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Engineering & Production SAN 3,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Test SAN,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0
+Test SAN Archive,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0
+Test SAN Archive Backup,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Company Management SAN,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1
+Company Management SAN Archive,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1
+Company Management SAN Archive Backup,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1
+Engineering & Production (Workstation 1),1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production (Workstation 2),0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Engineering & Production (Workstation 3),0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Engineering & Production (Workstation 4),0,0,0,0,0,0,1,0,0,0,1,0,0,0,0
+Test Engineering (Laptop 1),0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Test Engineering (Laptop 2),0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+Company Management (Workstation 5),0,0,0,0,0,0,0,0,0,1,0,0,1,1,1
+Company Management (Workstation 6),0,0,0,0,0,0,0,0,0,0,0,0,1,0,0

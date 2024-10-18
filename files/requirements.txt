@@ -1,0 +1,7 @@
+pandas
+transformers
+torch
+PySide6
+matplotlib
+nvdlib
+pyinstaller

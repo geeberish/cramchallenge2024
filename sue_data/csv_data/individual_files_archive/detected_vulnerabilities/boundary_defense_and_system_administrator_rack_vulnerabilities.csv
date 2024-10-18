@@ -1,0 +1,37 @@
+Node,Software Make,Software Description,Software Version,CVE Number,NVD Score
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20269,9.1
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20256,5.8
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20247,4.3
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20200,6.3
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20095,8.6
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20015,6.7
+Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20934,7.8
+Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2018-0284,6.5
+Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7999,7.7
+Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7993,3.3
+Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
+Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
+Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
+Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
+Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
+Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
+Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
+Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
+Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
+Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 7.1,CVD-2015-7833,4.9
+Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2020-7337,6.7
+Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2009-5118,9.3
+Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2007-2152,7.9
+Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2023-0101,8.8
+Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2021-20135,6.7
+Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2020-5765,5.4
+Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23675,6.5
+Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23676,3.5
+Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40593,7.5
+Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40592,6.1
+Audit Log Server,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+Cybersecurity Capability & Tools SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Audit Log SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
