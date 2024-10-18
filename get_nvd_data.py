@@ -19,9 +19,17 @@ import time
 
 def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
     print(f"<TERMINAL MESSAGE> RUNNING 'get_nvd_data.py'; PLEASE STAND BY...")
+
+    # ############################################################## #
+    # EVERY user should have a unique NVD API key to run this code   #
+    # Request an API key at the link below, then save to a .txt file #
+    # https://nvd.nist.gov/developers/request-an-api-key             #
+    # ############################################################## #
+
     # read the NIST NVD API key from the file
     with open(nvd_api_key_file_location) as key_file:
         nvd_api_key = key_file.read() # read API key file to variable
+
     vulnerabilities_list = list() # create an empty list to use for detected vulnerabilities data
     combined_vulnerabilities_data = []
 
