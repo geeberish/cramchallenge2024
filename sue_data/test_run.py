@@ -7,5 +7,3 @@ combined_vulnerabilities_data = get_nvd_data_main(
 )
 
 score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
-
-print(score_component_averages)

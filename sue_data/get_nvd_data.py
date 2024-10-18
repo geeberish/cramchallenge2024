@@ -53,7 +53,7 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
 
         length_cves = len(cves) # count number of CVE's
         counter_cves = 0
-        progress_bar = tqdm(total=length_cves, desc="Downloading from NIST NVD Database", unit="CVE's")
+        progress_bar = tqdm(total=length_cves, desc="<TERMINAL MESSAGE> DOWNLOADING FROM NIST NVD DATABASE", unit="CVE")
 
         # iterate through CVE's detected and pull data for each CVE
         for cve_id in cves:
