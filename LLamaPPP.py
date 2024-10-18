@@ -128,11 +128,11 @@ def parse_ai_response(response):
             results[category_key]['recommendations'] = recommendations[:3]  # Ensure we only get top 3
         else:
             results[category_key]['recommendations'] = ["No recommendation provided."] * 3
-
+    #print(results)
     return results
 
 def load_json_file(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 # This function can be called from other scripts
@@ -150,14 +150,14 @@ def get_security_scores(best_practices_file, system_summaries_file):
     }
 
 if __name__ == "__main__":
-    best_practices_file = 'frameworks/CSF_Best_Practices.json'
+    best_practices_file = 'frameworks/CSF_Best_Prac_KV.json'
     system_summaries_file = 'sue_data/json_data/summaries.json'
     
-    results = get_security_analysis(best_practices_file, system_summaries_file)
+    results = get_security_scores(best_practices_file, system_summaries_file)
     
     for category, data in results.items():
         print(f"\n{category.replace('_', ' ').title()}:")
-        print(f"Score: {data['score']:.2f}")
+        #print(f"Score: {data['score']:.2f}")
         print(f"Explanation: {data['explanation']}")
         print("Recommendations:")
         for i, rec in enumerate(data['recommendations'], 1):
@@ -177,125 +177,3 @@ if __name__ == "__main__":
 
 
 
-"""import json
-from groq import Groq
-
-# Groq API configuration
-GROQ_API_KEY = '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'  # Replace with your actual API key
-client = Groq(api_key=GROQ_API_KEY)
-
-def generate(system_message, user_message):
-    messages = [
-        {"role": "system", "content": system_message},
-        {"role": "user", "content": user_message}
-    ]
-    chat_completion = client.chat.completions.create(
-        messages=messages,
-        model="llama-3.1-70b-versatile",
-    )
-    return chat_completion.choices[0].message.content
-
-def analyze_security_measures(best_practices, system_summaries):
-    system_message = ""
-    You are a cybersecurity expert tasked with analyzing a system's security measures against best practices.
-    Compare the provided system summaries to the security best practices and evaluate the system in three areas:
-    1. Physical Security
-    2. Personnel
-    3. Policies
-
-    For each area:
-    1. Provide a score between 0 and 1 (where 0 is the worst and 1 is the best).
-    2. Provide a brief explanation for the score.
-    3. Recommend the three most important fixes or improvements based on the security best practices.
-
-    Be precise in your scoring and provide clear reasoning for each score and recommendation.
-
-    Format your response as follows:
-
-    Physical Security Score: [score]
-    Physical Security Explanation: [explanation]
-    Physical Security Recommendations:
-    1. [recommendation 1]
-    2. [recommendation 2]
-    3. [recommendation 3]
-
-    Personnel Score: [score]
-    Personnel Explanation: [explanation]
-    Personnel Recommendations:
-    1. [recommendation 1]
-    2. [recommendation 2]
-    3. [recommendation 3]
-
-    Policies Score: [score]
-    Policies Explanation: [explanation]
-    Policies Recommendations:
-    1. [recommendation 1]
-    2. [recommendation 2]
-    3. [recommendation 3]
-    ""
-
-    user_message = f
-    Security Best Practices:
-    {json.dumps(best_practices, indent=2)}
-
-    System Summaries:
-    {json.dumps(system_summaries, indent=2)}
-
-    Based on the above information, please provide scores, explanations, and recommendations for physical security, personnel, and policies.
-    "
-
-    ai_response = generate(system_message, user_message)
-    return parse_ai_response(ai_response)
-
-def parse_ai_response(response):
-    import re
-
-    categories = ['Physical Security', 'Personnel', 'Policies']
-    results = {}
-
-    for category in categories:
-        category_key = category.lower().replace(' ', '_')
-        results[category_key] = {}
-
-        # Extract score
-        score_match = re.search(fr"{category} Score: (0\.\d+|1\.0)", response, re.IGNORECASE)
-        results[category_key]['score'] = float(score_match.group(1)) if score_match else 0.0
-
-        # Extract explanation
-        explanation_match = re.search(fr"{category} Explanation: (.+?)(?=\n\n|\Z)", response, re.DOTALL | re.IGNORECASE)
-        results[category_key]['explanation'] = explanation_match.group(1).strip() if explanation_match else "No explanation provided."
-
-        # Extract recommendations
-        recommendations_match = re.search(fr"{category} Recommendations:(.*?)(?=\n\n|\Z)", response, re.DOTALL | re.IGNORECASE)
-        if recommendations_match:
-            recommendations = re.findall(r'\d+\.\s*(.+)', recommendations_match.group(1))
-            results[category_key]['recommendations'] = recommendations[:3]  # Ensure we only get top 3
-        else:
-            results[category_key]['recommendations'] = ["No recommendation provided."] * 3
-
-    return results
-
-def load_json_file(file_path):
-    with open(file_path, 'r') as file:
-        return json.load(file)
-
-# This function can be called from other scripts
-def get_security_analysis(best_practices_file, system_summaries_file):
-    best_practices = load_json_file(best_practices_file)
-    system_summaries = load_json_file(system_summaries_file)
-    
-    return analyze_security_measures(best_practices, system_summaries)
-
-if __name__ == "__main__":
-    best_practices_file = 'frameworks/CSF_Best_Practices.json'
-    system_summaries_file = 'sue_data/json_data/summaries.json'
-    
-    results = get_security_analysis(best_practices_file, system_summaries_file)
-    
-    for category, data in results.items():
-        print(f"\n{category.replace('_', ' ').title()}:")
-        print(f"Score: {data['score']:.2f}")
-        print(f"Explanation: {data['explanation']}")
-        print("Recommendations:")
-        for i, rec in enumerate(data['recommendations'], 1):
-            print(f"{i}. {rec}")"""
