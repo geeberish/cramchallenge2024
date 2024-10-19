@@ -1,0 +1,61 @@
+{
+    "APT29 (Cozy Bear)": "Associated with Russian intelligence. TTPs include: Spear-phishing with malicious attachments exploiting vulnerabilities in Adobe Flash and Java. Deployment of custom malware like SeaDuke and CloudDuke for persistent backdoors. Living off the land techniques, using legitimate tools and protocols to blend in. Privilege escalation through system vulnerabilities. Lateral movement using stolen credentials. Advanced encryption and obfuscation of malware and communications. Long-term persistence in target networks, often undetected for months or years.",
+    
+    "APT28 (Fancy Bear)": "Russian-linked group known for aggressive tactics. TTPs include: Spear-phishing campaigns with malicious attachments or fake login pages. Exploitation of zero-day vulnerabilities in Microsoft Office and Adobe Flash. Deployment of custom malware like X-Agent and Sofacy. Credential harvesting and lateral movement using stolen credentials. Use of living off the land techniques for stealth. Advanced evasion techniques to avoid detection. Targeting of critical infrastructure and government systems.",
+    
+    "APT41": "Chinese-linked group with dual focus on espionage and financial gain. TTPs include: Exploitation of vulnerabilities in web-facing applications, particularly in managed service providers. Supply chain attacks, compromising software development companies. Use of custom malware like Winnti for long-term access. Advanced lateral movement techniques. Data exfiltration using encrypted channels. Targeting of multiple sectors including gaming, telecommunications, and healthcare.",
+    
+    "Lazarus Group": "North Korean-associated group known for espionage and financial theft. TTPs include: Spear-phishing emails with malicious attachments exploiting Microsoft Office vulnerabilities. Watering hole attacks, compromising legitimate websites. Deployment of sophisticated malware like HOPLIGHT and FALLCHILL. Targeting of financial institutions and cryptocurrency exchanges. Use of custom-developed tools for network infiltration. Advanced obfuscation techniques to evade detection.",
+    
+    "APT33 (Elfin)": "Iranian-linked group targeting aerospace and energy sectors. TTPs include: Spear-phishing emails with job offer themes containing malicious attachments. Exploitation of Microsoft Office vulnerabilities. Deployment of custom malware like DROPSHOT and TURNEDUP. Aggressive brute-force attacks against exposed services. Use of web shells for persistence. Targeting of industrial control systems.",
+    
+    "Winnti Group": "Chinese-linked group primarily targeting gaming and software companies. TTPs include: Compromise of build servers to inject malware into legitimate software (supply chain attacks). Use of sophisticated malware like PlugX and ShadowPad. Theft and use of code-signing certificates to sign malware. Advanced persistence techniques, including firmware-level implants. Extensive use of living off the land techniques. Targeting of source code repositories and intellectual property.",
+    
+    "Equation Group": "Believed to be linked to the NSA. TTPs include: Exploitation of zero-day vulnerabilities in firmware and hard drive controllers. Use of highly sophisticated malware like EquationDrug and GrayFish. Advanced persistence techniques that survive system reinstalls. Targeting of air-gapped networks. Use of complex, multi-stage attack chains. Advanced encryption and steganography techniques.",
+    
+    "APT10 (Stone Panda)": "Chinese-linked group targeting managed service providers. TTPs include: Spear-phishing and exploitation of public-facing applications. Deployment of malware like ChChes and Quasar RAT. Advanced techniques to blend in with normal network traffic. Use of legitimate tools for lateral movement. Targeting of intellectual property and sensitive data across multiple industries. Long-term persistence in compromised networks.",
+    
+    "Turla (Snake)": "Russian-associated group known for complex operations. TTPs include: Exploitation of outdated web servers and use of watering hole attacks. Deployment of modular and highly adaptable malware like Snake and Carbon. Hijacking of satellite connections for covert communications. Use of complex, multi-layered obfuscation techniques. Targeting of government and diplomatic entities. Advanced lateral movement and privilege escalation techniques.",
+    
+    "APT32 (OceanLotus)": "Vietnamese-linked group targeting foreign companies and dissidents. TTPs include: Spear-phishing with malicious attachments and fake installer files. Use of Cobalt Strike and Korplug malware disguised as legitimate software. Creative obfuscation techniques to evade detection. Extensive use of living off the land techniques. Targeting of human rights organizations and foreign governments. Advanced data exfiltration methods.",
+    
+    "Dragonfly (Energetic Bear)": "Russian-linked group targeting energy and industrial sectors. TTPs include: Watering hole attacks and trojanized software updates. Deployment of malware like Havex and Backdoor.Oldrea. Gathering information about industrial control systems. Use of custom-developed tools for network infiltration. Targeting critical infrastructure. Long-term persistence in compromised networks.",
+    
+    "APT3 (Gothic Panda)": "Chinese-linked group known for rapid exploitation. TTPs include: Rapid exploitation of newly discovered vulnerabilities. Use of spear-phishing and watering hole attacks. Deployment of custom malware like Pirpi and CookieCutter. Advanced lateral movement techniques. Targeting aerospace and defense industries. Use of zero-day vulnerabilities in popular software.",
+    
+    "Carbanak": "Financially motivated group targeting banks. TTPs include: Spear-phishing emails with malicious attachments for initial access. Use of custom malware to monitor and manipulate banking systems. Long-term presence in compromised networks before acting. Advanced techniques for evading detection; targeting financial institutions globally; use of legitimate banking tools for fraudulent transfers.",
+    
+    "APT37 (Reaper)": "North Korean-linked group targeting various sectors; TTPs include: Spear-phishing with malicious attachments, often exploiting zero-day vulnerabilities; deployment of malware like ROKRAT and DOGCALL; targeting chemicals and electronics industries; use social engineering techniques; advanced data exfiltration methods; targeting individuals related to North Korean interests.",
+    
+    "Sandworm Team": "Russian-associated group targeting critical infrastructure; TTPs include: Exploitation vulnerabilities in industrial control systems; use spear-phishing for initial access; deployment malware like BlackEnergy & Industroyer; targeting energy sectors & government entities; advanced techniques disrupting industrial processes; use wiper malware destructive attacks.",
+    
+    "APT39 (Chafer)": "Iranian group focusing personal information theft; TTPs include: Exploitation vulnerabilities VPN systems; use spear-phishing initial access; deployment malware SEENPUP CACHEMONEY; long-term data exfiltration operations; targeting telecommunications travel industries; advanced persistence techniques.",
+    
+    "FIN7": "Financially motivated group targeting point-of-sale systems; TTPs include: Highly targeted spear-phishing emails masquerading as legitimate business communications; deployment custom malware Carbanak Bateleur; targeting retail hospitality sectors; advanced social engineering techniques; use legitimate penetration testing tools malicious purposes; sophisticated methods stealing exfiltrating payment card data.",
+    
+    "Leviathan (TEMP.Periscope)": "Chinese-linked group targeting maritime engineering sectors; TTPs include: Spear-phishing watering hole attacks; exploitation common software vulnerabilities; deployment malware Airbreak Badflick; targeting defense contractors research institutions; advanced long-term data exfiltration methods; use custom-developed tools network infiltration.",
+    
+    "APT34 (OilRig)": "Iranian group targeting Middle Eastern organizations; TTPs include: Spear-phishing malicious macros; exploitation public-facing applications; deployment malware TRIGONA HELMINTH; use web shells persistence; targeting government financial sectors advanced obfuscation techniques evade detection.",
+    
+    "Patchwork (Dropping Elephant)": "Possibly Indian-linked group targeting diplomatic entities; TTPs include: Spear-phishing malicious RTF files exploitation known vulnerabilities deployment malware BADNEWS Ragnatela targeting diplomatic government organizations social engineering techniques custom backdoors persistent access.",
+    
+    "MuddyWater": "Iranian-linked group targeting Middle Eastern Central Asian organizations; TTPs include: Spear-phishing malicious macro-enabled documents deployment malware POWERSTATS SHARPSTATS use legitimate tools services command control targeting telecommunications government sectors advanced living off land techniques social engineering initial access phase.",
+    
+    "APT40 (TEMP.Periscope)": "Chinese group focusing maritime industries spear-phishing watering hole attacks exploitation vulnerabilities web applications deployment malware Derusbi Gh0st RAT targeting naval technology maritime industries advanced long-term persistence use custom-developed tools data exfiltration.",
+    
+    "Silence": "Financially motivated group targeting banks spear-phishing malicious attachments exploiting Microsoft Office vulnerabilities deployment custom malware monitoring banking systems long-term presence compromised networks use legitimate banking tools fraudulent transfers advanced evasion detection targeting ATM networks.",
+    
+    "APT38 (Lazarus Subgroup)": "North Korean group focusing financial theft exploitation vulnerabilities SWIFT banking systems deployment custom malware DYEPACK NESTEGG long-term presence compromised networks executing thefts advanced covering tracks evading detection targeting cryptocurrency exchanges use custom-developed tools network infiltration.",
+    
+    "BlackTech": "Possibly Chinese-linked group technology companies East Asia spear-phishing supply chain attacks exploitation zero-day vulnerabilities deployment malware PLEAD Waterbear targeting semiconductor high-tech industries advanced persistence techniques stolen digital certificates sign malware.",
+    
+    "Thrip": "Chinese-linked group satellite defense organizations extensive living-off-the-land techniques legitimate tools PsExec LogMeIn lateral movement deployment custom malware Catchamas targeting satellite communications geospatial imaging advanced long-term data exfiltration stealthy operations avoid detection.",
+    
+    "APT19 (Codoso Team)": "Chinese group legal investment sectors spear-phishing malicious attachments watering hole attacks deployment malware Derusbi Hikit targeting intellectual property sensitive business data advanced lateral movement techniques custom backdoors persistent access.",
+    
+    "Machete": "Spanish-speaking group Latin American organizations highly targeted spear-phishing malicious attachments extensive social engineering techniques deployment custom information-gathering malware targeting government diplomatic entities advanced data exfiltration methods geopolitical themes phishing lures.",
+    
+    "Gallmaker": "Group government military organizations fileless malware techniques leveraging legitimate tools PowerShell malicious purposes targeting foreign policy institutions advanced obfuscation traditional antivirus living off land sophisticated social engineering initial access phase.",
+    
+    "Kimsuky":  "North Korean group think tanks government organizations spear-phishing malicious attachments often exploiting current events deployment malware BabyShark KGH_SPY targeting individuals organizations related Korean peninsula issues use social media platforms reconnaissance advanced information theft long-term espionage continuous evolution tactics evade detection."
+}
