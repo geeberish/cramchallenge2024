@@ -1,16 +1,23 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
+    QApplication, QWidget, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QPushButton, QProgressBar, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
 )
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QPalette, QColor, QFont, QIcon
+from PySide6.QtCore import Qt, QTimer, QSize
+from PySide6.QtGui import QPalette, QColor, QFont, QIcon, QMovie
 import shutil
 import sys
 import os
 import csv
 import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
-from average import *
-import average as avg
+#from average import *
+#import average as avg
+from get_nvd_data import main as get_nvd_data_main
+from average_nvd_data import main as average_nvd_data_main
+from scoremath import *
+import scoremath as sm
+from analysisorchestration import *
+import analysisorchestration as ao
+from LLamaPPP import get_security_scores
 import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -54,6 +61,7 @@ class SystemEvaluationApp(QWidget):
 
         self.select_file_view = self.create_file_select_view()
         self.stacked_widget.addWidget(self.select_file_view)
+
 
         layout = QVBoxLayout(self)
         layout.addWidget(self.stacked_widget)
@@ -250,12 +258,25 @@ class SystemEvaluationApp(QWidget):
         # Create a layout for the previous submissions view
         layout = QVBoxLayout()
 
+        # Create throbber
+        self.throbber_label = QLabel(self)
+        self.throbber_movie = QMovie("files/throbbergif.gif")
+        self.throbber_label.setMovie(self.throbber_movie)
+        self.throbber_label.setAlignment(Qt.AlignLeft)
+        throbber_size = QSize(50, 50)  # Set the size to make the GIF smaller
+        self.throbber_movie.setScaledSize(throbber_size)
+        self.throbber_label.setVisible(False)
+        #self.throbber_movie.start()
+
         # Text field for submission name
         self.submission_name_input = QLineEdit()
         self.submission_name_input.setPlaceholderText("Enter submission name")
         self.submission_name_input.setFont(self.font)
         self.submission_name_input.setStyleSheet("color: white; background-color: #3E3E3E;")
         layout.addWidget(self.submission_name_input)
+
+        # Add throbber to layout
+        layout.addWidget(self.throbber_label)
 
         self.cf_file_name_label = QLabel("")
         self.cf_file_name_label.setFont(self.font)
@@ -355,7 +376,7 @@ class SystemEvaluationApp(QWidget):
         self.submit_button.clicked.connect(self.submit_file)
 
         # Add labels and buttons to the layout
-        
+
         layout.addWidget(self.label2)
         layout.addWidget(self.cf_file_name_label)
         layout.addWidget(self.select_cf_button)
@@ -434,13 +455,26 @@ class SystemEvaluationApp(QWidget):
                 self.selected_sum_button = selected_file
                 self.sum_file_name_label.setText(f"Selected: {file_name}")
 
+    def start_throbber(self):
+        print("starting throbber")
+        self.throbber_label.setVisible(True)
+        self.throbber_movie.start()
+        self.layout().update()  # Force layout update
+
+    def stop_throbber(self):
+        self.throbber_movie.stop()
+        self.throbber_label.setVisible(False)
+        self.layout().update()  # Force layout update
 
     def submit_file(self):
+        self.start_throbber()
         # Check for required files
-        if not self.selected_cf_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
+        if not self.selected_cf_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
             missing_files = []
             if not self.selected_cf_button:
                 missing_files.append("Critical Functions")
+            if not self.selected_dv_button:
+                missing_files.append("Detected Vulnerabilities")
             if not self.selected_h_button:
                 missing_files.append("Hardware")
             if not self.selected_s_button:
@@ -460,69 +494,42 @@ class SystemEvaluationApp(QWidget):
             "Summaries": self.selected_sum_button,
         }
 
-        # Define the directory where the temp files will be saved (same as the main file's directory)
-        main_file_dir = os.path.dirname(__file__)
-        temp_dir = os.path.join(main_file_dir, "temp_files")
-
-        # Ensure the temp directory exists (create it if it doesn't)
-        os.makedirs(temp_dir, exist_ok=True)
-
+        self.start_throbber()
+        # tries for the anaylsis orchestration file
         try:
-            temp_file_paths = {}
-
-            # Save each selected file path or file content into the temporary directory
-            for file_type, file_path in files_to_submit.items():
-                temp_file_path = os.path.join(temp_dir, f"{file_type.replace(' ', '_')}.txt")
-
-                # Copy the contents or just the path (depending on your needs)
-                with open(file_path, 'r') as original_file:
-                    content = original_file.read()
-
-                # Write to the temporary file
-                with open(temp_file_path, 'w') as temp_file:
-                    temp_file.write(content)
-
-                # Store the path to the temporary file
-                temp_file_paths[file_type] = temp_file_path
-
-            # Now pass the temp_file_paths to the external script for further processing
-            handle_files(temp_file_paths)
-        
-        finally:
-            # Clean up the temporary directory after use
-            if os.path.exists(temp_dir):
-                shutil.rmtree(temp_dir)
-
-        # Invoke the model and perform score calculations in average.py
-        try:
-            base, impact_sub, exploitability_sub, temporal, environmental, physical_security, personnel_training, policies, average_cvss = avg.main(files_to_submit)
+            
+            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_dv_button, self.selected_sum_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
+            self.stop_throbber()
             return
 
+        # Process the results and update the GUI
+        #self.update_gui_with_results()
+        # 7. Called score math to get the modified average
+        average = sm.calculation()
+
+        self.stop_throbber()
         # Show success message and update GUI
-        self.score_label.setText(f"Files submitted successfully! Score: {average_cvss}")
+        self.score_label.setText(f"Files submitted successfully! Score: {average}")
 
         # Store submission details and update view
         submission_name = self.submission_name_input.text().strip() or "Unnamed"
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        self.submitted_files.append((submission_name, current_time, average_cvss))
+        self.submitted_files.append((submission_name, current_time, average))
         self.save_submissions()
         self.update_previous_submissions_view()
 
         # Update bar graphs with the calculated scores
         self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
-        self.update_bar_graph('temporal', [temporal])
-        self.update_bar_graph('environmental', [environmental])
-        self.update_bar_graph('security', [physical_security, personnel_training, policies])
-        self.update_bar_graph('overall', [average_cvss])
+        #self.update_bar_graph('temporal', [temporal])
+        #self.update_bar_graph('environmental', [environmental])
+        self.update_bar_graph('security', [physical, personnel, policies])
+        self.update_bar_graph('overall', [average])
 
         # Reset file selections and show the download report button
         self.reset_file_selections()
         self.download_report_button.setVisible(True)
-
-        
-
 
     def reset_file_selections(self):
         # Clear the selections for all file types
