@@ -10,7 +10,7 @@ def nvd(dv_file_path):
         '../.aws/nvd_api_key.txt', # FIXME send api key file location as variable from gui; needs entry method in gui
         dv_file_path,
     )
-    
+
     score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
     return score_component_averages
 
