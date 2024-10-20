@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
 import threading
 import time
-#from average import *
-#import average as avg
 from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
 from scoremath import *
@@ -40,7 +38,7 @@ class Worker(QObject):
 
     def run(self):
         try:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average = ao.main(
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt = ao.main(
                 self.selected_cfd,
                 self.selected_cfm,
                 self.selected_dv,
@@ -48,7 +46,7 @@ class Worker(QObject):
                 self.selected_nvd,
                 self.selected_groq  # Ensure these are passed
             )
-            self.results_ready.emit((base, impact_sub, exploitability_sub, physical, personnel, policies, average))
+            self.results_ready.emit((base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt))
         except Exception as e:
             print(f"Error during orchestration: {e}")  # Log the exception message
             self.results_ready.emit(None)
@@ -184,11 +182,11 @@ class SystemEvaluationApp(QWidget):
 
     def create_bar_graphs(self, layout):
         self.figures = {}
-        self.figures['base'] = self.add_bar_graph(layout, [0, 0, 0], ["Base", "Impact", "Exploitability"], "Impact Metrics (CVSS)", (6, 4))
+        self.figures['base'] = self.add_bar_graph(layout, [0, 0, 0], ["Base"], "Impact Metrics (CVSS)", (6, 4))
         #self.figures['temporal'] = self.add_bar_graph(layout, [0], ["Temporal"], "Temporal Scores", (4, 4))
         #self.figures['environmental'] = self.add_bar_graph(layout, [0], ["Environmental"], "Environmental Score", (4, 4))
         self.figures['security'] = self.add_bar_graph(layout, [0, 0, 0], ["Physical Security", "Personnel", "Policies"], "Security Best Practices Scores", (6, 4), y_limit=(0, 1))  # Set y limit to 0-1
-        self.figures['overall'] = self.add_bar_graph(layout, [0], ["Adjusted Score"], "Adjusted Score", (4, 4))
+        self.figures['overall'] = self.add_bar_graph(layout, [0], ["Environment", "APT Threat Index"], "Adjusted Score", (4, 4))
 
     
     def add_bar_graph(self, layout, scores, labels, title, figsize, y_limit=(0, 10)):
@@ -428,7 +426,7 @@ class SystemEvaluationApp(QWidget):
         # self.select_s_button.setFixedSize(203, 30)  # Half the original size
         # self.select_s_button.clicked.connect(lambda: self.open_file_dialog("s"))
 
-        self.label6 = QLabel("Please submit a file for Summaries (TXT):")
+        self.label6 = QLabel("Please submit a file for Summaries (CSV, JSON):")
         self.label6.setFont(self.font)
         self.label6.setStyleSheet("color: white;")
         self.label6.setAlignment(Qt.AlignLeft | Qt.AlignTop)
@@ -594,23 +592,23 @@ class SystemEvaluationApp(QWidget):
     def process_results(self, results):
         self.stop_throbber()  # Stop throbber when processing results
         if results is not None:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average = results
-            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average)
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt = results
+            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt)
             
             # Show success message and update GUI
-            self.score_label.setText(f"Files submitted successfully! Score: {average}")
+            self.score_label.setText(f"Files submitted successfully! Score: {average}, {apt}")
 
             # Store submission details and update view
             submission_name = self.submission_name_input.text().strip() or "Unnamed"
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            self.submitted_files.append((submission_name, current_time, average))
+            self.submitted_files.append((submission_name, current_time, average, apt))
             self.save_submissions()
             self.update_previous_submissions_view()
 
             # Update bar graphs with the calculated scores
-            self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
+            self.update_bar_graph('base', [base])
             self.update_bar_graph('security', [physical, personnel, policies])
-            self.update_bar_graph('overall', [average])
+            self.update_bar_graph('overall', [average, apt])
 
             # Reset file selections and show the download report button
             self.reset_file_selections()
@@ -784,11 +782,11 @@ class SystemEvaluationApp(QWidget):
             writer = csv.writer(csvfile)
             
             # Write header for the CSV file
-            writer.writerow(["File Name", "Submission Time", "Score"])  # Updated header
+            writer.writerow(["File Name", "Submission Time", "Environment Score", "APT Score"])  # Updated header
             
             # Write the submitted files and their details
-            for file_name, submission_time, score in self.submitted_files:  # Unpack three items
-                writer.writerow([file_name, submission_time, score])  # Write the three columns
+            for file_name, submission_time, env_score, apt_score in self.submitted_files:  # Unpack three items
+                writer.writerow([file_name, submission_time, env_score, apt_score])  # Write the three columns
 
     def populate_file_list(self):
         # Clear the current file list
@@ -807,7 +805,7 @@ class SystemEvaluationApp(QWidget):
                 next(reader)  # Skip header row
                 for row in reader:
                     if len(row) == 3:  # Ensure the row has three items
-                        submissions.append((row[0], row[1], row[2]))  # (File name, Submission Time, Score)
+                        submissions.append((row[0], row[1], row[2], row[3]))  # (File name, Submission Time, Score)
         except FileNotFoundError:
             print("No previous submissions found.")
         return submissions
