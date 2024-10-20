@@ -8,11 +8,11 @@ import json # a module to work with JSON data
 #     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # NEW VERSION
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
 
-install('nvdlib') # call function to install nvdlib
-install('tqdm')
+# install('nvdlib') # call function to install nvdlib
+# install('tqdm')
 
 import nvdlib # a module to interface with the NIST NVD database to pull CVEs and CPEs as objects
 from tqdm import tqdm

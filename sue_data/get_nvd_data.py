@@ -2,10 +2,10 @@ import subprocess
 import sys
 
 # function to install a package
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-install('nvdlib') # install nvdlib
+# install('nvdlib') # install nvdlib
 
 import json
 import nvdlib
