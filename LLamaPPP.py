@@ -4,7 +4,7 @@ from groq import Groq
 from functools import lru_cache
 
 # Groq API configuration
-GROQ_API_KEY = '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'  # Replace with your actual API key
+GROQ_API_KEY = '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'  # Replace with your actual API key
 client = Groq(api_key=GROQ_API_KEY)
 
 def generate(system_message, user_message, temperature=0.7):

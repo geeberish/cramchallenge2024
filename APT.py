@@ -4,7 +4,7 @@ from typing import Dict, Tuple, Any
 import json
 
 # Initialize Groq client
-GROQ_API_KEY = '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'
+GROQ_API_KEY = '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'
 client = Groq(api_key=GROQ_API_KEY)
 
 # Load APT groups dictionary
