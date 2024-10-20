@@ -45,7 +45,7 @@ def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, ap
 
     Format your response as:
     Score: [Your numerical score]
-    Explanation: [Your brief explanation]
+    Explanation: [Brief reasoning behind score. No more than 2 sentences]
     """
 
     try:
