@@ -748,7 +748,7 @@ class SystemEvaluationApp(QWidget):
             # Extract parts of the selected item based on your new formatting
             parts = selected_item.split(" - ")
             
-            if len(parts) == 4:  # Ensure it has four parts
+            if len(parts) == 5:  # Ensure it has four parts
                 file_name, submission_time, env_score_str, apt_score_str, report_file_name = parts[0], parts[1], parts[2], parts[3]
                 env_score = env_score_str.replace("Environment Score: ", "").strip()
                 apt_score = apt_score_str.replace("APT Score: ", "").strip()
@@ -826,7 +826,7 @@ class SystemEvaluationApp(QWidget):
                 reader = csv.reader(csvfile)
                 next(reader)  # Skip header row
                 for row in reader:
-                    if len(row) == 4:  # Ensure the row has three items
+                    if len(row) == 5:  # Ensure the row has three items
                         submissions.append((row[0], row[1], row[2], row[3]))  # (File name, Submission Time, Score)
         except FileNotFoundError:
             print("No previous submissions found.")
