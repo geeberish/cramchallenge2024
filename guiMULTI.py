@@ -375,25 +375,25 @@ class SystemEvaluationApp(QWidget):
         self.select_dv_button.setFixedSize(203, 30)  # Half the original size
         self.select_dv_button.clicked.connect(lambda: self.open_file_dialog("dv"))
 
-        self.label4 = QLabel("Please submit a file for Hardware (CSV, JSON):")
-        self.label4.setFont(self.font)
-        self.label4.setStyleSheet("color: white;")
-        self.label4.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+        # self.label4 = QLabel("Please submit a file for Hardware (CSV, JSON):")
+        # self.label4.setFont(self.font)
+        # self.label4.setStyleSheet("color: white;")
+        # self.label4.setAlignment(Qt.AlignLeft | Qt.AlignTop)
 
-        self.select_h_button = QPushButton("Select File")
-        self.select_h_button.setFont(self.font)
-        self.select_h_button.setFixedSize(203, 30)  # Half the original size
-        self.select_h_button.clicked.connect(lambda: self.open_file_dialog("h"))
+        # self.select_h_button = QPushButton("Select File")
+        # self.select_h_button.setFont(self.font)
+        # self.select_h_button.setFixedSize(203, 30)  # Half the original size
+        # self.select_h_button.clicked.connect(lambda: self.open_file_dialog("h"))
 
-        self.label5 = QLabel("Please submit a file for Software (CSV, JSON):")
-        self.label5.setFont(self.font)
-        self.label5.setStyleSheet("color: white;")
-        self.label5.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+        # self.label5 = QLabel("Please submit a file for Software (CSV, JSON):")
+        # self.label5.setFont(self.font)
+        # self.label5.setStyleSheet("color: white;")
+        # self.label5.setAlignment(Qt.AlignLeft | Qt.AlignTop)
 
-        self.select_s_button = QPushButton("Select File")
-        self.select_s_button.setFont(self.font)
-        self.select_s_button.setFixedSize(203, 30)  # Half the original size
-        self.select_s_button.clicked.connect(lambda: self.open_file_dialog("s"))
+        # self.select_s_button = QPushButton("Select File")
+        # self.select_s_button.setFont(self.font)
+        # self.select_s_button.setFixedSize(203, 30)  # Half the original size
+        # self.select_s_button.clicked.connect(lambda: self.open_file_dialog("s"))
 
         self.label6 = QLabel("Please submit a file for Summaries (TXT):")
         self.label6.setFont(self.font)
@@ -447,15 +447,15 @@ class SystemEvaluationApp(QWidget):
         leftlayout.addWidget(self.select_dv_button)
         leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        rightlayout.addWidget(self.label4)
-        rightlayout.addWidget(self.h_file_name_label)
-        rightlayout.addWidget(self.select_h_button)
-        rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
+        # rightlayout.addWidget(self.label4)
+        # rightlayout.addWidget(self.h_file_name_label)
+        # rightlayout.addWidget(self.select_h_button)
+        # rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        leftlayout.addWidget(self.label5)
-        leftlayout.addWidget(self.s_file_name_label)
-        leftlayout.addWidget(self.select_s_button)
-        leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
+        # leftlayout.addWidget(self.label5)
+        # leftlayout.addWidget(self.s_file_name_label)
+        # leftlayout.addWidget(self.select_s_button)
+        # leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
         rightlayout.addWidget(self.label6)
         rightlayout.addWidget(self.sum_file_name_label)
@@ -530,12 +530,12 @@ class SystemEvaluationApp(QWidget):
             elif file_type == "dv":
                 self.selected_dv_button = selected_file
                 self.dv_file_name_label.setText(f"Selected: {file_name}")
-            elif file_type == "h":
-                self.selected_h_button = selected_file
-                self.h_file_name_label.setText(f"Selected: {file_name}")
-            elif file_type == "s":
-                self.selected_s_button = selected_file
-                self.s_file_name_label.setText(f"Selected: {file_name}")
+            # elif file_type == "h":
+            #     self.selected_h_button = selected_file
+            #     self.h_file_name_label.setText(f"Selected: {file_name}")
+            # elif file_type == "s":
+            #     self.selected_s_button = selected_file
+            #     self.s_file_name_label.setText(f"Selected: {file_name}")
             elif file_type == "sum":
                 self.selected_sum_button = selected_file
                 self.sum_file_name_label.setText(f"Selected: {file_name}")
@@ -560,7 +560,8 @@ class SystemEvaluationApp(QWidget):
     def submit_file(self):
         self.start_throbber()
         # Check for required files
-        if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
+        # if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
+        if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
             missing_files = []
             if not self.selected_cfd_button:
                 missing_files.append("Critical Functions Definitions")
@@ -568,10 +569,10 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Critical Functions Mapping")
             if not self.selected_dv_button:
                 missing_files.append("Detected Vulnerabilities")
-            if not self.selected_h_button:
-                missing_files.append("Hardware")
-            if not self.selected_s_button:
-                missing_files.append("Software")
+            # if not self.selected_h_button:
+            #     missing_files.append("Hardware")
+            # if not self.selected_s_button:
+            #     missing_files.append("Software")
             if not self.selected_sum_button:
                 missing_files.append("Summaries")
             if not self.selected_nvd_button:
@@ -587,8 +588,8 @@ class SystemEvaluationApp(QWidget):
             "Critical Functions Definitions": self.selected_cfd_button,
             "Critical Functions Mapping": self.selected_cfm_button,
             "Detected Vulnerabilities": self.selected_dv_button,
-            "Hardware": self.selected_h_button,
-            "Software": self.selected_s_button,
+            # "Hardware": self.selected_h_button,
+            # "Software": self.selected_s_button,
             "Summaries": self.selected_sum_button,
             "NVD": self.selected_nvd_button,
             "Groq": self.selected_groq_button,
@@ -598,7 +599,7 @@ class SystemEvaluationApp(QWidget):
         # tries for the anaylsis orchestration file
         try:
             
-            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_h_button, self.selected_s_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
+            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
             self.stop_throbber()
@@ -607,7 +608,6 @@ class SystemEvaluationApp(QWidget):
         # Process the results and update the GUI
         #self.update_gui_with_results()
         # 7. Called score math to get the modified average
-        average = sm.calculation()
 
         self.stop_throbber()
         # Show success message and update GUI

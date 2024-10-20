@@ -54,7 +54,7 @@ def call_calc_modify(combined_vuln,max_criticality, ppp_system_scores, apt_score
 
 
 # modify cvss base average score with criticality and 3 p's
-def main(cfd_file_path, cfm_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path, nvd_file_path, groq_file_path):
+def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
 
     apt_scores_desc = call_apt_api(combined_vuln_data)
