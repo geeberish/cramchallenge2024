@@ -2,8 +2,6 @@ import math
 from LLamaPPP import get_security_scores
 from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
-from scoremath import *
-import scoremath as ms
 from LLamaPPP import get_security_scores
 
 
@@ -35,7 +33,7 @@ def api(sum_file_path):
 
 
 # modify cvss base average score with criticality and 3 p's
-def main(dv_file_path, sum_file_path):
+def main(cf_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path):
     score_component_averages = nvd(dv_file_path)
 
     base = score_component_averages['base_score']
