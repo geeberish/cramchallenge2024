@@ -94,6 +94,8 @@ def main(combined_vulnerabilities_data, node_criticality_mapping, system_evaluat
       exploit_code_maturity, remediation_level, report_confidence, scope
     )
 
+  print(cve_number)
+
   # return modified score variables via combined vulnerabilities data to orchestration script
   return combined_vulnerabilities_data
 
