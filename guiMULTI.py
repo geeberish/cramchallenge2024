@@ -605,7 +605,7 @@ class SystemEvaluationApp(QWidget):
             # Save the report to a .txt file in the submission folder
             submission_name = self.submission_name_input.text().strip() or "Unnamed"
             report_file_name = f"{submission_name.replace(' ', '_')}_report.txt"
-            report_file_path = os.path.join(self.submissions_folder, report_file_name)
+            report_file_path = os.path.join("submissions", report_file_name)
 
             # Write the report content to the file
             with open(report_file_path, 'w') as report_file:
@@ -783,7 +783,7 @@ class SystemEvaluationApp(QWidget):
             report_file_name = parts[-1].replace("Report: ", "").strip()  # Extract the report file name
 
             # Define the source path in the submissions folder
-            source_path = os.path.join(self.submissions_folder, report_file_name)
+            source_path = os.path.join("submissions", report_file_name)
 
             # Define the destination path for the download (user's Downloads folder)
             download_path = os.path.join(os.path.expanduser("~"), "Downloads", report_file_name)
