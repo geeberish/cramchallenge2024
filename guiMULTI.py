@@ -162,7 +162,7 @@ class SystemEvaluationApp(QWidget):
         self.download_report_button.setFixedSize(200, 40)
         self.download_report_button.setStyleSheet("background-color: green; color: white;")
         self.download_report_button.setVisible(False)  # Initially hidden
-        self.download_report_button.clicked.connect(self.download_file)
+        self.download_report_button.clicked.connect(self.download_latest_report)
 
         # Add the button to its own layout and center it
         button_layout.addWidget(self.download_report_button)
@@ -777,6 +777,34 @@ class SystemEvaluationApp(QWidget):
             else:
                 print("Selected item does not match the expected format.")
 
+    def download_latest_report(self):
+        if self.submitted_files:
+            # Get the latest submission (the last entry in the list)
+            latest_submission = self.submitted_files[-1]  # Assuming it's sorted by time, or you can sort it if needed
+
+            file_name, submission_time, env_score, apt_score, report_file_name = latest_submission
+
+            # Define the source path in the submissions folder
+            source_path = os.path.join("submissions", report_file_name)
+
+            # Define the destination path for the download (user's Downloads folder)
+            download_path = os.path.join(os.path.expanduser("~"), "Downloads", report_file_name)
+
+            try:
+                # Copy the report file to the Downloads folder
+                shutil.copy(source_path, download_path)
+
+                # Open the Downloads folder
+                if platform.system() == "Windows":
+                    subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
+                elif platform.system() == "Darwin":  # macOS
+                    subprocess.Popen(['open', os.path.join(os.path.expanduser("~"), "Downloads")])
+
+                print(f"{report_file_name} has been downloaded to {download_path}.")
+            except Exception as e:
+                print(f"Error downloading report: {e}")
+        else:
+            print("No submissions available to download.")
 
     def download_file(self):
         # Download the selected report file
