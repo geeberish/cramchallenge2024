@@ -304,7 +304,6 @@ class SystemEvaluationApp(QWidget):
         throbber_size = QSize(50, 50)  # Set the size to make the GIF smaller
         self.throbber_movie.setScaledSize(throbber_size)
         self.throbber_label.setVisible(False)
-        #self.throbber_movie.start()
 
         # Text field for submission name
         self.submission_name_input = QLineEdit()
@@ -532,15 +531,21 @@ class SystemEvaluationApp(QWidget):
         fig_data = self.figures[name]
         ax = fig_data['ax']
         ax.clear()
-        
+
         ax.set_facecolor('#2D2D2D')
-        ax.bar(fig_data['labels'], scores, color='blue', edgecolor='white')
-        
+        bars = ax.bar(fig_data['labels'], scores, color='blue', edgecolor='white')
+
         # Set the y-limits based on the graph name
         if name == 'security':
             ax.set_ylim(0, 1)  # For security scores, keep y limits from 0.0 to 1.0
         else:
             ax.set_ylim(0, 10)  # For other graphs, set y limits from 0 to 10
+
+        # Annotate each bar with the score
+        for bar in bars:
+            yval = bar.get_height()  # Get the height of the bar (the score)
+            ax.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2),
+                    ha='center', va='bottom', color='white')  # Display score above the bar
 
         fig_data['canvas'].draw()
         fig_data['canvas'].flush_events()
