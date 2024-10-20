@@ -6,11 +6,11 @@ boundary defense and system administrator rack,Firewall,Cisco,FirePower 4125 Nex
 boundary defense and system administrator rack,Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20095,8.6
 boundary defense and system administrator rack,Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20015,6.7
 boundary defense and system administrator rack,Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7,CVE-2023-20934,7.8
-boundary defense and system administrator rack,Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2018-0284,6.5
-boundary defense and system administrator rack,Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7999,7.7
-boundary defense and system administrator rack,Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7993,3.3
-boundary defense and system administrator rack,Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
-boundary defense and system administrator rack,Router,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
+boundary defense and system administrator rack,System Administrator Terminal,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2018-0284,6.5
+boundary defense and system administrator rack,System Administrator Terminal,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7999,7.7
+boundary defense and system administrator rack,System Administrator Terminal,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7993,3.3
+boundary defense and system administrator rack,System Administrator Terminal,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
+boundary defense and system administrator rack,System Administrator Terminal,Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014,CVE-2014-7994,5.4
 boundary defense and system administrator rack,Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
 boundary defense and system administrator rack,Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
 boundary defense and system administrator rack,Ethernet Switch,Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
@@ -18,23 +18,23 @@ boundary defense and system administrator rack,Ethernet Switch,Cisco,Catalyst 29
 boundary defense and system administrator rack,Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
 boundary defense and system administrator rack,Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
 boundary defense and system administrator rack,Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
-boundary defense and system administrator rack,Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 7.1,CVD-2015-7833,4.9
-boundary defense and system administrator rack,Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2020-7337,6.7
-boundary defense and system administrator rack,Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2009-5118,9.3
-boundary defense and system administrator rack,Virtualization Manager Server,McAfee,VirusScan Enterprise,2,CVE-2007-2152,7.9
-boundary defense and system administrator rack,Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2023-0101,8.8
-boundary defense and system administrator rack,Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2021-20135,6.7
-boundary defense and system administrator rack,Virtualization Manager Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2020-5765,5.4
-boundary defense and system administrator rack,Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23675,6.5
-boundary defense and system administrator rack,Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23676,3.5
-boundary defense and system administrator rack,Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40593,7.5
-boundary defense and system administrator rack,Virtualization Manager Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40592,6.1
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 7.1,CVD-2015-7833,4.9
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,McAfee,VirusScan Enterprise,2,CVE-2020-7337,6.7
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,McAfee,VirusScan Enterprise,2,CVE-2009-5118,9.3
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,McAfee,VirusScan Enterprise,2,CVE-2007-2152,7.9
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2023-0101,8.8
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2021-20135,6.7
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Tenable,Nessus Vulnerability Scanner,8.10.0,CVE-2020-5765,5.4
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23675,6.5
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2024-23676,3.5
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40593,7.5
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6,CVE-2023-40592,6.1
 boundary defense and system administrator rack,Audit Log Server,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-boundary defense and system administrator rack,Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
-boundary defense and system administrator rack,Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
-boundary defense and system administrator rack,Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
-boundary defense and system administrator rack,Cybersecurity Capability & Tools SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-boundary defense and system administrator rack,Audit Log SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+boundary defense and system administrator rack,Virtualization Manager SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+boundary defense and system administrator rack,Virtualization Manager SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+boundary defense and system administrator rack,Virtualization Manager SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+boundary defense and system administrator rack,Cybersecurity Capability & Tools SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+boundary defense and system administrator rack,Audit Log SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
 bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
 bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
@@ -48,57 +48,104 @@ bulk data storage rack,Test SAN Archive Backup,RedHat,RedHat Enterprise Linux,RH
 bulk data storage rack,Cybersecurity Capability & Tools SAN Archive Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 bulk data storage rack,Company Management SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 bulk data storage rack,Company Management SAN Archive Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-company laptops,"Test Engineering, Laptop 1",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
-company laptops,"Test Engineering, Laptop 1",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
-company laptops,"Test Engineering, Laptop 1",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
-company laptops,"Test Engineering, Laptop 1",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
-company laptops,"Test Engineering, Laptop 1",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
-company laptops,"Test Engineering, Laptop 1",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
-company laptops,"Test Engineering, Laptop 1",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
-company laptops,"Test Engineering, Laptop 1",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
-company laptops,"Test Engineering, Laptop 2",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
-company laptops,"Test Engineering, Laptop 2",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
-company laptops,"Test Engineering, Laptop 2",RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
-company laptops,"Test Engineering, Laptop 2",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
-company laptops,"Test Engineering, Laptop 2",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
-company laptops,"Test Engineering, Laptop 2",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
-company laptops,"Test Engineering, Laptop 2",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
-company laptops,"Test Engineering, Laptop 2",OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
-company workstations,Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
-company workstations,Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
-company workstations,Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
-company workstations,Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
-company workstations,Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
-company workstations,Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
-company workstations,Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
-company workstations,Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
-company workstations,Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
-company workstations,Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
-company workstations,Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
-company workstations,Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
-company workstations,Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
-company workstations,Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
-company workstations,Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
-company workstations,Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company laptops,Test Engineering (Laptop 1),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
+company laptops,Test Engineering (Laptop 1),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
+company laptops,Test Engineering (Laptop 1),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
+company laptops,Test Engineering (Laptop 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company laptops,Test Engineering (Laptop 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company laptops,Test Engineering (Laptop 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company laptops,Test Engineering (Laptop 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company laptops,Test Engineering (Laptop 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company laptops,Test Engineering (Laptop 2),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
+company laptops,Test Engineering (Laptop 2),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
+company laptops,Test Engineering (Laptop 2),RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
+company laptops,Test Engineering (Laptop 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company laptops,Test Engineering (Laptop 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company laptops,Test Engineering (Laptop 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company laptops,Test Engineering (Laptop 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company laptops,Test Engineering (Laptop 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Engineering & Production (Workstation 1),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Engineering & Production (Workstation 1),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Engineering & Production (Workstation 1),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Engineering & Production (Workstation 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Engineering & Production (Workstation 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Engineering & Production (Workstation 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Engineering & Production (Workstation 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Engineering & Production (Workstation 1),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Engineering & Production (Workstation 2),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Engineering & Production (Workstation 2),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Engineering & Production (Workstation 2),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Engineering & Production (Workstation 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Engineering & Production (Workstation 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Engineering & Production (Workstation 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Engineering & Production (Workstation 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Engineering & Production (Workstation 2),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Engineering & Production (Workstation 3),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Engineering & Production (Workstation 3),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Engineering & Production (Workstation 3),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Engineering & Production (Workstation 3),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Engineering & Production (Workstation 3),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Engineering & Production (Workstation 3),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Engineering & Production (Workstation 3),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Engineering & Production (Workstation 3),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Engineering & Production (Workstation 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Engineering & Production (Workstation 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Engineering & Production (Workstation 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Engineering & Production (Workstation 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Engineering & Production (Workstation 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Engineering & Production (Workstation 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Engineering & Production (Workstation 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Engineering & Production (Workstation 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Company Management (Workstation 5),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Company Management (Workstation 5),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Company Management (Workstation 5),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Company Management (Workstation 5),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Company Management (Workstation 5),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Company Management (Workstation 5),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Company Management (Workstation 5),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Company Management (Workstation 5),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+company workstations,Company Management (Workstation 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+company workstations,Company Management (Workstation 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+company workstations,Company Management (Workstation 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+company workstations,Company Management (Workstation 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+company workstations,Company Management (Workstation 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+company workstations,Company Management (Workstation 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+company workstations,Company Management (Workstation 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+company workstations,Company Management (Workstation 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
 server rack,Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
 server rack,Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
 server rack,Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
 server rack,Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
-server rack,Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
-server rack,Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
-server rack,Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
-server rack,Servers SR3 and SR4,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-server rack,Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
-server rack,Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
-server rack,Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
-server rack,Servers SR7 and SR8,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-server rack,Severs SR9 and SR10,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2017-8543,9.8
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0301,9.3
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0323,6.6
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0315,6.9
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5058,6.9
-server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5056,9.3
+server rack,"Server Rack, Server #1 (SR1)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
+server rack,"Server Rack, Server #1 (SR1)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
+server rack,"Server Rack, Server #1 (SR1)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
+server rack,"Server Rack, Server #2 (SR2)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
+server rack,"Server Rack, Server #2 (SR2)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
+server rack,"Server Rack, Server #2 (SR2)",RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
+server rack,"Server Rack, Server #3 (SR3)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #4 (SR4)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #5 (SR5)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+server rack,"Server Rack, Server #5 (SR5)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+server rack,"Server Rack, Server #5 (SR5)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+server rack,"Server Rack, Server #6 (SR6)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+server rack,"Server Rack, Server #6 (SR6)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+server rack,"Server Rack, Server #6 (SR6)",RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+server rack,"Server Rack, Server #7 (SR7)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #8 (SR8)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #9 (SR9)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #10 (SR10)",RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2017-8543,9.8
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0301,9.3
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0323,6.6
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0315,6.9
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5058,6.9
+server rack,"Server Rack, Server #11 (SR11)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5056,9.3
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2017-8543,9.8
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0301,9.3
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0323,6.6
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0315,6.9
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5058,6.9
+server rack,"Server Rack, Server #12 (SR12)",Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5056,9.3
 server rack,Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
 server rack,Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
 server rack,Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
