@@ -36,12 +36,8 @@ def api(sum_file_path):
 
 
 # modify cvss base average score with criticality and 3 p's
-def main(cf_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path):
-    api_key_file_path = '../.aws/nvd_api_key.txt' # FIXME remove once variable set in GUI
-    
-    combined_dv_file = call_get_nvd_data(dv_file_path)
-
-    security_best_prac = api(sum_file_path)
+def main(cfd_file_path, cfm_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path, nvd_file_path, groq_file_path):
+    score_component_averages = nvd(dv_file_path)
 
     base = score_component_averages['base_score']
     impact_sub = score_component_averages['impact_score']

@@ -32,6 +32,7 @@ class SystemEvaluationApp(QWidget):
     def __init__(self):
         super().__init__()
 
+
         # Initialize the submitted_files list before calling any methods that use it
         self.submitted_files = self.load_submissions()
 
@@ -40,7 +41,7 @@ class SystemEvaluationApp(QWidget):
 
         # Set window title and size
         self.setWindowTitle("ACRES")
-        self.showMaximized()
+        
 
         # Set background color and font
         palette = self.palette()
@@ -256,7 +257,10 @@ class SystemEvaluationApp(QWidget):
         file_select_widget = QWidget()
 
         # Create a layout for the previous submissions view
-        layout = QVBoxLayout()
+        toplayout = QHBoxLayout()
+        leftlayout = QVBoxLayout()
+        rightlayout = QVBoxLayout()
+        bottomlayout = QHBoxLayout()
 
         # Create throbber
         self.throbber_label = QLabel(self)
@@ -273,17 +277,24 @@ class SystemEvaluationApp(QWidget):
         self.submission_name_input.setPlaceholderText("Enter submission name")
         self.submission_name_input.setFont(self.font)
         self.submission_name_input.setStyleSheet("color: white; background-color: #3E3E3E;")
-        layout.addWidget(self.submission_name_input)
+        toplayout.addWidget(self.submission_name_input)
 
         # Add throbber to layout
-        layout.addWidget(self.throbber_label)
+        toplayout.addWidget(self.throbber_label)
 
-        self.cf_file_name_label = QLabel("")
-        self.cf_file_name_label.setFont(self.font)
-        self.cf_file_name_label.setStyleSheet("color: white;")
-        self.cf_file_name_label.setAlignment(Qt.AlignLeft)
-        self.cf_file_name_label.setWordWrap(True)
-        self.cf_file_name_label.setFixedWidth(400)
+        self.cfd_file_name_label = QLabel("")
+        self.cfd_file_name_label.setFont(self.font)
+        self.cfd_file_name_label.setStyleSheet("color: white;")
+        self.cfd_file_name_label.setAlignment(Qt.AlignLeft)
+        self.cfd_file_name_label.setWordWrap(True)
+        self.cfd_file_name_label.setFixedWidth(400)
+
+        self.cfm_file_name_label = QLabel("")
+        self.cfm_file_name_label.setFont(self.font)
+        self.cfm_file_name_label.setStyleSheet("color: white;")
+        self.cfm_file_name_label.setAlignment(Qt.AlignLeft)
+        self.cfm_file_name_label.setWordWrap(True)
+        self.cfm_file_name_label.setFixedWidth(400)
 
         self.dv_file_name_label = QLabel("")
         self.dv_file_name_label.setFont(self.font)
@@ -313,6 +324,20 @@ class SystemEvaluationApp(QWidget):
         self.sum_file_name_label.setWordWrap(True)
         self.sum_file_name_label.setFixedWidth(400)
 
+        self.nvd_file_name_label = QLabel("")
+        self.nvd_file_name_label.setFont(self.font)
+        self.nvd_file_name_label.setStyleSheet("color: white;")
+        self.nvd_file_name_label.setAlignment(Qt.AlignLeft)
+        self.nvd_file_name_label.setWordWrap(True)
+        self.nvd_file_name_label.setFixedWidth(400)
+
+        self.groq_file_name_label = QLabel("")
+        self.groq_file_name_label.setFont(self.font)
+        self.groq_file_name_label.setStyleSheet("color: white;")
+        self.groq_file_name_label.setAlignment(Qt.AlignLeft)
+        self.groq_file_name_label.setWordWrap(True)
+        self.groq_file_name_label.setFixedWidth(400)
+
         # Create a button to go back to the main view
         self.back_button = QPushButton("Back to Main Menu")
         self.back_button.setFont(self.font)
@@ -320,15 +345,25 @@ class SystemEvaluationApp(QWidget):
         self.back_button.clicked.connect(self.switch_to_main_view)
 
 
-        self.label2 = QLabel("Please submit a file for Critical Functions (CSV, JSON):")
+        self.label2 = QLabel("Please submit a file for Critical Functions Definitions (CSV, JSON):")
         self.label2.setFont(self.font)
         self.label2.setStyleSheet("color: white;")
         self.label2.setAlignment(Qt.AlignLeft | Qt.AlignTop)
 
-        self.select_cf_button = QPushButton("Select File")
-        self.select_cf_button.setFont(self.font)
-        self.select_cf_button.setFixedSize(203, 30)  # Half the original size
-        self.select_cf_button.clicked.connect(lambda: self.open_file_dialog("cf"))
+        self.select_cfd_button = QPushButton("Select File")
+        self.select_cfd_button.setFont(self.font)
+        self.select_cfd_button.setFixedSize(203, 30)  # Half the original size
+        self.select_cfd_button.clicked.connect(lambda: self.open_file_dialog("cfd"))
+
+        self.label22 = QLabel("Please submit a file for Critical Functions Mapping (CSV, JSON):")
+        self.label22.setFont(self.font)
+        self.label22.setStyleSheet("color: white;")
+        self.label22.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_cfm_button = QPushButton("Select File")
+        self.select_cfm_button.setFont(self.font)
+        self.select_cfm_button.setFixedSize(203, 30)  # Half the original size
+        self.select_cfm_button.clicked.connect(lambda: self.open_file_dialog("cfm"))
 
         self.label3 = QLabel("Please submit a file for Detected Vulnerabilities (CSV, JSON):")
         self.label3.setFont(self.font)
@@ -370,6 +405,26 @@ class SystemEvaluationApp(QWidget):
         self.select_sum_button.setFixedSize(203, 30)  # Half the original size
         self.select_sum_button.clicked.connect(lambda: self.open_file_dialog("sum"))
 
+        self.label7 = QLabel("Please submit a file for the NVD API Key (TXT):")
+        self.label7.setFont(self.font)
+        self.label7.setStyleSheet("color: white;")
+        self.label7.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_nvd_button = QPushButton("Select File")
+        self.select_nvd_button.setFont(self.font)
+        self.select_nvd_button.setFixedSize(203, 30)  # Half the original size
+        self.select_nvd_button.clicked.connect(lambda: self.open_file_dialog("nvd"))
+
+        self.label8 = QLabel("Please submit a file for the Groq API Key (TXT):")
+        self.label8.setFont(self.font)
+        self.label8.setStyleSheet("color: white;")
+        self.label8.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        self.select_groq_button = QPushButton("Select File")
+        self.select_groq_button.setFont(self.font)
+        self.select_groq_button.setFixedSize(203, 30)  # Half the original size
+        self.select_groq_button.clicked.connect(lambda: self.open_file_dialog("groq"))
+
         self.submit_button = QPushButton("Submit File")
         self.submit_button.setFont(self.font)
         self.submit_button.setFixedSize(200, 30)
@@ -377,37 +432,64 @@ class SystemEvaluationApp(QWidget):
 
         # Add labels and buttons to the layout
 
-        layout.addWidget(self.label2)
-        layout.addWidget(self.cf_file_name_label)
-        layout.addWidget(self.select_cf_button)
-        layout.addStretch()  # Optional: Add stretchable space to separate sections
+        leftlayout.addWidget(self.label2)
+        leftlayout.addWidget(self.cfd_file_name_label)
+        leftlayout.addWidget(self.select_cfd_button)
+        leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        layout.addWidget(self.label3)
-        layout.addWidget(self.dv_file_name_label)
-        layout.addWidget(self.select_dv_button)
-        layout.addStretch()  # Optional: Add stretchable space to separate sections
+        rightlayout.addWidget(self.label22)
+        rightlayout.addWidget(self.cfm_file_name_label)
+        rightlayout.addWidget(self.select_cfm_button)
+        rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        layout.addWidget(self.label4)
-        layout.addWidget(self.h_file_name_label)
-        layout.addWidget(self.select_h_button)
-        layout.addStretch()  # Optional: Add stretchable space to separate sections
+        leftlayout.addWidget(self.label3)
+        leftlayout.addWidget(self.dv_file_name_label)
+        leftlayout.addWidget(self.select_dv_button)
+        leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        layout.addWidget(self.label5)
-        layout.addWidget(self.s_file_name_label)
-        layout.addWidget(self.select_s_button)
-        layout.addStretch()  # Optional: Add stretchable space to separate sections
+        rightlayout.addWidget(self.label4)
+        rightlayout.addWidget(self.h_file_name_label)
+        rightlayout.addWidget(self.select_h_button)
+        rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
-        layout.addWidget(self.label6)
-        layout.addWidget(self.sum_file_name_label)
-        layout.addWidget(self.select_sum_button)
-        layout.addStretch()  # Optional: Add stretchable space to separate sections
+        leftlayout.addWidget(self.label5)
+        leftlayout.addWidget(self.s_file_name_label)
+        leftlayout.addWidget(self.select_s_button)
+        leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        rightlayout.addWidget(self.label6)
+        rightlayout.addWidget(self.sum_file_name_label)
+        rightlayout.addWidget(self.select_sum_button)
+        rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        leftlayout.addWidget(self.label7)
+        leftlayout.addWidget(self.nvd_file_name_label)
+        leftlayout.addWidget(self.select_nvd_button)
+        leftlayout.addStretch()  # Optional: Add stretchable space to separate sections
+
+        rightlayout.addWidget(self.label8)
+        rightlayout.addWidget(self.groq_file_name_label)
+        rightlayout.addWidget(self.select_groq_button)
+        rightlayout.addStretch()  # Optional: Add stretchable space to separate sections
 
         # Add the submit button without additional spacing
-        layout.addWidget(self.submit_button)
-        layout.addWidget(self.back_button)
+        bottomlayout.addWidget(self.submit_button)
+        bottomlayout.addWidget(self.back_button)
+
+
 
         # Set the layout for the previous submissions widget
-        file_select_widget.setLayout(layout)
+        hbox = QHBoxLayout()
+        hbox.addLayout(leftlayout)
+        hbox.addLayout(rightlayout)
+
+        mainlayout = QVBoxLayout()
+        mainlayout.addLayout(toplayout)
+        mainlayout.addLayout(hbox)
+        mainlayout.addLayout(bottomlayout)
+
+        #file_select_widget.setLayout(toplayout)
+        file_select_widget.setLayout(mainlayout)
 
         return file_select_widget
     
@@ -439,9 +521,12 @@ class SystemEvaluationApp(QWidget):
             file_name = os.path.basename(selected_file)
 
             # Set the selected file based on the provided type
-            if file_type == "cf":
-                self.selected_cf_button = selected_file
-                self.cf_file_name_label.setText(f"Selected: {file_name}")
+            if file_type == "cfd":
+                self.selected_cfd_button = selected_file
+                self.cfd_file_name_label.setText(f"Selected: {file_name}")
+            if file_type == "cfm":
+                self.selected_cfm_button = selected_file
+                self.cfm_file_name_label.setText(f"Selected: {file_name}")
             elif file_type == "dv":
                 self.selected_dv_button = selected_file
                 self.dv_file_name_label.setText(f"Selected: {file_name}")
@@ -454,6 +539,12 @@ class SystemEvaluationApp(QWidget):
             elif file_type == "sum":
                 self.selected_sum_button = selected_file
                 self.sum_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "nvd":
+                self.selected_nvd_button = selected_file
+                self.nvd_file_name_label.setText(f"Selected: {file_name}")
+            elif file_type == "groq":
+                self.selected_groq_button = selected_file
+                self.groq_file_name_label.setText(f"Selected: {file_name}")
 
     def start_throbber(self):
         print("starting throbber")
@@ -469,10 +560,12 @@ class SystemEvaluationApp(QWidget):
     def submit_file(self):
         self.start_throbber()
         # Check for required files
-        if not self.selected_cf_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button:
+        if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
             missing_files = []
-            if not self.selected_cf_button:
-                missing_files.append("Critical Functions")
+            if not self.selected_cfd_button:
+                missing_files.append("Critical Functions Definitions")
+            if not self.selected_cfm_button:
+                missing_files.append("Critical Functions Mapping")
             if not self.selected_dv_button:
                 missing_files.append("Detected Vulnerabilities")
             if not self.selected_h_button:
@@ -481,24 +574,31 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Software")
             if not self.selected_sum_button:
                 missing_files.append("Summaries")
+            if not self.selected_nvd_button:
+                missing_files.append("NVD")
+            if not self.selected_groq_button:
+                missing_files.append("Groq")
 
             QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
             return  # Exit if files are missing
 
         # Prepare files to submit
         files_to_submit = {
-            "Critical Functions": self.selected_cf_button,
+            "Critical Functions Definitions": self.selected_cfd_button,
+            "Critical Functions Mapping": self.selected_cfm_button,
             "Detected Vulnerabilities": self.selected_dv_button,
             "Hardware": self.selected_h_button,
             "Software": self.selected_s_button,
             "Summaries": self.selected_sum_button,
+            "NVD": self.selected_nvd_button,
+            "Groq": self.selected_groq_button,
         }
 
         self.start_throbber()
         # tries for the anaylsis orchestration file
         try:
             
-            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cf_button, self.selected_dv_button, self.selected_h_button, self.selected_s_button, self.selected_sum_button)
+            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_h_button, self.selected_s_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
             self.stop_throbber()
@@ -545,6 +645,8 @@ class SystemEvaluationApp(QWidget):
         self.h_file_name_label.setText("")
         self.s_file_name_label.setText("")
         self.sum_file_name_label.setText("")
+        self.nvd_file_name_label.setText("")
+        self.groq_file_name_label.setText("")
 
     def update_previous_submissions_view(self):
         # Clear and update the list widget in the previous submissions view
