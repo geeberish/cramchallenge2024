@@ -649,7 +649,7 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Groq")
 
             QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
-            self.stop_throbber()  # Stop the throbber if files are missing
+            #self.stop_throbber()  # Stop the throbber if files are missing
             return  # Exit if files are missing
 
         # Prepare files to submit
@@ -676,7 +676,7 @@ class SystemEvaluationApp(QWidget):
 
         # Start the orchestration in a separate thread
         threading.Thread(target=worker.run).start()
-        self.stop_throbber()
+        #self.stop_throbber()
         
 
     def reset_file_selections(self):
