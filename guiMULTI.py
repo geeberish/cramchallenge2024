@@ -498,7 +498,7 @@ class SystemEvaluationApp(QWidget):
         # tries for the anaylsis orchestration file
         try:
             
-            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_dv_button, self.selected_sum_button)
+            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cf_button, self.selected_dv_button, self.selected_h_button, self.selected_s_button, self.selected_sum_button)
         except Exception as e:
             QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
             self.stop_throbber()
