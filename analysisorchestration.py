@@ -1,7 +1,6 @@
-import math
+
 from LLamaPPP import get_security_scores
 from get_nvd_data import main as get_nvd_data_main
-from average_nvd_data import main as average_nvd_data_main
 from LLamaPPP import get_security_scores
 from APT import main as apt_main
 from set_max_node_criticalites import main as criticality_main
@@ -17,9 +16,9 @@ def call_get_nvd_data(api_key_file_path, dv_file_path):
     )
     return combined_vulnerabilities_data
 
-def get_score_averages(combined_vulnerabilities_data):
-     score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
-     return score_component_averages
+# def get_score_averages(combined_vulnerabilities_data):
+#      score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
+#      return score_component_averages
 
 def ppp_api(sum_file_path):
         # 3. Send dictionary to modified score    
@@ -66,6 +65,7 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
     ppp_scores = ppp_api(sum_file_path)
     #print(ppp_scores)
+    
 
     criticality = call_criticalities_max(combined_vuln_data, cfd_file_path,cfm_file_path)
     #print(criticality)
@@ -73,7 +73,16 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     modified_scores = call_calc_modify(combined_vuln_data, criticality, ppp_scores, apt_scores_desc)
     #print(f"*********\n\n{modified_scores}")
     average_scores = call_average_nvd(modified_scores)
-    print(average_scores)
+    #print(average_scores)
+    base = average_scores['base_score']
+    average = average_scores['environmental_score']
+    apt = average_scores['apt_threat_index']
+    physical = ppp_scores['physical_security_score']
+    personnel = ppp_scores['personnel_score']
+    policies = ppp_scores['policies_score']
+    #print(f"base = {base}\naverage = {average}\napt threat index = {apt}\nphysical = {physical}\npersonnel = {personnel}\npolicies = {policies}")
+    return  base, physical, personnel, policies, average, apt
+
 
     
 
@@ -97,4 +106,4 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
 if __name__ == "__main__":
     print("running")
-    main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/hardware.json','sue_data/json_data/software.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
+    main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
