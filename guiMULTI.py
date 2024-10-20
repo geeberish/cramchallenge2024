@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import (
     QApplication, QWidget, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QPushButton, QProgressBar, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
 )
-from PySide6.QtCore import Qt, QTimer, QSize
+from PySide6.QtCore import Qt, QTimer, QSize, QThread, Signal, QObject
 from PySide6.QtGui import QPalette, QColor, QFont, QIcon, QMovie
 import shutil
 import sys
@@ -24,16 +24,46 @@ import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
+
+class Worker(QObject):
+    # Signal to send results back to the main thread
+    results_ready = Signal(object)
+
+    def __init__(self, selected_cfd, selected_cfm, selected_dv, selected_sum, selected_nvd, selected_groq):
+        super().__init__()
+        self.selected_cfd = selected_cfd
+        self.selected_cfm = selected_cfm
+        self.selected_dv = selected_dv
+        self.selected_sum = selected_sum
+        self.selected_nvd = selected_nvd
+        self.selected_groq = selected_groq
+
+    def run(self):
+        try:
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average = ao.main(
+                self.selected_cfd,
+                self.selected_cfm,
+                self.selected_dv,
+                self.selected_sum,
+                self.selected_nvd,
+                self.selected_groq  # Ensure these are passed
+            )
+            self.results_ready.emit((base, impact_sub, exploitability_sub, physical, personnel, policies, average))
+        except Exception as e:
+            print(f"Error during orchestration: {e}")  # Log the exception message
+            self.results_ready.emit(None)
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     if hasattr(sys, '_MEIPASS'):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
 
+
+
 class SystemEvaluationApp(QWidget):
     def __init__(self):
         super().__init__()
-
 
         # Initialize the submitted_files list before calling any methods that use it
         self.submitted_files = self.load_submissions()
@@ -74,6 +104,7 @@ class SystemEvaluationApp(QWidget):
         self.filter_state_alpha = 0
         self.filter_state_score = 0
         self.resize(1024, 768)  # Set to your desired default size
+
 
     def create_main_view(self):
         main_widget = QWidget()
@@ -559,25 +590,39 @@ class SystemEvaluationApp(QWidget):
         self.throbber_label.setVisible(False)
         self.layout().update()  # Force layout update
 
+        
+    def process_results(self, results):
+        self.stop_throbber()  # Stop throbber when processing results
+        if results is not None:
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average = results
+            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average)
+            
+            # Show success message and update GUI
+            self.score_label.setText(f"Files submitted successfully! Score: {average}")
 
-    def orchestration(self):
-        # Simulating a long-running process
-        self.start_throbber()
-        # tries for the anaylsis orchestration file
-        try:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
-            self.stop_throbber()
-            return base, impact_sub, exploitability_sub, physical, personnel, policies, average
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
-            self.stop_throbber()
-            return
+            # Store submission details and update view
+            submission_name = self.submission_name_input.text().strip() or "Unnamed"
+            current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            self.submitted_files.append((submission_name, current_time, average))
+            self.save_submissions()
+            self.update_previous_submissions_view()
+
+            # Update bar graphs with the calculated scores
+            self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
+            self.update_bar_graph('security', [physical, personnel, policies])
+            self.update_bar_graph('overall', [average])
+
+            # Reset file selections and show the download report button
+            self.reset_file_selections()
+            self.download_report_button.setVisible(True)
+        else:
+            print("Task failed or returned no results.")
+        
         
 
     def submit_file(self):
         self.start_throbber()
         # Check for required files
-        # if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_h_button or not self.selected_s_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
         if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
             missing_files = []
             if not self.selected_cfd_button:
@@ -586,10 +631,6 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Critical Functions Mapping")
             if not self.selected_dv_button:
                 missing_files.append("Detected Vulnerabilities")
-            # if not self.selected_h_button:
-            #     missing_files.append("Hardware")
-            # if not self.selected_s_button:
-            #     missing_files.append("Software")
             if not self.selected_sum_button:
                 missing_files.append("Summaries")
             if not self.selected_nvd_button:
@@ -598,72 +639,50 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Groq")
 
             QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
+            self.stop_throbber()  # Stop the throbber if files are missing
             return  # Exit if files are missing
 
         # Prepare files to submit
         files_to_submit = {
-            "Critical Functions Definitions": self.selected_cfd_button,
-            "Critical Functions Mapping": self.selected_cfm_button,
-            "Detected Vulnerabilities": self.selected_dv_button,
-            # "Hardware": self.selected_h_button,
-            # "Software": self.selected_s_button,
-            "Summaries": self.selected_sum_button,
-            "NVD": self.selected_nvd_button,
-            "Groq": self.selected_groq_button,
+            "cfd": self.selected_cfd_button,
+            "cfm": self.selected_cfm_button,
+            "dv": self.selected_dv_button,
+            "sum": self.selected_sum_button,
+            "nvd": self.selected_nvd_button,
+            "groq": self.selected_groq_button,
         }
 
-        # Create a list to hold results
-        results = [None]
+        worker = Worker(
+        self.selected_cfd_button,
+        self.selected_cfm_button,
+        self.selected_dv_button,
+        self.selected_sum_button,
+        self.selected_nvd_button,
+        self.selected_groq_button
+        )
 
-        def task_wrapper():
-            results[0] = self.orchestration()  # Store the result in the shared list
+        # Connect the signal to process_results
+        worker.results_ready.connect(self.process_results)
 
-        thread = threading.Thread(target=task_wrapper)
-        thread.start()
-        thread.join()  # Wait for the thread to complete
-
-        # Now you can access the results
-        if results[0] is not None:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average = results[0]
-            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average)
-        else:
-            print("Task failed or returned no results.")
-
-        
-        # Show success message and update GUI
-        self.score_label.setText(f"Files submitted successfully! Score: {average}")
-
-        # Store submission details and update view
-        submission_name = self.submission_name_input.text().strip() or "Unnamed"
-        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        self.submitted_files.append((submission_name, current_time, average))
-        self.save_submissions()
-        self.update_previous_submissions_view()
-
-        # Update bar graphs with the calculated scores
-        self.update_bar_graph('base', [base, impact_sub, exploitability_sub])
-        #self.update_bar_graph('temporal', [temporal])
-        #self.update_bar_graph('environmental', [environmental])
-        self.update_bar_graph('security', [physical, personnel, policies])
-        self.update_bar_graph('overall', [average])
-
-        # Reset file selections and show the download report button
-        self.reset_file_selections()
-        self.download_report_button.setVisible(True)
+        # Start the orchestration in a separate thread
+        threading.Thread(target=worker.run).start()
 
     def reset_file_selections(self):
         # Clear the selections for all file types
         self.selected_cf_file = None
         self.selected_dv_file = None
-        self.selected_h_file = None
-        self.selected_s_file = None
+        # self.selected_h_file = None
+        # self.selected_s_file = None
         self.selected_sum_file = None
+        self.selected_nvd_file = None
+        self.selected_groq_file = None
         
         # Clear the labels in the UI
-        self.cf_file_name_label.setText("")
+        self.cfd_file_name_label.setText("")
+        self.cfm_file_name_label.setText("")
         self.dv_file_name_label.setText("")
-        self.h_file_name_label.setText("")
-        self.s_file_name_label.setText("")
+        # self.h_file_name_label.setText("")
+        # self.s_file_name_label.setText("")
         self.sum_file_name_label.setText("")
         self.nvd_file_name_label.setText("")
         self.groq_file_name_label.setText("")
