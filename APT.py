@@ -24,7 +24,7 @@ def get_apt_info(given_apt: str) -> Tuple[str, Any]:
             return apt, info
     return None, None
 
-def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, apt_info: Dict) -> str:
+def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, apt_info: Dict, temperature = .6) -> str:
     prompt = f"""
     Analyze the following vulnerability and APT group information to determine the likelihood of the APT group exploiting this vulnerability:
 
@@ -35,10 +35,13 @@ def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, ap
     APT Group: {apt_name}
     APT Info: {apt_info}
 
-    Based on the APT group's tactics, techniques, and procedures (TTPs), assess the likelihood of them exploiting this vulnerability. 
+    Based on the APT group's tactics, techniques, and procedures (TTPs) as well as their common exploitation methods, assess the likelihood of them exploiting this vulnerability. 
     Provide a brief explanation of your assessment and a numerical score from 0 to 1 be precise to 2 decimal points, where:
     0 means the APT group is very unlikely to exploit this vulnerability
+    .5 means the APT group is neither likely or unlikely to exploit this vulnerability
     1 means the APT group is very likely to exploit this vulnerability
+
+    Also be harsh with your grading, make any assumptions needed.
 
     Format your response as:
     Score: [Your numerical score]
@@ -55,6 +58,7 @@ def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, ap
             ],
             model="llama-3.1-70b-versatile",
             max_tokens=2000,
+            temperature=temperature
         )
         return chat_completion.choices[0].message.content
     except Exception as e:
@@ -77,34 +81,41 @@ def parse_analysis(analysis: str) -> Tuple[float, str]:
 
 def analyze_vulnerabilities(vulnerabilities: Dict[str, str], given_apt: str) -> Dict[str, Dict[str, Any]]:
     apt_name, apt_info = get_apt_info(given_apt)
-    if not apt_info:
-        print(f"APT group '{given_apt}' not found.")
-        return {}
-
-    print(f"Analyzing vulnerabilities for APT group: {apt_name}")
-    
     results = {}
-    for cve, description in vulnerabilities.items():
-        analysis = analyze_vulnerability_with_apt(cve, description, apt_name, apt_info)
-        score, explanation = parse_analysis(analysis)
-        results[cve] = {
-            "apt_score": score,
-            "reasoning": explanation
-        }
-        
-        print(f"\nCVE: {cve}")
-        print(f"APT Exploitation Likelihood Score: {score}")
-        print(f"Reasoning: {explanation}")
-        print("-" * 80)
+
+    if not apt_info:
+        print(f"APT group '{given_apt}' not found or not provided. Using default values.")
+        for cve, description in vulnerabilities.items():
+            results[cve] = {
+                "apt_score": 0.5,  # Default score
+                "reasoning": "No specific APT group analysis available. Using default medium risk score."
+            }
+            print(f"\nCVE: {cve}")
+            print(f"APT Exploitation Likelihood Score: 0.5 (Default)")
+            print(f"Reasoning: No specific APT group analysis available. Using default medium risk score.")
+            print("-" * 80)
+    else:
+        print(f"Analyzing vulnerabilities for APT group: {apt_name}")
+        for cve, description in vulnerabilities.items():
+            analysis = analyze_vulnerability_with_apt(cve, description, apt_name, apt_info)
+            score, explanation = parse_analysis(analysis)
+            results[cve] = {
+                "apt_score": score,
+                "reasoning": explanation
+            }
+            print(f"\nCVE: {cve}")
+            print(f"APT Exploitation Likelihood Score: {score}")
+            print(f"Reasoning: {explanation}")
+            print("-" * 80)
 
     return results
 
-def main(vulnerabilities: Dict[str, str], given_apt: str) -> Dict[str, Dict[str, Any]]:
+def main(vulnerabilities: Dict[str, str], given_apt: str = "") -> Dict[str, Dict[str, Any]]:
     """
-    Main function to analyze vulnerabilities for a given APT group.
+    Main function to analyze vulnerabilities for a given APT group or use default values if no APT is provided.
     
     :param vulnerabilities: Dictionary with CVE numbers as keys and descriptions as values
-    :param given_apt: String name of the APT group to analyze
+    :param given_apt: String name of the APT group to analyze (optional)
     :return: Dictionary with CVE numbers as keys and dictionaries containing apt_score and reasoning as values
     """
     return analyze_vulnerabilities(vulnerabilities, given_apt)
@@ -123,8 +134,13 @@ if __name__ == "__main__":
     cve_dict = {item['CVE Number']: item['description'] for item in vuln}
 
     try:
-        output = main(cve_dict, "sandworm team")
-        print(output)
+        print("Analysis with a specific APT group:")
+        output_with_apt = main(cve_dict, "sandworm team")
+        print(output_with_apt)
+
+        print("\nAnalysis without a specific APT group (using default values):")
+        #output_without_apt = main(cve_dict)
+        #print(output_without_apt)
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
