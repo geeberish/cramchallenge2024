@@ -598,7 +598,7 @@ class SystemEvaluationApp(QWidget):
 
         
     def process_results(self, results):
-        self.stop_throbber()  # Stop throbber when processing results
+        #self.stop_throbber()  # Stop throbber when processing results
         if results is not None:
             base, physical, personnel, policies, average, apt = results
             print("Results:", base, physical, personnel, policies, average, apt)
@@ -672,6 +672,8 @@ class SystemEvaluationApp(QWidget):
 
         # Start the orchestration in a separate thread
         threading.Thread(target=worker.run).start()
+        self.stop_throbber()
+        
 
     def reset_file_selections(self):
         # Clear the selections for all file types
