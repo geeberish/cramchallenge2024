@@ -31,25 +31,29 @@ def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
     with open(nvd_api_key_file_location) as key_file:
         nvd_api_key = key_file.read() # read API key file to variable
 
-
-    vulnerabilities_list = list() # create an empty list to use for detected vulnerabilities data
+    vulnerabilities_list = [] # create an empty list to use for detected vulnerabilities data
     combined_vulnerabilities_data = []
 
     # call function to extract data from detected vulnerabilities file
     vulnerability_data = make_detected_vulnerabilities_data(vulnerabilities_detected_file_location)
+
+    cves = set([item["CVE Number"] for item in vulnerability_data]) # create distinct list of CVE's detected
 
     # call function to extract distinct CVE numbers from detected vulnerabilities file
     vulnerabilities_list = get_detected_vulnerabilities_list(
         nvd_api_key, # API key for NIST NVD API
         vulnerability_data, # detected vulnerabilities data
         vulnerabilities_list, # empty vulnerabilities list
+        cves # distinct list of CVE's detected
     )
+
+    suspected_cves = get_nvd_cpe_data_main(vulnerability_data, vulnerabilities_list, nvd_api_key, cves)
 
     # take detected vulnerabilities data and append individual CVE metrics score component data to it
     combined_vulnerabilities_data = build_vulnerability_data(vulnerabilities_list, vulnerability_data)
     
-    with open('./sue_data/json_data/individual_files_archive/combined_vulnerabilities_data_file.json', 'w') as json_file:
-        json.dump(combined_vulnerabilities_data, json_file, indent=4)  # 'indent=4' for pretty-printing
+    # with open('./sue_data/json_data/individual_files_archive/combined_vulnerabilities_data_file.json', 'w') as json_file:
+    #     json.dump(combined_vulnerabilities_data, json_file, indent=4)  # 'indent=4' for pretty-printing
 
     return combined_vulnerabilities_data
 
@@ -60,9 +64,8 @@ def make_detected_vulnerabilities_data(vulnerabilities_detected_file_location):
         vulnerability_data = json.load(vulnerabilities_detected_file) # load data from detected vulnerabilities json file
     return vulnerability_data
 
-def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnerabilities_list):
+def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnerabilities_list, cves):
     print(f"<TERMINAL MESSAGE> CONNECTING TO NIST NVD DATABASE; THIS COULD TAKE A WHILE...")
-    cves = set([item["CVE Number"] for item in vulnerabilities_data]) # create distinct list of CVE's detected
 
     length_cves = len(cves) # count number of CVE's
     counter_cves = 0
@@ -201,4 +204,4 @@ if __name__ == "__main__":
     critical_functions_mapping = './sue_data/json_data/critical_functions_mapping.json # ' # sets vulnerabilities detected file location
     combined_vulnerabilities_data = main(nvd_api_key_file_location, vulnerabilities_detected_file_location) # passes both variables to main() to run script
     # print_vulnerability_data(combined_vulnerabilities_data)
-    print(combined_vulnerabilities_data)
+    # print(combined_vulnerabilities_data)
