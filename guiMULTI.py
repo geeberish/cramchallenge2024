@@ -687,8 +687,8 @@ class SystemEvaluationApp(QWidget):
         self.list_widget.clear()
 
         # Use the current state of self.submitted_files to display the filtered submissions
-        for file_name, submission_time, score in self.submitted_files:
-            self.list_widget.addItem(f"{file_name} - {submission_time} - Score: {score}")  # Add formatted string
+        for file_name, submission_time, env_score, apt_score in self.submitted_files:
+            self.list_widget.addItem(f"{file_name} - {submission_time} - Environment Score: {env_score} - APT Score {apt_score}")  # Add formatted string
 
     def toggle_filter_alpha(self):
         # Toggle the alphabetical filtering state
@@ -728,14 +728,20 @@ class SystemEvaluationApp(QWidget):
         selected_items = self.list_widget.selectedItems()
         if selected_items:
             selected_item = selected_items[0].text()
-            # Extract parts of the selected item based on your current formatting
+            # Extract parts of the selected item based on your new formatting
             parts = selected_item.split(" - ")
-            if len(parts) == 3:  # Ensure it has three parts
-                file_name, submission_time, score = parts[0], parts[1], parts[2].replace("Score: ", "").strip()
+            
+            if len(parts) == 4:  # Ensure it has four parts
+                file_name, submission_time, env_score_str, apt_score_str = parts[0], parts[1], parts[2], parts[3]
+                env_score = env_score_str.replace("Environment Score: ", "").strip()
+                apt_score = apt_score_str.replace("APT Score: ", "").strip()
 
                 # Find the exact index of the selected submission in the submitted_files list
-                for index, (f, t, s) in enumerate(self.submitted_files):
-                    if f == file_name and t == submission_time and float(s) == float(score):  # Compare as floats for consistency
+                for index, (f, t, e, a) in enumerate(self.submitted_files):
+                    if (f == file_name and 
+                        t == submission_time and 
+                        float(e) == float(env_score) and 
+                        float(a) == float(apt_score)):  # Compare as floats for consistency
                         # Remove the selected submission
                         del self.submitted_files[index]
                         break  # Stop after deleting the selected submission
@@ -746,7 +752,7 @@ class SystemEvaluationApp(QWidget):
                 # Update the list view
                 self.update_previous_submissions_view()
 
-                print(f"Submission {file_name} from {submission_time} with score {score} has been deleted.")
+                print(f"Submission {file_name} from {submission_time} with Environment Score {env_score} and APT Score {apt_score} has been deleted.")
             else:
                 print("Selected item does not match the expected format.")
 
