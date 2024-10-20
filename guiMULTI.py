@@ -804,7 +804,7 @@ class SystemEvaluationApp(QWidget):
                 reader = csv.reader(csvfile)
                 next(reader)  # Skip header row
                 for row in reader:
-                    if len(row) == 3:  # Ensure the row has three items
+                    if len(row) == 4:  # Ensure the row has three items
                         submissions.append((row[0], row[1], row[2], row[3]))  # (File name, Submission Time, Score)
         except FileNotFoundError:
             print("No previous submissions found.")
