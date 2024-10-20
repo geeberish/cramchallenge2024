@@ -6,6 +6,9 @@ from APT import main as apt_main
 from set_max_node_criticalites import main as criticality_main
 from calculate_modified_scores import main as modify_main
 from average_nvd_data import main as average_main
+from LLamaPPP import get_explanations
+from LLamaPPP import get_recommendations
+import os
 
 
 
@@ -20,21 +23,17 @@ def call_get_nvd_data(api_key_file_path, dv_file_path):
 #      score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
 #      return score_component_averages
 
-def ppp_api(sum_file_path):
-        # 3. Send dictionary to modified score    
-        #get_base(score_component_averages)
-
-        # 4. Send files to API
-        security_best_prac = get_security_scores('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
-
-        return security_best_prac
+def ppp_api(sum_file_path, groq_api_path):
+    # Construct the path using os.path.join for cross-platform compatibility
+    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
     
-        # 5. GUI Sends to modified score
-        #get_p(security_best_prac)
+    # 4. Send files to API
+    security_best_prac = get_security_scores(framework_file_path, sum_file_path, groq_api_path)
 
-def call_apt_api(cve_desc):
+    return security_best_prac
+def call_apt_api(cve_desc, groq_file_path):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
-     apt_scores_desc_dict = apt_main(cve_desc, "APT3 (Gothic Panda)")
+     apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper)", groq_file_path)
      
      return apt_scores_desc_dict
 
@@ -60,10 +59,10 @@ def call_average_nvd(modified_combined_data):
 def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
 
-    apt_scores_desc = call_apt_api(combined_vuln_data)
+    apt_scores_desc = call_apt_api(combined_vuln_data, groq_file_path)
     #print(apt_scores_desc)
 
-    ppp_scores = ppp_api(sum_file_path)
+    ppp_scores = ppp_api(sum_file_path, groq_file_path)
     #print(ppp_scores)
     
 
@@ -81,14 +80,36 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     personnel = ppp_scores['personnel_score']
     policies = ppp_scores['policies_score']
     #print(f"base = {base}\naverage = {average}\napt threat index = {apt}\nphysical = {physical}\npersonnel = {personnel}\npolicies = {policies}")
-    return  base, physical, personnel, policies, average, apt
+
+    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores,groq_file_path)
+    return  base, physical, personnel, policies, average, apt, report
 
 
     
 
     
 
+def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores,groq_api_path):
+    # Construct the path using os.path.join for cross-platform compatibility
+    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
+    
+    ppp_explanations = get_explanations(framework_file_path, sum_file_path, groq_api_path)
+    ppp_recommendations = get_recommendations(framework_file_path, sum_file_path, groq_api_path)
 
+    output = (f"Base Score: {base}\n"
+              f"Physical Security Score: {physical}\n"
+              f"\t*Explanation: {ppp_explanations['physical_security_explanation']}\n"
+              f"Personnel Score: {personnel}\n"
+              f"\t*Explanation: {ppp_explanations['personnel_explanation']}\n"
+              f"Operational Policies Score: {policies}\n"
+              f"\t*Explanation: {ppp_explanations['policies_explanation']}\n"
+              f"Environmental Score: {average}\n"
+              f"APT Threat Index: {apt}\n")
+    
+    return output
+
+
+     
 
     #base = score_component_averages['base_score']
     #impact_sub = score_component_averages['impact_score']
@@ -106,4 +127,5 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
 if __name__ == "__main__":
     print("running")
-    main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
+    report_generation('sue_data/json_data/summaries.json')
+    #main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')

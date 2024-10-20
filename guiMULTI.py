@@ -17,6 +17,7 @@ from analysisorchestration import *
 import analysisorchestration as ao
 import subprocess
 import datetime
+import platform
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
@@ -35,7 +36,7 @@ class Worker(QObject):
 
     def run(self):
         try:
-            base, physical, personnel, policies, average, apt = ao.main(
+            base, physical, personnel, policies, average, apt, report = ao.main(
                 self.selected_cfd,
                 self.selected_cfm,
                 self.selected_dv,
@@ -43,7 +44,7 @@ class Worker(QObject):
                 self.selected_nvd,
                 self.selected_groq 
             )
-            self.results_ready.emit((base, physical, personnel, policies, average, apt))
+            self.results_ready.emit((base, physical, personnel, policies, average, apt, report))
         except Exception as e:
             print(f"Error during orchestration: {e}")  # Log the exception message
             self.results_ready.emit(None)
@@ -161,7 +162,7 @@ class SystemEvaluationApp(QWidget):
         self.download_report_button.setFixedSize(200, 40)
         self.download_report_button.setStyleSheet("background-color: green; color: white;")
         self.download_report_button.setVisible(False)  # Initially hidden
-        self.download_report_button.clicked.connect(self.download_file)
+        self.download_report_button.clicked.connect(self.download_latest_report)
 
         # Add the button to its own layout and center it
         button_layout.addWidget(self.download_report_button)
@@ -598,18 +599,22 @@ class SystemEvaluationApp(QWidget):
 
         
     def process_results(self, results):
-        #self.stop_throbber()  # Stop throbber when processing results
         if results is not None:
-            base, physical, personnel, policies, average, apt = results
-            print("Results:", base, physical, personnel, policies, average, apt)
-            
-            # Show success message and update GUI
-            self.score_label.setText(f"Files submitted successfully! Score: {average}, {apt}")
+            base, physical, personnel, policies, average, apt, report = results
+            print("Results:", base, physical, personnel, policies, average, apt, report)
 
-            # Store submission details and update view
+            # Save the report to a .txt file in the submission folder
             submission_name = self.submission_name_input.text().strip() or "Unnamed"
+            report_file_name = f"{submission_name.replace(' ', '_')}_report.txt"
+            report_file_path = os.path.join("submissions", report_file_name)
+
+            # Write the report content to the file
+            with open(report_file_path, 'w') as report_file:
+                report_file.write(report)
+
+            # Update the submitted_files list with report file info
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            self.submitted_files.append((submission_name, current_time, average, apt))
+            self.submitted_files.append((submission_name, current_time, average, apt, report_file_name))
             self.save_submissions()
             self.update_previous_submissions_view()
 
@@ -645,7 +650,7 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Groq")
 
             QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
-            self.stop_throbber()  # Stop the throbber if files are missing
+            #self.stop_throbber()  # Stop the throbber if files are missing
             return  # Exit if files are missing
 
         # Prepare files to submit
@@ -699,9 +704,12 @@ class SystemEvaluationApp(QWidget):
         # Clear and update the list widget in the previous submissions view
         self.list_widget.clear()
 
-        # Use the current state of self.submitted_files to display the filtered submissions
-        for file_name, submission_time, env_score, apt_score in self.submitted_files:
-            self.list_widget.addItem(f"{file_name} - {submission_time} - Environment Score: {env_score} - APT Score {apt_score}")  # Add formatted string
+        for submission in self.submitted_files:
+            if len(submission) == 5:  # Ensure it has five parts
+                file_name, submission_time, env_score, apt_score, report_file_name = submission
+                self.list_widget.addItem(f"{file_name} - {submission_time} - Environment Score: {env_score} - APT Score: {apt_score} - Report: {report_file_name}")
+            else:
+                print(f"Unexpected submission format: {submission}")
 
     def toggle_filter_alpha(self):
         # Toggle the alphabetical filtering state
@@ -744,8 +752,8 @@ class SystemEvaluationApp(QWidget):
             # Extract parts of the selected item based on your new formatting
             parts = selected_item.split(" - ")
             
-            if len(parts) == 4:  # Ensure it has four parts
-                file_name, submission_time, env_score_str, apt_score_str = parts[0], parts[1], parts[2], parts[3]
+            if len(parts) == 5:  # Ensure it has five parts
+                file_name, submission_time, env_score_str, apt_score_str, report_file_name = parts[0], parts[1], parts[2], parts[3], parts[4]
                 env_score = env_score_str.replace("Environment Score: ", "").strip()
                 apt_score = apt_score_str.replace("APT Score: ", "").strip()
 
@@ -765,30 +773,70 @@ class SystemEvaluationApp(QWidget):
                 # Update the list view
                 self.update_previous_submissions_view()
 
-                print(f"Submission {file_name} from {submission_time} with Environment Score {env_score} and APT Score {apt_score} has been deleted.")
+                print(f"Submission {file_name} from {submission_time} with Environment Score {env_score} and APT Score {apt_score} and Report Name {report_file_name} has been deleted.")
             else:
                 print("Selected item does not match the expected format.")
+                
+    def download_latest_report(self):
+        if self.submitted_files:
+            # Get the latest submission (the last entry in the list)
+            latest_submission = self.submitted_files[-1]  # Assuming it's sorted by time
+
+            file_name, submission_time, env_score, apt_score, report_file_name = latest_submission
+
+            # Define the source path in the submissions folder
+            source_path = os.path.join("submissions", report_file_name)
+
+            # Open a Save As dialog
+            options = QFileDialog.Options()
+            download_path, _ = QFileDialog.getSaveFileName(self, "Save Report As", report_file_name, "Text Files (*.txt);;All Files (*)", options=options)
+
+            if download_path:  # If the user selects a path
+                try:
+                    # Copy the report file to the selected path
+                    shutil.copy(source_path, download_path)
+
+                    # Open the Downloads folder (optional, if you want to show it after saving)
+                    if platform.system() == "Windows":
+                        subprocess.Popen(f'explorer "{os.path.dirname(download_path)}"')
+                    elif platform.system() == "Darwin":  # macOS
+                        subprocess.Popen(['open', os.path.dirname(download_path)])
+
+                    print(f"{report_file_name} has been saved to {download_path}.")
+                except Exception as e:
+                    print(f"Error downloading report: {e}")
+        else:
+            print("No submissions available to download.")
 
     def download_file(self):
-        # Download the selected file
+        # Download the selected report file
         selected_items = self.list_widget.selectedItems()
         if selected_items:
             selected_item = selected_items[0].text()
-            file_name = selected_item.split(" - ")[0]  # Extract the file name
+            parts = selected_item.split(" - ")
+            report_file_name = parts[-1].replace("Report: ", "").strip()  # Extract the report file name
 
             # Define the source path in the submissions folder
-            source_path = os.path.join(self.submissions_folder, file_name)
+            source_path = os.path.join("submissions", report_file_name)
 
-            # Define the destination path for the download (user's Downloads folder)
-            download_path = os.path.join(os.path.expanduser("~"), "Downloads", file_name)
+            # Open a Save As dialog
+            options = QFileDialog.Options()
+            download_path, _ = QFileDialog.getSaveFileName(self, "Save Report As", report_file_name, "Text Files (*.txt);;All Files (*)", options=options)
 
-            # Copy the file to the Downloads folder
-            shutil.copy(source_path, download_path)
+            if download_path:  # If the user selects a path
+                try:
+                    # Copy the report file to the selected path
+                    shutil.copy(source_path, download_path)
 
-            # Open the Downloads folder
-            subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
+                    # Open the Downloads folder (optional)
+                    if platform.system() == "Windows":
+                        subprocess.Popen(f'explorer "{os.path.dirname(download_path)}"')
+                    elif platform.system() == "Darwin":  # macOS
+                        subprocess.Popen(['open', os.path.dirname(download_path)])
 
-            print(f"{file_name} has been downloaded to {download_path}.")  # Output for debugging
+                    print(f"{report_file_name} has been saved to {download_path}.")
+                except Exception as e:
+                    print(f"Error downloading report: {e}")
         else:
             print("No file selected for download.")
     
@@ -798,11 +846,11 @@ class SystemEvaluationApp(QWidget):
             writer = csv.writer(csvfile)
             
             # Write header for the CSV file
-            writer.writerow(["File Name", "Submission Time", "Environment Score", "APT Score"])  # Updated header
+            writer.writerow(["File Name", "Submission Time", "Environment Score", "APT Score", "Report"])  # Updated header
             
             # Write the submitted files and their details
-            for file_name, submission_time, env_score, apt_score in self.submitted_files:  # Unpack three items
-                writer.writerow([file_name, submission_time, env_score, apt_score])  # Write the three columns
+            for file_name, submission_time, env_score, apt_score, report_file_name in self.submitted_files:  # Unpack three items
+                writer.writerow([file_name, submission_time, env_score, apt_score, report_file_name])  # Write the three columns
 
     def populate_file_list(self):
         # Clear the current file list
@@ -820,8 +868,8 @@ class SystemEvaluationApp(QWidget):
                 reader = csv.reader(csvfile)
                 next(reader)  # Skip header row
                 for row in reader:
-                    if len(row) == 4:  # Ensure the row has three items
-                        submissions.append((row[0], row[1], row[2], row[3]))  # (File name, Submission Time, Score)
+                    if len(row) == 5:  # Ensure the row has three items
+                        submissions.append((row[0], row[1], row[2], row[3], row[4]))  # (File name, Submission Time, Score)
         except FileNotFoundError:
             print("No previous submissions found.")
         return submissions
