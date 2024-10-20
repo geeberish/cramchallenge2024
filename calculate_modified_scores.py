@@ -12,6 +12,7 @@ def main(combined_vulnerabilities_data, node_criticality_mapping, system_evaluat
     physical_security_score = system_evaluation_scores['physical_security_score'] # FIXME
     operations_policies_score = system_evaluation_scores['policies_score'] # FIXME
     apt_score = apt_cve_evaluation_scores[cve_number]['apt_score'] # FIXME
+    apt_reasoning = apt_cve_evaluation_scores[cve_number]['reasoning']
 
     # custom CVSS modified scoring metrics
     exploit_code_maturity = 1 # NOT DEFINED
@@ -74,7 +75,7 @@ def main(combined_vulnerabilities_data, node_criticality_mapping, system_evaluat
     # call function to calculate the temporal score using CVSSv3.1 equations
     temporal_score = calculate_temporal_score(base_score, exploit_code_maturity, remediation_level, report_confidence)
 
-    scores_to_upload = {'temporal_score': temporal_score, 'environmental_score': environmental_score, 'apt_threat_index': apt_threat_index}
+    scores_to_upload = {'temporal_score': temporal_score, 'environmental_score': environmental_score, 'apt_threat_index': apt_threat_index, 'apt_score': apt_score, }
 
     # append modified scores to combined vulnerabilities data
     for score in scores_to_upload:
