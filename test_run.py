@@ -11,9 +11,9 @@ combined_vulnerabilities_data = get_nvd_data_main(
 ###################################### TEMPORARY FILLER DATA ######################################
 # FIXME
 system_evaluation_scores = {
-    'personel_training_score': 0.5,
+    'personnel_score': 0.5,
     'physical_security_score': 0.5,
-    'policy_procedures_score': 0.5
+    'policies_score': 0.5
   }
 cves = set([item["CVE Number"] for item in combined_vulnerabilities_data])
 apt_cve_evaluation_scores = {}

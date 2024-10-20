@@ -188,9 +188,6 @@ def modify_environmental_score(environmental_score, apt_score):
 
   apt_threat_index = round_up_ten(checked_environmental_score + apt_score_modifier)
 
-  if apt_score == 0.5:
-    apt_threat_index = 'N/A'
-
   return apt_threat_index
 
 # define function to calculate the modifiable range for the score

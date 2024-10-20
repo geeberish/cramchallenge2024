@@ -82,6 +82,7 @@ def create_node_category_mapping(combined_vulnerabilities_data):
 
   return node_category_mapping
 
+
 # define function to create dictionary mapping functions to criticality
 def create_function_criticality_mapping(critical_functions_definitions):
   function_criticality_mapping = {} # create empty dictionary for function criticality values
@@ -135,7 +136,8 @@ def  update_node_criticality_mapping(node_criticality_mapping, node_category_map
   # with open('./sue_data/json_data/individual_files_archive/node_criticality_mapping_file.json', 'w') as json_file:
   #   json.dump(node_criticality_mapping, json_file, indent=4)  # 'indent=4' for pretty-printing
 
-  return category_criticality_mapping
+  # FIXME
+  # return category_criticality_mapping
 
   return node_criticality_mapping
 

@@ -46,8 +46,9 @@ def main(nvd_api_key_file_location, vulnerabilities_detected_file_location):
         vulnerabilities_list, # empty vulnerabilities list
         cves # distinct list of CVE's detected
     )
-
-    suspected_cves = get_nvd_cpe_data_main(vulnerability_data, vulnerabilities_list, nvd_api_key, cves)
+    
+    # FIXME
+    # suspected_cves = get_nvd_cpe_data_main(vulnerability_data, vulnerabilities_list, nvd_api_key, cves)
 
     # take detected vulnerabilities data and append individual CVE metrics score component data to it
     combined_vulnerabilities_data = build_vulnerability_data(vulnerabilities_list, vulnerability_data)
