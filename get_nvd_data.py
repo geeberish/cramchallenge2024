@@ -1,17 +1,18 @@
-import subprocess # a module used to run new codes and applications by creating new processes
-import sys # a module that provides access to system-specific parameters and functions
+# import subprocess # a module used to run new codes and applications by creating new processes
+# import sys # a module that provides access to system-specific parameters and functions
 import json # a module to work with JSON data
 
 # function to install a package
 # def install(package):
 #     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-# NEW VERSION
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
+# FIXME Probably delete later
+# # NEW VERSION
+# def install(package):
+#     subprocess.check_call([sys.executable, "-m", "pip", "install", package], stdout=subprocess.DEVNULL)
 
-install('nvdlib') # call function to install nvdlib
-install('tqdm')
+# install('nvdlib') # call function to install nvdlib
+# install('tqdm')
 
 import nvdlib # a module to interface with the NIST NVD database to pull CVEs and CPEs as objects
 from tqdm import tqdm
