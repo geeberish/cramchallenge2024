@@ -834,7 +834,7 @@ class SystemEvaluationApp(QWidget):
                 next(reader)  # Skip header row
                 for row in reader:
                     if len(row) == 5:  # Ensure the row has three items
-                        submissions.append((row[0], row[1], row[2], row[3]))  # (File name, Submission Time, Score)
+                        submissions.append((row[0], row[1], row[2], row[3], row[4]))  # (File name, Submission Time, Score)
         except FileNotFoundError:
             print("No previous submissions found.")
         return submissions
