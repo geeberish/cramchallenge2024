@@ -7,7 +7,7 @@ from LLamaPPP import get_security_scores
 
 def nvd(dv_file_path):
     combined_vulnerabilities_data = get_nvd_data_main(
-        '../.aws/nvd_api_key.txt',
+        '../.aws/nvd_api_key.txt', # FIXME send api key file location as variable from gui; needs entry method in gui
         dv_file_path,
     )
     
