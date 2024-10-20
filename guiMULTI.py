@@ -189,7 +189,7 @@ class SystemEvaluationApp(QWidget):
     def add_bar_graph(self, layout, scores, labels, title, figsize, y_limit=(0, 10)):
         fig, ax = plt.subplots(figsize=figsize, facecolor='#2D2D2D')
         ax.set_facecolor('#2D2D2D')
-        ax.bar(labels, scores, color='blue', edgecolor='white')
+        bars = ax.bar(labels, scores, color='blue', edgecolor='white')
         ax.set_ylim(y_limit)  # Set dynamic y limits based on the argument
         ax.set_title(title, color='white')
         ax.set_xlabel('Metrics', fontstyle='italic', color='white')
@@ -200,6 +200,12 @@ class SystemEvaluationApp(QWidget):
         ax.spines['bottom'].set_color('white')
         ax.spines['left'].set_color('white')
         ax.spines['right'].set_color('white')
+
+        # Annotate each bar with the score
+        for bar in bars:
+            yval = bar.get_height()  # Get the height of the bar (the score)
+            ax.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), 
+                    ha='center', va='bottom', color='white')  # Display score above the bar
 
         canvas = FigureCanvas(fig)
         layout.addWidget(canvas)
