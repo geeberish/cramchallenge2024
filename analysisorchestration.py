@@ -23,17 +23,17 @@ def call_get_nvd_data(api_key_file_path, dv_file_path):
 #      score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
 #      return score_component_averages
 
-def ppp_api(sum_file_path):
+def ppp_api(sum_file_path, groq_api_path):
     # Construct the path using os.path.join for cross-platform compatibility
     framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
     
     # 4. Send files to API
-    security_best_prac = get_security_scores(framework_file_path, sum_file_path)
+    security_best_prac = get_security_scores(framework_file_path, sum_file_path, groq_api_path)
 
     return security_best_prac
-def call_apt_api(cve_desc):
+def call_apt_api(cve_desc, groq_file_path):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
-     apt_scores_desc_dict = apt_main(cve_desc, "APT3 (Gothic Panda)")
+     apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper))", groq_file_path)
      
      return apt_scores_desc_dict
 
@@ -59,10 +59,10 @@ def call_average_nvd(modified_combined_data):
 def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
 
-    apt_scores_desc = call_apt_api(combined_vuln_data)
+    apt_scores_desc = call_apt_api(combined_vuln_data, groq_file_path)
     #print(apt_scores_desc)
 
-    ppp_scores = ppp_api(sum_file_path)
+    ppp_scores = ppp_api(sum_file_path, groq_file_path)
     #print(ppp_scores)
     
 
@@ -81,7 +81,7 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     policies = ppp_scores['policies_score']
     #print(f"base = {base}\naverage = {average}\napt threat index = {apt}\nphysical = {physical}\npersonnel = {personnel}\npolicies = {policies}")
 
-    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores)
+    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores,groq_file_path)
     return  base, physical, personnel, policies, average, apt, report
 
 
@@ -89,12 +89,12 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
     
 
-def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores):
+def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores,groq_api_path):
     # Construct the path using os.path.join for cross-platform compatibility
     framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
     
-    ppp_explanations = get_explanations(framework_file_path, sum_file_path)
-    ppp_recommendations = get_recommendations(framework_file_path, sum_file_path)
+    ppp_explanations = get_explanations(framework_file_path, sum_file_path, groq_api_path)
+    ppp_recommendations = get_recommendations(framework_file_path, sum_file_path, groq_api_path)
 
     output = (f"Base Score: {base}\n"
               f"Physical Security Score: {physical}\n"

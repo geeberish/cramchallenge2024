@@ -3,11 +3,12 @@ import re
 from groq import Groq
 from functools import lru_cache
 
-# Groq API configuration
-GROQ_API_KEY = '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'  # Replace with your actual API key
-client = Groq(api_key=GROQ_API_KEY)
 
-def generate(system_message, user_message, temperature=0.7):
+def generate(system_message, user_message,groq_api_path, temperature=0.7):
+    with open(groq_api_path) as key_file:
+        groq_api_key = key_file.read() # read API key file to variable
+
+    client = Groq(api_key=groq_api_key)
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_message}
@@ -28,7 +29,8 @@ def chunk_data(data, chunk_size=2000):
     else:
         raise ValueError("Data must be either a dictionary or a list")
 
-def analyze_security_measures(best_practices, system_summaries, max_retries=3):
+def analyze_security_measures(best_practices, system_summaries,groq_api_path, max_retries=3):
+    
     system_message = """
     You are a cybersecurity expert tasked with analyzing a system's security measures against best practices.
     Compare the provided system summaries to the security best practices and evaluate the system in three areas:
@@ -89,7 +91,7 @@ def analyze_security_measures(best_practices, system_summaries, max_retries=3):
 
         chunk_results = None
         for attempt in range(max_retries):
-            ai_response = generate(system_message, user_message)
+            ai_response = generate(system_message, user_message, groq_api_path)
             #print(f"AI Response (Attempt {attempt + 1}):", ai_response)  # Debug print
             
             chunk_results = parse_ai_response(ai_response)
@@ -153,30 +155,30 @@ def load_json_file(file_path):
         return json.load(file)
 
 @lru_cache(maxsize=1)
-def get_cached_analysis(best_practices_file, system_summaries_file):
+def get_cached_analysis(best_practices_file, system_summaries_file, groq_api_path):
     best_practices = load_json_file(best_practices_file)
     system_summaries = load_json_file(system_summaries_file)
-    results = analyze_security_measures(best_practices, system_summaries)
+    results = analyze_security_measures(best_practices, system_summaries, groq_api_path)
     return results
 
-def get_security_scores(best_practices_file, system_summaries_file):
-    results = get_cached_analysis(best_practices_file, system_summaries_file)
+def get_security_scores(best_practices_file, system_summaries_file, groq_api_path):
+    results = get_cached_analysis(best_practices_file, system_summaries_file, groq_api_path)
     return {
         'physical_security_score': results['physical_security']['score'],
         'personnel_score': results['personnel']['score'],
         'policies_score': results['policies']['score']
     }
 
-def get_explanations(best_practices_file, system_summaries_file):
-    results = get_cached_analysis(best_practices_file, system_summaries_file)
+def get_explanations(best_practices_file, system_summaries_file,groq_api_path):
+    results = get_cached_analysis(best_practices_file, system_summaries_file, groq_api_path)
     return {
         'physical_security_explanation': results['physical_security']['explanation'],
         'personnel_explanation': results['personnel']['explanation'],
         'policies_explanation': results['policies']['explanation']
     }
 
-def get_recommendations(best_practices_file, system_summaries_file):
-    results = get_cached_analysis(best_practices_file, system_summaries_file)
+def get_recommendations(best_practices_file, system_summaries_file,groq_api_path):
+    results = get_cached_analysis(best_practices_file, system_summaries_file, groq_api_path)
     return {
         'physical_security_recommendations': results['physical_security']['recommendations'],
         'personnel_recommendations': results['personnel']['recommendations'],

@@ -3,9 +3,7 @@ import os
 from typing import Dict, Tuple, Any
 import json
 
-# Initialize Groq client
-GROQ_API_KEY = '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'
-client = Groq(api_key=GROQ_API_KEY)
+
 
 # Load APT groups dictionary
 # Construct the path using os.path.join for cross-platform compatibility
@@ -37,7 +35,7 @@ def get_apt_info(given_apt: str) -> Tuple[str, Any]:
             return apt, info
     return None, None
 
-def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, apt_info: Dict, temperature = .6) -> str:
+def analyze_vulnerability_with_apt(cve: str, description: str, apt_name: str, apt_info: Dict, temperature = .6, client = "") -> str:
     prompt = f"""
     Analyze the following vulnerability and APT group information to determine the likelihood of the APT group exploiting this vulnerability:
 
@@ -92,7 +90,7 @@ def parse_analysis(analysis: str) -> Tuple[float, str]:
             explanation = line.split(':', 1)[1].strip()
     return score, explanation
 
-def analyze_vulnerabilities(vulnerabilities, given_apt: str) -> Dict[str, Dict[str, Any]]:
+def analyze_vulnerabilities(vulnerabilities, given_apt: str, client) -> Dict[str, Dict[str, Any]]:
     apt_name, apt_info = get_apt_info(given_apt)
     results = {}
 
@@ -110,7 +108,7 @@ def analyze_vulnerabilities(vulnerabilities, given_apt: str) -> Dict[str, Dict[s
     else:
         print(f"Analyzing vulnerabilities for APT group: {apt_name}")
         for cve, description in vulnerabilities.items():
-            analysis = analyze_vulnerability_with_apt(cve, description, apt_name, apt_info)
+            analysis = analyze_vulnerability_with_apt(cve, description, apt_name, apt_info, client=client)
             score, explanation = parse_analysis(analysis)
             results[cve] = {
                 "apt_score": score,
@@ -123,7 +121,7 @@ def analyze_vulnerabilities(vulnerabilities, given_apt: str) -> Dict[str, Dict[s
 
     return results
 
-def main(vulnerabilities, given_apt: str = "") -> Dict[str, Dict[str, Any]]:
+def main(vulnerabilities, given_apt, groq_api_path) -> Dict[str, Dict[str, Any]]:
     """
     Main function to analyze vulnerabilities for a given APT group or use default values if no APT is provided.
     
@@ -131,8 +129,12 @@ def main(vulnerabilities, given_apt: str = "") -> Dict[str, Dict[str, Any]]:
     :param given_apt: String name of the APT group to analyze (optional)
     :return: Dictionary with CVE numbers as keys and dictionaries containing apt_score and reasoning as values
     """
+    
+    with open(groq_api_path) as key_file:
+        groq_api_key = key_file.read() # read API key file to variable
+    client = Groq(api_key=groq_api_key)
     vulnerabilities_dict = {item['CVE Number']: item['description'] for item in vulnerabilities}
-    return analyze_vulnerabilities(vulnerabilities_dict, given_apt)
+    return analyze_vulnerabilities(vulnerabilities_dict, given_apt, client)
 
 if __name__ == "__main__":
     vuln = [
