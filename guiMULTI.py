@@ -17,6 +17,7 @@ from analysisorchestration import *
 import analysisorchestration as ao
 import subprocess
 import datetime
+import platform
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 
@@ -795,7 +796,10 @@ class SystemEvaluationApp(QWidget):
             shutil.copy(source_path, download_path)
 
             # Open the Downloads folder
-            subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
+            if platform.system() == "Windows":
+                subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
+            elif platform.system() == "Darwin":  # macOS
+                subprocess.Popen(['open', os.path.join(os.path.expanduser("~"), "Downloads")])
 
             print(f"{report_file_name} has been downloaded to {download_path}.")
         else:
