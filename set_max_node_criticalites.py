@@ -1,4 +1,3 @@
-import math
 import json
 
 def main(
@@ -65,10 +64,6 @@ def create_node_function_mapping(combined_vulnerabilities_data, critical_functio
               node_function_mapping[vulnerability["Node Name"]].append(entry.replace("function_", ""))
         break
 
-  # FIXME
-  print(f"node_function_mapping = {node_function_mapping}")
-  input()
-
   return node_function_mapping
 
 # define function to create dictionary mapping nodes to categories
@@ -85,10 +80,6 @@ def create_node_category_mapping(combined_vulnerabilities_data):
         if vulnerability["Node Name"] not in node_category_mapping[category]:
           node_category_mapping[category].append(vulnerability["Node Name"])
 
-  # FIXME
-  print(f"node_category_mapping = {node_category_mapping}")
-  input()
-
   return node_category_mapping
 
 # define function to create dictionary mapping functions to criticality
@@ -97,10 +88,6 @@ def create_function_criticality_mapping(critical_functions_definitions):
 
   for function in critical_functions_definitions:
     function_criticality_mapping[function["function_number"]] = function["criticality_value"]
-  
-  # FIXME
-  print(f"function_criticality_mapping = {function_criticality_mapping}")
-  input()
   
   return function_criticality_mapping
 
@@ -116,10 +103,6 @@ def create_node_criticality_mapping(node_function_mapping, function_criticality_
     
     node_criticality_mapping[node] = max_node_criticality
     max_node_criticality = 0
-  
-  # FIXME
-  print(f"node_criticality_mapping = {node_criticality_mapping}")
-  input()
   
   return node_criticality_mapping
 
@@ -138,10 +121,6 @@ def create_category_criticality_mapping(node_category_mapping, node_criticality_
 
     category_max_criticality = 0
 
-  # FIXME
-  print(f"category_criticality_mapping = {category_criticality_mapping}")
-  input()
-
   return category_criticality_mapping
 
 def  update_node_criticality_mapping(node_criticality_mapping, node_category_mapping, category_criticality_mapping):
@@ -151,10 +130,10 @@ def  update_node_criticality_mapping(node_criticality_mapping, node_category_map
         if node in node_category_mapping[category]:
           node_criticality_mapping[node] = category_criticality_mapping[category]
           break
-
-  # FIXME
-  print(f"node_criticality_mapping = {node_criticality_mapping}")
-  input()
+  
+  # output json representation of node criticality mapping
+  # with open('./sue_data/json_data/individual_files_archive/node_criticality_mapping_file.json', 'w') as json_file:
+  #   json.dump(node_criticality_mapping, json_file, indent=4)  # 'indent=4' for pretty-printing
 
   return category_criticality_mapping
 
