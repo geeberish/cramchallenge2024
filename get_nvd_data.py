@@ -1,6 +1,7 @@
 import subprocess # a module used to run new codes and applications by creating new processes
 import sys # a module that provides access to system-specific parameters and functions
 import json # a module to work with JSON data
+from get_nvd_cpe_data import main as get_nvd_cpe_data_main
 
 # function to install a package
 # def install(package):
