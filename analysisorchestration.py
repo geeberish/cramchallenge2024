@@ -92,9 +92,12 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
     
 
-def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified):
+def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores):
      ppp_explanations = get_explanations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
      ppp_recommendations = get_recommendations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
+
+     output = f"Base Score: {base}\nPhysical Security Score: {physical}\n\t*Explanation: {ppp_explanations['physical_security_explanation']}\nPersonnel Score: {personnel}\n\t*Explanation: {ppp_explanations['personnel_explanation']}\nOperational Policies Score: {policies}\n\t*Explanation: {ppp_explanations['policies_explanation']}\nEnvironmental Score: {average}\nAPT Threat Index: {apt}\n"
+     return output
 
 
      
