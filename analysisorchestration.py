@@ -4,6 +4,7 @@ from get_nvd_data import main as get_nvd_data_main
 from average_nvd_data import main as average_nvd_data_main
 from LLamaPPP import get_security_scores
 from APT import main as apt_main
+from set_max_node_criticalites import main as criticality_main
 
 
 def call_get_nvd_data(api_key_file_path, dv_file_path):
@@ -36,6 +37,11 @@ def call_apt_api(cve_desc):
      return apt_scores_desc_dict
 
 
+def call_criticalities_max(combined_vulnerability_data, crit_func_def_path, crit_func_map_path):
+     max_criticalities = criticality_main(combined_vulnerability_data, crit_func_def_path, crit_func_map_path)
+
+     return max_criticalities
+
         
         
 
@@ -46,7 +52,10 @@ def call_apt_api(cve_desc):
 # modify cvss base average score with criticality and 3 p's
 def main(cfd_file_path, cfm_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path, nvd_file_path, groq_file_path):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
-    print(combined_vuln_data)
+    #print(combined_vuln_data)
+
+    criticality = call_criticalities_max(combined_vuln_data, cfd_file_path,cfm_file_path)
+    print(criticality)
 
     apt_scores_desc = call_apt_api(combined_vuln_data)
     print(apt_scores_desc)

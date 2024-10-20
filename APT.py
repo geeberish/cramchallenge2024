@@ -110,7 +110,7 @@ def analyze_vulnerabilities(vulnerabilities: Dict[str, str], given_apt: str) -> 
 
     return results
 
-def main(vulnerabilities: Dict[str, str], given_apt: str = "") -> Dict[str, Dict[str, Any]]:
+def main(vulnerabilities, given_apt: str = "") -> Dict[str, Dict[str, Any]]:
     """
     Main function to analyze vulnerabilities for a given APT group or use default values if no APT is provided.
     
@@ -118,7 +118,11 @@ def main(vulnerabilities: Dict[str, str], given_apt: str = "") -> Dict[str, Dict
     :param given_apt: String name of the APT group to analyze (optional)
     :return: Dictionary with CVE numbers as keys and dictionaries containing apt_score and reasoning as values
     """
-    return analyze_vulnerabilities(vulnerabilities, given_apt)
+    vulnerabilities_updated = [{
+    'CVE Number': item.get('CVE Number', 'N/A'),
+    'description': item.get('description', 'No description available')
+        } for item in vulnerabilities]
+    return analyze_vulnerabilities(vulnerabilities_updated, given_apt)
 
 if __name__ == "__main__":
     vuln = [
