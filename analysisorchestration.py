@@ -33,7 +33,7 @@ def api(sum_file_path):
 
 
 # modify cvss base average score with criticality and 3 p's
-def main(cf_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path):
+def main(cfd_file_path, cfm_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path, nvd_file_path, groq_file_path):
     score_component_averages = nvd(dv_file_path)
 
     base = score_component_averages['base_score']
