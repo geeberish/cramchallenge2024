@@ -85,4 +85,5 @@ with open('./sue_data/json_data/detected_vulnerabilities.json') as data_file:
                     # combined_list[index]["exploit_code_maturity"] = vulnerability.
                     # combined_list[index]["remediation_level"] = vulnerability.
                     # combined_list[index]["report_confidence"] = vulnerability.
+                break
             print(combined_list)
