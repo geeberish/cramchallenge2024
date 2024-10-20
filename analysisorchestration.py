@@ -84,8 +84,8 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     policies = ppp_scores['policies_score']
     #print(f"base = {base}\naverage = {average}\napt threat index = {apt}\nphysical = {physical}\npersonnel = {personnel}\npolicies = {policies}")
 
-    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, apt_scores_desc, modified_scores)
-    return  base, physical, personnel, policies, average, apt
+    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores)
+    return  base, physical, personnel, policies, average, apt, report
 
 
     
