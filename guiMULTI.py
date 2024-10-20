@@ -1,7 +1,10 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QSpacerItem, QSizePolicy, QPushButton, QProgressBar, QVBoxLayout, QFileDialog, QHBoxLayout, QListWidget, QMessageBox, QStackedWidget, QScrollArea
+    QApplication, QWidget, QLabel, 
+    QLineEdit, QPushButton, QVBoxLayout, 
+    QFileDialog, QHBoxLayout, QListWidget, 
+    QMessageBox, QStackedWidget, QScrollArea
 )
-from PySide6.QtCore import Qt, QTimer, QSize, QThread, Signal, QObject
+from PySide6.QtCore import Qt, QSize, Signal, QObject
 from PySide6.QtGui import QPalette, QColor, QFont, QIcon, QMovie
 import shutil
 import sys
@@ -10,14 +13,8 @@ import csv
 import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
 import threading
-import time
-from get_nvd_data import main as get_nvd_data_main
-from average_nvd_data import main as average_nvd_data_main
-from scoremath import *
-import scoremath as sm
 from analysisorchestration import *
 import analysisorchestration as ao
-from LLamaPPP import get_security_scores
 import subprocess
 import datetime
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -44,7 +41,7 @@ class Worker(QObject):
                 self.selected_dv,
                 self.selected_sum,
                 self.selected_nvd,
-                self.selected_groq  # Ensure these are passed
+                self.selected_groq 
             )
             self.results_ready.emit((base, physical, personnel, policies, average, apt))
         except Exception as e:
