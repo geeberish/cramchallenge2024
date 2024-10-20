@@ -8,6 +8,7 @@ from calculate_modified_scores import main as modify_main
 from average_nvd_data import main as average_main
 from LLamaPPP import get_explanations
 from LLamaPPP import get_recommendations
+import os
 
 
 
@@ -23,17 +24,13 @@ def call_get_nvd_data(api_key_file_path, dv_file_path):
 #      return score_component_averages
 
 def ppp_api(sum_file_path):
-        # 3. Send dictionary to modified score    
-        #get_base(score_component_averages)
-
-        # 4. Send files to API
-        security_best_prac = get_security_scores('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
-
-        return security_best_prac
+    # Construct the path using os.path.join for cross-platform compatibility
+    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
     
-        # 5. GUI Sends to modified score
-        #get_p(security_best_prac)
+    # 4. Send files to API
+    security_best_prac = get_security_scores(framework_file_path, sum_file_path)
 
+    return security_best_prac
 def call_apt_api(cve_desc):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
      apt_scores_desc_dict = apt_main(cve_desc, "APT3 (Gothic Panda)")
@@ -93,11 +90,23 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     
 
 def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores):
-     ppp_explanations = get_explanations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
-     ppp_recommendations = get_recommendations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
+    # Construct the path using os.path.join for cross-platform compatibility
+    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
+    
+    ppp_explanations = get_explanations(framework_file_path, sum_file_path)
+    ppp_recommendations = get_recommendations(framework_file_path, sum_file_path)
 
-     output = f"Base Score: {base}\nPhysical Security Score: {physical}\n\t*Explanation: {ppp_explanations['physical_security_explanation']}\nPersonnel Score: {personnel}\n\t*Explanation: {ppp_explanations['personnel_explanation']}\nOperational Policies Score: {policies}\n\t*Explanation: {ppp_explanations['policies_explanation']}\nEnvironmental Score: {average}\nAPT Threat Index: {apt}\n"
-     return output
+    output = (f"Base Score: {base}\n"
+              f"Physical Security Score: {physical}\n"
+              f"\t*Explanation: {ppp_explanations['physical_security_explanation']}\n"
+              f"Personnel Score: {personnel}\n"
+              f"\t*Explanation: {ppp_explanations['personnel_explanation']}\n"
+              f"Operational Policies Score: {policies}\n"
+              f"\t*Explanation: {ppp_explanations['policies_explanation']}\n"
+              f"Environmental Score: {average}\n"
+              f"APT Threat Index: {apt}\n")
+    
+    return output
 
 
      

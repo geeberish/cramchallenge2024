@@ -8,8 +8,12 @@ GROQ_API_KEY = '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'
 client = Groq(api_key=GROQ_API_KEY)
 
 # Load APT groups dictionary
+# Construct the path using os.path.join for cross-platform compatibility
+apt_group_file_path = os.path.join('sue_data', 'json_data', 'apt_group.json')
+
+# Load APT groups dictionary
 try:
-    with open('sue_data/json_data/apt_group.json', 'r') as f:
+    with open(apt_group_file_path, 'r') as f:
         apt_groups = json.load(f)
 except FileNotFoundError:
     print("Error: APT group data file not found.")
@@ -17,6 +21,15 @@ except FileNotFoundError:
 except json.JSONDecodeError:
     print("Error: Invalid JSON in APT group data file.")
     apt_groups = {}
+# try:
+#     with open('sue_data/json_data/apt_group.json', 'r') as f:
+#         apt_groups = json.load(f)
+# except FileNotFoundError:
+#     print("Error: APT group data file not found.")
+#     apt_groups = {}
+# except json.JSONDecodeError:
+#     print("Error: Invalid JSON in APT group data file.")
+#     apt_groups = {}
 
 def get_apt_info(given_apt: str) -> Tuple[str, Any]:
     for apt, info in apt_groups.items():
