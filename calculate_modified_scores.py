@@ -75,7 +75,10 @@ def main(combined_vulnerabilities_data, node_criticality_mapping, system_evaluat
     # call function to calculate the temporal score using CVSSv3.1 equations
     temporal_score = calculate_temporal_score(base_score, exploit_code_maturity, remediation_level, report_confidence)
 
-    scores_to_upload = {'temporal_score': temporal_score, 'environmental_score': environmental_score, 'apt_threat_index': apt_threat_index, 'apt_score': apt_score, }
+    scores_to_upload = {
+      'temporal_score': temporal_score, 'environmental_score': environmental_score, 'apt_threat_index': apt_threat_index,
+      'apt_score': apt_score, 'apt_reasoning': apt_reasoning
+    }
 
     # append modified scores to combined vulnerabilities data
     for score in scores_to_upload:
