@@ -776,33 +776,35 @@ class SystemEvaluationApp(QWidget):
                 print(f"Submission {file_name} from {submission_time} with Environment Score {env_score} and APT Score {apt_score} and Report Name {report_file_name} has been deleted.")
             else:
                 print("Selected item does not match the expected format.")
-
+                
     def download_latest_report(self):
         if self.submitted_files:
             # Get the latest submission (the last entry in the list)
-            latest_submission = self.submitted_files[-1]  # Assuming it's sorted by time, or you can sort it if needed
+            latest_submission = self.submitted_files[-1]  # Assuming it's sorted by time
 
             file_name, submission_time, env_score, apt_score, report_file_name = latest_submission
 
             # Define the source path in the submissions folder
             source_path = os.path.join("submissions", report_file_name)
 
-            # Define the destination path for the download (user's Downloads folder)
-            download_path = os.path.join(os.path.expanduser("~"), "Downloads", report_file_name)
+            # Open a Save As dialog
+            options = QFileDialog.Options()
+            download_path, _ = QFileDialog.getSaveFileName(self, "Save Report As", report_file_name, "Text Files (*.txt);;All Files (*)", options=options)
 
-            try:
-                # Copy the report file to the Downloads folder
-                shutil.copy(source_path, download_path)
+            if download_path:  # If the user selects a path
+                try:
+                    # Copy the report file to the selected path
+                    shutil.copy(source_path, download_path)
 
-                # Open the Downloads folder
-                if platform.system() == "Windows":
-                    subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
-                elif platform.system() == "Darwin":  # macOS
-                    subprocess.Popen(['open', os.path.join(os.path.expanduser("~"), "Downloads")])
+                    # Open the Downloads folder (optional, if you want to show it after saving)
+                    if platform.system() == "Windows":
+                        subprocess.Popen(f'explorer "{os.path.dirname(download_path)}"')
+                    elif platform.system() == "Darwin":  # macOS
+                        subprocess.Popen(['open', os.path.dirname(download_path)])
 
-                print(f"{report_file_name} has been downloaded to {download_path}.")
-            except Exception as e:
-                print(f"Error downloading report: {e}")
+                    print(f"{report_file_name} has been saved to {download_path}.")
+                except Exception as e:
+                    print(f"Error downloading report: {e}")
         else:
             print("No submissions available to download.")
 
@@ -817,19 +819,24 @@ class SystemEvaluationApp(QWidget):
             # Define the source path in the submissions folder
             source_path = os.path.join("submissions", report_file_name)
 
-            # Define the destination path for the download (user's Downloads folder)
-            download_path = os.path.join(os.path.expanduser("~"), "Downloads", report_file_name)
+            # Open a Save As dialog
+            options = QFileDialog.Options()
+            download_path, _ = QFileDialog.getSaveFileName(self, "Save Report As", report_file_name, "Text Files (*.txt);;All Files (*)", options=options)
 
-            # Copy the report file to the Downloads folder
-            shutil.copy(source_path, download_path)
+            if download_path:  # If the user selects a path
+                try:
+                    # Copy the report file to the selected path
+                    shutil.copy(source_path, download_path)
 
-            # Open the Downloads folder
-            if platform.system() == "Windows":
-                subprocess.Popen(f'explorer "{os.path.expanduser("~\\Downloads")}"')
-            elif platform.system() == "Darwin":  # macOS
-                subprocess.Popen(['open', os.path.join(os.path.expanduser("~"), "Downloads")])
+                    # Open the Downloads folder (optional)
+                    if platform.system() == "Windows":
+                        subprocess.Popen(f'explorer "{os.path.dirname(download_path)}"')
+                    elif platform.system() == "Darwin":  # macOS
+                        subprocess.Popen(['open', os.path.dirname(download_path)])
 
-            print(f"{report_file_name} has been downloaded to {download_path}.")
+                    print(f"{report_file_name} has been saved to {download_path}.")
+                except Exception as e:
+                    print(f"Error downloading report: {e}")
         else:
             print("No file selected for download.")
     

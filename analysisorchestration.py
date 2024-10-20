@@ -33,7 +33,7 @@ def ppp_api(sum_file_path, groq_api_path):
     return security_best_prac
 def call_apt_api(cve_desc, groq_file_path):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
-     apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper))", groq_file_path)
+     apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper)", groq_file_path)
      
      return apt_scores_desc_dict
 
