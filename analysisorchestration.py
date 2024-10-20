@@ -5,14 +5,17 @@ from average_nvd_data import main as average_nvd_data_main
 from LLamaPPP import get_security_scores
 
 
-def nvd(dv_file_path):
+def call_get_nvd_data(api_key_file_path, dv_file_path):
     combined_vulnerabilities_data = get_nvd_data_main(
-        '../.aws/nvd_api_key.txt', # FIXME send api key file location as variable from gui; needs entry method in gui
+        api_key_file_path,
         dv_file_path,
     )
-    
-    score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
-    return score_component_averages
+    return combined_vulnerabilities_data
+
+def get_score_averages(combined_vulnerabilities_data):
+     score_component_averages = average_nvd_data_main(combined_vulnerabilities_data)
+     return score_component_averages
+
 def api(sum_file_path):
         # 3. Send dictionary to modified score    
         #get_base(score_component_averages)
@@ -34,13 +37,17 @@ def api(sum_file_path):
 
 # modify cvss base average score with criticality and 3 p's
 def main(cf_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path):
-    score_component_averages = nvd(dv_file_path)
+    api_key_file_path = '../.aws/nvd_api_key.txt' # FIXME remove once variable set in GUI
+    
+    combined_dv_file = call_get_nvd_data(dv_file_path)
+
+    security_best_prac = api(sum_file_path)
 
     base = score_component_averages['base_score']
     impact_sub = score_component_averages['impact_score']
     exploitability_sub = score_component_averages['exploitability_score']
 
-    security_best_prac = api(sum_file_path)
+    
 
     # 6. GUI Sends scores to Modified scored to be calculated
     physical = security_best_prac['physical_security']
