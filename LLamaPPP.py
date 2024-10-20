@@ -37,7 +37,7 @@ def analyze_security_measures(best_practices, system_summaries, max_retries=3):
     3. Policies
 
     For each area:
-    1. Provide a score between 0 and 1 (where 0 is the worst and 1 is the best).
+    1. Provide a score between 0 and 1 (where 0 is the worst and 1 is the best) go to 2 decimal points.
     2. Provide a brief explanation for the score.
     3. Recommend the three most important fixes or improvements based on the security best practices.
 
@@ -46,7 +46,7 @@ def analyze_security_measures(best_practices, system_summaries, max_retries=3):
     Format your response as follows:
 
     Physical Security Score: [score]
-    Physical Security Explanation: [explanation]
+    Physical Security Explanation: [explanation, 2 sentences max]
     Physical Security Recommendations:
     1. [recommendation 1]
     2. [recommendation 2]

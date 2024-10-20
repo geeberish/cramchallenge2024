@@ -6,6 +6,8 @@ from APT import main as apt_main
 from set_max_node_criticalites import main as criticality_main
 from calculate_modified_scores import main as modify_main
 from average_nvd_data import main as average_main
+from LLamaPPP import get_explanations
+from LLamaPPP import get_recommendations
 
 
 
@@ -81,6 +83,8 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     personnel = ppp_scores['personnel_score']
     policies = ppp_scores['policies_score']
     #print(f"base = {base}\naverage = {average}\napt threat index = {apt}\nphysical = {physical}\npersonnel = {personnel}\npolicies = {policies}")
+
+    report = report_generation(base, physical, personnel, policies, average, apt, sum_file_path, apt_scores_desc, modified_scores)
     return  base, physical, personnel, policies, average, apt
 
 
@@ -88,7 +92,12 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
     
 
+def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified):
+     ppp_explanations = get_explanations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
+     ppp_recommendations = get_recommendations('frameworks/CSF_Best_Prac_KV.json', sum_file_path)
 
+
+     
 
     #base = score_component_averages['base_score']
     #impact_sub = score_component_averages['impact_score']
@@ -106,4 +115,5 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
 if __name__ == "__main__":
     print("running")
-    main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
+    report_generation('sue_data/json_data/summaries.json')
+    #main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
