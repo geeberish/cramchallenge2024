@@ -38,7 +38,7 @@ class Worker(QObject):
 
     def run(self):
         try:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt = ao.main(
+            base, physical, personnel, policies, average, apt = ao.main(
                 self.selected_cfd,
                 self.selected_cfm,
                 self.selected_dv,
@@ -46,7 +46,7 @@ class Worker(QObject):
                 self.selected_nvd,
                 self.selected_groq  # Ensure these are passed
             )
-            self.results_ready.emit((base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt))
+            self.results_ready.emit((base, physical, personnel, policies, average, apt))
         except Exception as e:
             print(f"Error during orchestration: {e}")  # Log the exception message
             self.results_ready.emit(None)
@@ -592,8 +592,8 @@ class SystemEvaluationApp(QWidget):
     def process_results(self, results):
         self.stop_throbber()  # Stop throbber when processing results
         if results is not None:
-            base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt = results
-            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average, apt)
+            base, physical, personnel, policies, average, apt = results
+            print("Results:", base, physical, personnel, policies, average, apt)
             
             # Show success message and update GUI
             self.score_label.setText(f"Files submitted successfully! Score: {average}, {apt}")
