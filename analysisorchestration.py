@@ -5,6 +5,8 @@ from average_nvd_data import main as average_nvd_data_main
 from LLamaPPP import get_security_scores
 from APT import main as apt_main
 from set_max_node_criticalites import main as criticality_main
+from calculate_modified_scores import main as modify_main
+
 
 
 def call_get_nvd_data(api_key_file_path, dv_file_path):
@@ -42,9 +44,11 @@ def call_criticalities_max(combined_vulnerability_data, crit_func_def_path, crit
 
      return max_criticalities
 
-        
-        
-
+def call_calc_modify(combined_vuln,max_criticality, ppp_system_scores, apt_scores_desc):
+     
+    calculate_modified_scores = modify_main(combined_vuln, max_criticality, ppp_system_scores, apt_scores_desc)
+    return calculate_modified_scores
+    
 
         # 7. Modified Score sends rest of scores to GUI
 
@@ -52,17 +56,24 @@ def call_criticalities_max(combined_vulnerability_data, crit_func_def_path, crit
 # modify cvss base average score with criticality and 3 p's
 def main(cfd_file_path, cfm_file_path, dv_file_path, h_file_path, s_file_path, sum_file_path, nvd_file_path, groq_file_path):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
-    #print(combined_vuln_data)
-
-    criticality = call_criticalities_max(combined_vuln_data, cfd_file_path,cfm_file_path)
-    print(criticality)
 
     apt_scores_desc = call_apt_api(combined_vuln_data)
-    print(apt_scores_desc)
+    #print(apt_scores_desc)
 
     ppp_scores = ppp_api(sum_file_path)
-    print(ppp_scores)
-    print('hello')
+    #print(ppp_scores)
+
+    criticality = call_criticalities_max(combined_vuln_data, cfd_file_path,cfm_file_path)
+    #print(criticality)
+
+    modified_scores = call_calc_modify(combined_vuln_data, criticality, ppp_scores, apt_scores_desc)
+    print(f"*********\n\n{modified_scores}")
+
+    
+
+    
+
+
 
     #base = score_component_averages['base_score']
     #impact_sub = score_component_averages['impact_score']

@@ -79,7 +79,7 @@ def parse_analysis(analysis: str) -> Tuple[float, str]:
             explanation = line.split(':', 1)[1].strip()
     return score, explanation
 
-def analyze_vulnerabilities(vulnerabilities: Dict[str, str], given_apt: str) -> Dict[str, Dict[str, Any]]:
+def analyze_vulnerabilities(vulnerabilities, given_apt: str) -> Dict[str, Dict[str, Any]]:
     apt_name, apt_info = get_apt_info(given_apt)
     results = {}
 
@@ -114,15 +114,12 @@ def main(vulnerabilities, given_apt: str = "") -> Dict[str, Dict[str, Any]]:
     """
     Main function to analyze vulnerabilities for a given APT group or use default values if no APT is provided.
     
-    :param vulnerabilities: Dictionary with CVE numbers as keys and descriptions as values
+    :param vulnerabilities: List of dictionaries containing CVE numbers and descriptions
     :param given_apt: String name of the APT group to analyze (optional)
     :return: Dictionary with CVE numbers as keys and dictionaries containing apt_score and reasoning as values
     """
-    vulnerabilities_updated = [{
-    'CVE Number': item.get('CVE Number', 'N/A'),
-    'description': item.get('description', 'No description available')
-        } for item in vulnerabilities]
-    return analyze_vulnerabilities(vulnerabilities_updated, given_apt)
+    vulnerabilities_dict = {item['CVE Number']: item['description'] for item in vulnerabilities}
+    return analyze_vulnerabilities(vulnerabilities_dict, given_apt)
 
 if __name__ == "__main__":
     vuln = [
