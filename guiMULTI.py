@@ -676,7 +676,7 @@ class SystemEvaluationApp(QWidget):
 
         # Start the orchestration in a separate thread
         threading.Thread(target=worker.run).start()
-        #self.stop_throbber()
+        self.stop_throbber()
         
 
     def reset_file_selections(self):
