@@ -9,6 +9,8 @@ import os
 import csv
 import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
+import threading
+import time
 #from average import *
 #import average as avg
 from get_nvd_data import main as get_nvd_data_main
@@ -557,6 +559,21 @@ class SystemEvaluationApp(QWidget):
         self.throbber_label.setVisible(False)
         self.layout().update()  # Force layout update
 
+
+    def orchestration(self):
+        # Simulating a long-running process
+        self.start_throbber()
+        # tries for the anaylsis orchestration file
+        try:
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
+            self.stop_throbber()
+            return base, impact_sub, exploitability_sub, physical, personnel, policies, average
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
+            self.stop_throbber()
+            return
+        
+
     def submit_file(self):
         self.start_throbber()
         # Check for required files
@@ -595,21 +612,24 @@ class SystemEvaluationApp(QWidget):
             "Groq": self.selected_groq_button,
         }
 
-        self.start_throbber()
-        # tries for the anaylsis orchestration file
-        try:
-            
-            base, impact_sub, exploitability_sub, physical, personnel, policies = ao.main(self.selected_cfd_button, self.selected_cfm_button, self.selected_dv_button, self.selected_sum_button, self.selected_nvd_button, self.selected_groq_button)
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"An error occurred while processing the files: {e}")
-            self.stop_throbber()
-            return
+        # Create a list to hold results
+        results = [None]
 
-        # Process the results and update the GUI
-        #self.update_gui_with_results()
-        # 7. Called score math to get the modified average
+        def task_wrapper():
+            results[0] = self.orchestration()  # Store the result in the shared list
 
-        self.stop_throbber()
+        thread = threading.Thread(target=task_wrapper)
+        thread.start()
+        thread.join()  # Wait for the thread to complete
+
+        # Now you can access the results
+        if results[0] is not None:
+            base, impact_sub, exploitability_sub, physical, personnel, policies, average = results[0]
+            print("Results:", base, impact_sub, exploitability_sub, physical, personnel, policies, average)
+        else:
+            print("Task failed or returned no results.")
+
+        
         # Show success message and update GUI
         self.score_label.setText(f"Files submitted successfully! Score: {average}")
 
