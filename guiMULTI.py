@@ -703,9 +703,12 @@ class SystemEvaluationApp(QWidget):
         # Clear and update the list widget in the previous submissions view
         self.list_widget.clear()
 
-        # Use the current state of self.submitted_files to display the filtered submissions
-        for file_name, submission_time, env_score, apt_score, report_file_name in self.submitted_files:
-            self.list_widget.addItem(f"{file_name} - {submission_time} - Environment Score: {env_score} - APT Score {apt_score} - Report: {report_file_name}")
+        for submission in self.submitted_files:
+            if len(submission) == 5:  # Ensure it has five parts
+                file_name, submission_time, env_score, apt_score, report_file_name = submission
+                self.list_widget.addItem(f"{file_name} - {submission_time} - Environment Score: {env_score} - APT Score: {apt_score} - Report: {report_file_name}")
+            else:
+                print(f"Unexpected submission format: {submission}")
 
     def toggle_filter_alpha(self):
         # Toggle the alphabetical filtering state
@@ -748,8 +751,8 @@ class SystemEvaluationApp(QWidget):
             # Extract parts of the selected item based on your new formatting
             parts = selected_item.split(" - ")
             
-            if len(parts) == 5:  # Ensure it has four parts
-                file_name, submission_time, env_score_str, apt_score_str, report_file_name = parts[0], parts[1], parts[2], parts[3]
+            if len(parts) == 5:  # Ensure it has five parts
+                file_name, submission_time, env_score_str, apt_score_str, report_file_name = parts[0], parts[1], parts[2], parts[3], parts[4]
                 env_score = env_score_str.replace("Environment Score: ", "").strip()
                 apt_score = apt_score_str.replace("APT Score: ", "").strip()
 
