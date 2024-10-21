@@ -4,7 +4,7 @@ a = Analysis(
     ['guiMULTI.py'],
     pathex=[],
     binaries=[
-        ('C:\\Users\\Acer\\Cram\\cramchallenge2024\\dist\\guiMULTI\\_internal\\python312.dll', '.'),
+        ('dist\\guiMULTI\\_internal\\python3.dll', '.'),
     ],
     datas=[
         ('get_nvd_data.py', '.'),  # Include get_nvd_data.py
