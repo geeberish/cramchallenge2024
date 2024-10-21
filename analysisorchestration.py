@@ -24,13 +24,17 @@ def call_get_nvd_data(api_key_file_path, dv_file_path):
 #      return score_component_averages
 
 def ppp_api(sum_file_path, groq_api_path):
-    # Construct the path using os.path.join for cross-platform compatibility
-    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
+    # Get the directory of the current script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construct the full path to the framework file
+    framework_file_path = os.path.join(base_dir, 'frameworks', 'CSF_Best_Prac_KV.json')
     
     # 4. Send files to API
     security_best_prac = get_security_scores(framework_file_path, sum_file_path, groq_api_path)
 
     return security_best_prac
+
 def call_apt_api(cve_desc, groq_file_path):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
      apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper)", groq_file_path)
@@ -85,16 +89,13 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
     return  base, physical, personnel, policies, average, apt, report
 
 
-    
-
-    
-
-
-import os
 
 def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores, groq_api_path):
-    # Construct the path using os.path.join for cross-platform compatibility
-    framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
+    # Get the directory of the current script
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construct the full path to the framework file
+    framework_file_path = os.path.join(base_dir, 'frameworks', 'CSF_Best_Prac_KV.json')
     
     # Get explanations and recommendations
     ppp_explanations = get_explanations(framework_file_path, sum_file_path, groq_api_path)
@@ -119,9 +120,6 @@ def report_generation(base, physical, personnel, policies, average, apt, sum_fil
     
     # Iterate over the list of modified scores to extract apt_score and apt_reasoning only
     for idx, scores_to_upload in enumerate(modified_scores):
-        # Print the dictionary for debugging purposes
-        #print(f"Entry {idx + 1}: {scores_to_upload}")
-        
         # Extract the APT-related information
         cve_number = scores_to_upload.get('CVE Number', 'N/A')
         apt_score = scores_to_upload.get('apt_score', 'N/A')
@@ -134,7 +132,6 @@ def report_generation(base, physical, personnel, policies, average, apt, sum_fil
     
     # Return the full report as a string
     return full_report
-
 
 
 

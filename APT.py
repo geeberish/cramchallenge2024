@@ -5,9 +5,11 @@ import json
 
 
 
-# Load APT groups dictionary
-# Construct the path using os.path.join for cross-platform compatibility
-apt_group_file_path = os.path.join('sue_data', 'json_data', 'apt_group.json')
+# Get the directory of the current script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the APT group file
+apt_group_file_path = os.path.join(base_dir, 'sue_data', 'json_data', 'apt_group.json')
 
 # Load APT groups dictionary
 try:
