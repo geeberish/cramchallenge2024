@@ -16,7 +16,7 @@ try:
     with open(apt_group_file_path, 'r') as f:
         apt_groups = json.load(f)
 except FileNotFoundError:
-    print("Error: APT group data file not found.")
+    print("Error: data file not found.")
     apt_groups = {}
 except json.JSONDecodeError:
     print("Error: Invalid JSON in APT group data file.")
