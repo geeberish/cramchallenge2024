@@ -1,0 +1,32 @@
+[
+  {
+    "Hardware Make": "Cisco",
+    "Model Number": "Catalyst 2960-X",
+    "Description": "Layer 2 Gigabit Ethernet Network Switch"
+  },
+  {
+    "Hardware Make": "Dell",
+    "Model Number": "PowerVault ME5024",
+    "Description": "Storage Area Network (SAN)"
+  },
+  {
+    "Hardware Make": "Tripp Lite",
+    "Model Number": "N052-048-1U",
+    "Description": "48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+  },
+  {
+    "Hardware Make": "Cisco",
+    "Model Number": "MS425-32",
+    "Description": "Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+  },
+  {
+    "Hardware Make": "APC",
+    "Model Number": "SMT3000RM2UC",
+    "Description": "Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+  },
+  {
+    "Hardware Make": "Miscellaneous",
+    "Model Number": "Miscellaneous",
+    "Description": "Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "function_number": "F1",
+    "company_work_area": "Engineering & Production",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F2",
+    "company_work_area": "Engineering & Production",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F3",
+    "company_work_area": "Engineering & Production",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F4",
+    "company_work_area": "Test Engineering",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F5",
+    "company_work_area": "IT & Cybersecurity",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F6",
+    "company_work_area": "IT & Cybersecurity",
+    "criticality_weight": "High",
+    "criticality_value": 3
+  },
+  {
+    "function_number": "F7",
+    "company_work_area": "Engineering & Production",
+    "criticality_weight": "Medium",
+    "criticality_value": 2
+  },
+  {
+    "function_number": "F8",
+    "company_work_area": "Test Engineering",
+    "criticality_weight": "Medium",
+    "criticality_value": 2
+  },
+  {
+    "function_number": "F9",
+    "company_work_area": "Test Engineering",
+    "criticality_weight": "Medium",
+    "criticality_value": 2
+  },
+  {
+    "function_number": "F10",
+    "company_work_area": "Company Management",
+    "criticality_weight": "Medium",
+    "criticality_value": 2
+  },
+  {
+    "function_number": "F11",
+    "company_work_area": "Engineering & Production",
+    "criticality_weight": "Low",
+    "criticality_value": 1
+  },
+  {
+    "function_number": "F12",
+    "company_work_area": "Test Engineering",
+    "criticality_weight": "Low",
+    "criticality_value": 1
+  },
+  {
+    "function_number": "F13",
+    "company_work_area": "Company Management",
+    "criticality_weight": "Low",
+    "criticality_value": 1
+  },
+  {
+    "function_number": "F14",
+    "company_work_area": "Company Management",
+    "criticality_weight": "Low",
+    "criticality_value": 1
+  },
+  {
+    "function_number": "F15",
+    "company_work_area": "Company Management",
+    "criticality_weight": "Low",
+    "criticality_value": 1
+  }
+]

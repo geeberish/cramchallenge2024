@@ -1,0 +1,16 @@
+function_number,company_work_area,criticality_weight,criticality_value
+F1,Engineering & Production,High,3
+F2,Engineering & Production,High,3
+F3,Engineering & Production,High,3
+F4,Test Engineering,High,3
+F5,IT & Cybersecurity,High,3
+F6,IT & Cybersecurity,High,3
+F7,Engineering & Production,Medium,2
+F8,Test Engineering,Medium,2
+F9,Test Engineering,Medium,2
+F10,Company Management,Medium,2
+F11,Engineering & Production,Low,1
+F12,Test Engineering,Low,1
+F13,Company Management,Low,1
+F14,Company Management,Low,1
+F15,Company Management,Low,1

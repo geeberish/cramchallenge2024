@@ -1,0 +1,164 @@
+[
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "4125 NGFW",
+    "Hardware Description": "Next Generation Firewall (NGFW) with Intrusion Protection Systems (IPS), rack mountable, 1U"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "MS425-32",
+    "Hardware Description": "Meraki Layer 3 Switch (Router)"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "Catalyst 2960-X",
+    "Hardware Description": "Layer 2 Gigabit Ethernet Network Switch"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Tripp Lite",
+    "Hardware Model Number": "B030-008-17-IP",
+    "Hardware Description": "Rack Mounted Monitor, Keyboard, and Touchpad"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "PowerEdge R750",
+    "Hardware Description": "Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "PowerVault ME5024",
+    "Hardware Description": "Storage Area Network (SAN)"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Tripp Lite",
+    "Hardware Model Number": "N052-048-1U",
+    "Hardware Description": "48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "APC",
+    "Hardware Model Number": "SMT3000RM2UC",
+    "Hardware Description": "Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+  },
+  {
+    "Node Category": "boundary defense and system administrator rack",
+    "Hardware Make": "Miscellaneous",
+    "Hardware Model Number": "Miscellaneous",
+    "Hardware Description": "Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "Catalyst 2960-X",
+    "Hardware Description": "Layer 2 Gigabit Ethernet Network Switch"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "PowerVault ME5024",
+    "Hardware Description": "Storage Area Network (SAN)"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "Tripp Lite",
+    "Hardware Model Number": "N052-048-1U",
+    "Hardware Description": "48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "MS425-32",
+    "Hardware Description": "Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "APC",
+    "Hardware Model Number": "SMT3000RM2UC",
+    "Hardware Description": "Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Hardware Make": "Miscellaneous",
+    "Hardware Model Number": "Miscellaneous",
+    "Hardware Description": "Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+  },
+  {
+    "Node Category": "company laptops",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": 7330,
+    "Hardware Description": "Rugged Latitude Extreme Laptop"
+  },
+  {
+    "Node Category": "company laptops",
+    "Hardware Make": "Gator",
+    "Hardware Model Number": "None",
+    "Hardware Description": "ATA TSA Molded Laptop Travel Case (Hard Shell, Exterior Dimensions: 19.38in W x 14.5in D x 9.75in H)"
+  },
+  {
+    "Node Category": "company laptops",
+    "Hardware Make": "Miscellaneous",
+    "Hardware Model Number": "Miscellaneous",
+    "Hardware Description": "Miscellaneous Equipment (e.g., industrial grade power strip and power cord, various computer network cable types, cable adapters, etc.)"
+  },
+  {
+    "Node Category": "company workstations",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "Precision 5820",
+    "Hardware Description": "Computer Tower with Keyboard and Mouse"
+  },
+  {
+    "Node Category": "company workstations",
+    "Hardware Make": "Samsung",
+    "Hardware Model Number": "S24C450DL",
+    "Hardware Description": "24in Widescreen LCD Display"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "Catalyst 2960-X",
+    "Hardware Description": "Layer 2 Gigabit Ethernet Network Switch"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "PowerEdge R750",
+    "Hardware Description": "Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Tripp Lite",
+    "Hardware Model Number": "N052-048-1U",
+    "Hardware Description": "48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Cisco",
+    "Hardware Model Number": "MS425-32",
+    "Hardware Description": "Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Dell",
+    "Hardware Model Number": "PowerVault ME5024",
+    "Hardware Description": "Storage Area Network (SAN)"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "APC",
+    "Hardware Model Number": "SMT3000RM2UC",
+    "Hardware Description": "Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+  },
+  {
+    "Node Category": "server rack",
+    "Hardware Make": "Miscellaneous",
+    "Hardware Model Number": "Miscellaneous",
+    "Hardware Description": "Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+  }
+]

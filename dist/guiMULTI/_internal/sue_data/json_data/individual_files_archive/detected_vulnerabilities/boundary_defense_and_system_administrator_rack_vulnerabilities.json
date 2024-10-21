@@ -1,0 +1,290 @@
+[
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20269",
+    "NVD Score": 9.1
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20256",
+    "NVD Score": 5.8
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20247",
+    "NVD Score": 4.3
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20200",
+    "NVD Score": 6.3
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20095",
+    "NVD Score": 8.6
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20015",
+    "NVD Score": 6.7
+  },
+  {
+    "Node": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20934",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Router",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2018-0284",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Router",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7999",
+    "NVD Score": 7.7
+  },
+  {
+    "Node": "Router",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7993",
+    "NVD Score": 3.3
+  },
+  {
+    "Node": "Router",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7994",
+    "NVD Score": 5.4
+  },
+  {
+    "Node": "Router",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7994",
+    "NVD Score": 5.4
+  },
+  {
+    "Node": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": 2,
+    "CVE Number": "CVE-2020-7337",
+    "NVD Score": 6.7
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": 2,
+    "CVE Number": "CVE-2009-5118",
+    "NVD Score": 9.3
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": 2,
+    "CVE Number": "CVE-2007-2152",
+    "NVD Score": 7.9
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2023-0101",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2021-20135",
+    "NVD Score": 6.7
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2020-5765",
+    "NVD Score": 5.4
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": 8.6,
+    "CVE Number": "CVE-2024-23675",
+    "NVD Score": 6.5
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": 8.6,
+    "CVE Number": "CVE-2024-23676",
+    "NVD Score": 3.5
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": 8.6,
+    "CVE Number": "CVE-2023-40593",
+    "NVD Score": 7.5
+  },
+  {
+    "Node": "Virtualization Manager Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": 8.6,
+    "CVE Number": "CVE-2023-40592",
+    "NVD Score": 6.1
+  },
+  {
+    "Node": "Audit Log Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Virtualization Manager SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node": "Virtualization Manager SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Virtualization Manager SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Cybersecurity Capability & Tools SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Audit Log SANS",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVD-2015-7833",
+    "NVD Score": 4.9
+  }
+]

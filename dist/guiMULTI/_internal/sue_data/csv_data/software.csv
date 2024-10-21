@@ -1,0 +1,39 @@
+﻿Node Category,Node Name,Software Make,Software Description,Software Version
+boundary defense and system administrator rack,Firewall,Cisco,FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software,6.6.7
+boundary defense and system administrator rack,Layer 3 Switch (Router),Cisco,Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23),9/23/2014
+boundary defense and system administrator rack,Layer 2 Switch (Ethernet),Cisco,Catalyst 2960-X IOS,IOS 15.2(1)E
+boundary defense and system administrator rack,Virtualization Manager Server,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,RedHat,RedHat Enterprise Linux,RHEL 7.1
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,McAfee,VirusScan Enterprise,2
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Tenable,Nessus Vulnerability Scanner,8.10.0
+boundary defense and system administrator rack,Cybersecurity Capability & Tools Server,Splunk,Enterprise Security Information and Event Manager (SIEM),8.6
+boundary defense and system administrator rack,Audit Log Server,RedHat,RedHat Enterprise Linux,RHEL 7.1
+boundary defense and system administrator rack,Virtualization Manager SANS,RedHat,RedHat Enterprise Linux,RHEL 6.0
+boundary defense and system administrator rack,Cybersecurity Capability & Tools SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1
+boundary defense and system administrator rack,Audit Log SANS,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E
+bulk data storage rack,Engineering & Production SAN Archive 1,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Engineering & Production SAN Archive 2,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Engineering & Production SAN Archive 1 Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Engineering & Production SAN Archive 2 Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Test SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Test SAN Archive Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Cybersecurity Capability & Tools SAN Archive Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Company Management SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1
+bulk data storage rack,Company Management SAN Archive Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1
+company laptops,Test Laptop,RedHat,Red Hat Enterprise Linux (RHEL),RHEL 5.0
+company laptops,Test Laptop,OpenOffice,Apache OpenOffice (Open Source),4.1.1.4
+company workstations,Workstations,RedHat,Red Hat Enterprise Linux (RHEL),RHEL 6.0
+company workstations,Workstations,OpenOffice,Apache OpenOffice (Open Source),4.1.1.4
+server rack,"Layer 2 Switches (Ethernet), Qty. 2",Cisco,Catalyst 2960-X IOS,IOS 15.2(1)E
+server rack,Servers SR1 and SR2,RedHat,RedHat Enterprise Linux,RHEL 5.0
+server rack,Servers SR3 and SR4,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0
+server rack,Servers SR7 and SR8,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Severs SR9 and SR10,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2
+server rack,Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0
+server rack,Engineering & Production SAN 2,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Engineering & Production SAN 3,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Test SAN,RedHat,RedHat Enterprise Linux,RHEL 7.1
+server rack,Company Management SAN,RedHat,RedHat Enterprise Linux,RHEL 5.0

@@ -1,0 +1,14 @@
+[
+  {
+    "Node": "Workstations",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 6.0"
+  },
+  {
+    "Node": "Workstations",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice (Open Source)",
+    "Software Version": "4.1.1.4"
+  }
+]
