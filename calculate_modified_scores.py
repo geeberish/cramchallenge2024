@@ -337,23 +337,23 @@ def round_up_hun(number):
 # set file locations/hard code some variables if this code is run to test
 if __name__ == "__main__":
   with open('./sue_data/json_data/individual_files_archive/combined_vulnerabilities_data_file.json') as detected_vulnerabilities_file:
-    combined_vulnerabilities_data = json.load(detected_vulnerabilities_file)
-  cves = set([item["CVE Number"] for item in combined_vulnerabilities_data])
+    combined_vulnerabilities_data = json.load(detected_vulnerabilities_file) # manually load combined_vulnerabilities_data
+  cves = set([item["CVE Number"] for item in combined_vulnerabilities_data]) # disting set of detected CVE's
   with open('./sue_data/json_data/individual_files_archive/node_criticality_mapping_file.json') as node_criticality_mapping_file:
-    node_criticality_mapping = json.load(node_criticality_mapping_file)
-  system_evaluation_scores = {
+    node_criticality_mapping = json.load(node_criticality_mapping_file) # manually load node_criticality_mapping
+  system_evaluation_scores = { # simulate being passed the 3P's
     'personnel_score': 0.45,
     'physical_security_score': 0.5,
     'policies_score': 0.55
   }
-  apt_cve_evaluation_scores = {}
+  apt_cve_evaluation_scores = {} # create empty dictionary for LLM APT score metrics
 
   for cve in cves:
-    cve_number = cve
-    apt_score = .52
-    reasoning = "reasoning ... ... ... blah blah blah ... APT's BAD!!!"
-    dictionary = {'apt_score': apt_score, 'reasoning': reasoning}
-    apt_cve_evaluation_scores[cve_number] = dictionary
+    cve_number = cve # simulate CVE being analyzed against APT data
+    apt_score = .52 # simulate creating LLM apt score for specified CVE
+    reasoning = "reasoning ... ... ... blah blah blah ... APT's BAD!!!" # simulate creating LLM reasoning for APT score
+    dictionary = {'apt_score': apt_score, 'reasoning': reasoning} # build sub-dictionary
+    apt_cve_evaluation_scores[cve_number] = dictionary # append sub-dictionary to dictionary
 
   main(combined_vulnerabilities_data, node_criticality_mapping, system_evaluation_scores, apt_cve_evaluation_scores)
 
