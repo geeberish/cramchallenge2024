@@ -89,24 +89,52 @@ def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_pat
 
     
 
-def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores,groq_api_path):
+
+import os
+
+def report_generation(base, physical, personnel, policies, average, apt, sum_file_path, modified_scores, groq_api_path):
     # Construct the path using os.path.join for cross-platform compatibility
     framework_file_path = os.path.join('frameworks', 'CSF_Best_Prac_KV.json')
     
+    # Get explanations and recommendations
     ppp_explanations = get_explanations(framework_file_path, sum_file_path, groq_api_path)
     ppp_recommendations = get_recommendations(framework_file_path, sum_file_path, groq_api_path)
-
-    output = (f"Base Score: {base}\n"
-              f"Physical Security Score: {physical}\n"
-              f"\t*Explanation: {ppp_explanations['physical_security_explanation']}\n"
-              f"Personnel Score: {personnel}\n"
-              f"\t*Explanation: {ppp_explanations['personnel_explanation']}\n"
-              f"Operational Policies Score: {policies}\n"
-              f"\t*Explanation: {ppp_explanations['policies_explanation']}\n"
-              f"Environmental Score: {average}\n"
-              f"APT Threat Index: {apt}\n")
     
-    return output
+    # Start the report with static base information (this part will only print once)
+    full_report = (f"Base Score: {base}\n"
+                   f"Environmental Score: {average}\n"
+                   f"APT Threat Index: {apt}\n"
+                   f"Physical Security Score: {physical}\n"
+                   f"\t*Explanation: {ppp_explanations['physical_security_explanation']}\n"
+                   f"\n\t*Recommendations for Remediation: {ppp_recommendations['physical_security_recommendations']}\n"
+                   f"Personnel Score: {personnel}\n"
+                   f"\t*Explanation: {ppp_explanations['personnel_explanation']}\n"
+                   f"\n\t*Recommendations for Remediation: {ppp_recommendations['personnel_recommendations']}\n"
+                   f"Operational Policies Score: {policies}\n"
+                   f"\t*Explanation: {ppp_explanations['policies_explanation']}\n"
+                   f"\n\t*Recommendations for Remediation: {ppp_recommendations['policies_recommendations']}\n")
+
+    # Add a section for just the APT scores and reasoning
+    full_report += "\nAPT Scores and Reasoning:\n"
+    
+    # Iterate over the list of modified scores to extract apt_score and apt_reasoning only
+    for idx, scores_to_upload in enumerate(modified_scores):
+        # Print the dictionary for debugging purposes
+        print(f"Entry {idx + 1}: {scores_to_upload}")
+        
+        # Extract the APT-related information
+        apt_score = scores_to_upload.get('apt_score', 'N/A')
+        apt_reasoning = scores_to_upload.get('apt_reasoning', 'N/A')
+        
+        # Append APT-specific information to the report
+        full_report += (f"APT Score: {apt_score}\n"
+                        f"APT Reasoning: {apt_reasoning}\n\n")
+    
+    # Return the full report as a string
+    return full_report
+
+
+
 
 
      
