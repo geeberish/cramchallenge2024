@@ -608,6 +608,9 @@ class SystemEvaluationApp(QWidget):
             report_file_name = f"{submission_name.replace(' ', '_')}_report.txt"
             report_file_path = os.path.join("submissions", report_file_name)
 
+            # Ensure the submissions folder exists
+            os.makedirs("submissions", exist_ok=True)
+
             # Write the report content to the file
             with open(report_file_path, 'w') as report_file:
                 report_file.write(report)
