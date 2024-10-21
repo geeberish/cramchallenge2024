@@ -863,20 +863,42 @@ class SystemEvaluationApp(QWidget):
         for file_name in self.submitted_files:
             self.file_list_widget.addItem(file_name)
 
+    # def load_submissions(self):
+    #     # Load submissions from a CSV file
+    #     submissions = []
+    #     try:
+    #         with open("submissions.csv", "r") as csvfile:
+    #             reader = csv.reader(csvfile)
+    #             next(reader)  # Skip header row
+    #             for row in reader:
+    #                 if len(row) == 5:  # Ensure the row has three items
+    #                     submissions.append((row[0], row[1], row[2], row[3], row[4]))  # (File name, Submission Time, Score)
+    #     except FileNotFoundError:
+    #         print("No previous submissions found.")
+    #     return submissions
+    
     def load_submissions(self):
-        # Load submissions from a CSV file
+    # Load submissions from a CSV file
         submissions = []
         try:
             with open("submissions.csv", "r") as csvfile:
                 reader = csv.reader(csvfile)
-                next(reader)  # Skip header row
+                try:
+                    next(reader)  # Skip header row
+                except StopIteration:
+                    # Handle the case where the file is empty or contains no rows
+                    print("The file is empty or contains no rows.")
+                    return submissions  # Return empty list if no header or rows
+                    
                 for row in reader:
-                    if len(row) == 5:  # Ensure the row has three items
+                    if len(row) == 5:  # Ensure the row has exactly 5 items
                         submissions.append((row[0], row[1], row[2], row[3], row[4]))  # (File name, Submission Time, Score)
+                    else:
+                        print(f"Skipping malformed row: {row}")  # Optionally handle malformed rows
         except FileNotFoundError:
             print("No previous submissions found.")
         return submissions
-    
+
     def hash_submissions(self):
         # Hash the submissions CSV file
         with open("submissions.csv", "rb") as file:
