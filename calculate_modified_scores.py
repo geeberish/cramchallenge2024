@@ -336,10 +336,10 @@ def round_up_hun(number):
 
 # set file locations/hard code some variables if this code is run to test
 if __name__ == "__main__":
-  with open('./sue_data/json_data/individual_files_archive/combined_vulnerabilities_data_file.json') as detected_vulnerabilities_file:
+  with open('./sue_data_1.0/json_data/individual_files_archive/combined_vulnerabilities_data_file.json') as detected_vulnerabilities_file:
     combined_vulnerabilities_data = json.load(detected_vulnerabilities_file) # manually load combined_vulnerabilities_data
   cves = set([item["CVE Number"] for item in combined_vulnerabilities_data]) # disting set of detected CVE's
-  with open('./sue_data/json_data/individual_files_archive/node_criticality_mapping_file.json') as node_criticality_mapping_file:
+  with open('./sue_data_1.0/json_data/individual_files_archive/node_criticality_mapping_file.json') as node_criticality_mapping_file:
     node_criticality_mapping = json.load(node_criticality_mapping_file) # manually load node_criticality_mapping
   system_evaluation_scores = { # simulate being passed the 3P's
     'personnel_score': 0.45,

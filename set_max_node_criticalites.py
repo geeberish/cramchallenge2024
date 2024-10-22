@@ -142,10 +142,10 @@ def  update_node_criticality_mapping(node_criticality_mapping, node_category_map
   return node_criticality_mapping
 
 if __name__ == "__main__":
-  with open('./sue_data/json_data/detected_vulnerabilities.json') as detected_vulnerabilities_file:
+  with open('./sue_data_1.0/json_data/detected_vulnerabilities.json') as detected_vulnerabilities_file:
     combined_vulnerabilities_data = json.load(detected_vulnerabilities_file)
-  critical_functions_definitions_location = './sue_data/json_data/critical_functions_definition.json'
-  critical_functions_mapping_location = './sue_data/json_data/critical_functions_mapping.json'
+  critical_functions_definitions_location = './sue_data_1.0/json_data/critical_functions_definition.json'
+  critical_functions_mapping_location = './sue_data_1.0/json_data/critical_functions_mapping.json'
   
   main(
     combined_vulnerabilities_data,

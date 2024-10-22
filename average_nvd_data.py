@@ -45,7 +45,7 @@ def build_score_components_averages_dictionary(combined_vulnerabilities_data, sc
 
 # set file locations if this code is run directly/not called from another script
 if __name__ == "__main__":
-  combined_vulnerabilities_data_location = './sue_data/json_data/individual_files_archive/combined_vulnerabilities_data_file.json'
+  combined_vulnerabilities_data_location = './sue_data_1.0/json_data/individual_files_archive/combined_vulnerabilities_data_file.json'
 
   with open(combined_vulnerabilities_data_location) as vulnerabilities_file: # open file
     combined_vulnerabilities_data = json.loads(vulnerabilities_file) # read file and save to variable

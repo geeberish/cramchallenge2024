@@ -13,10 +13,10 @@ a = Analysis(
         ('APT.py', '.'), 
         ('set_max_node_criticalites.py', '.'), 
         ('calculate_modified_scores.py', '.'), 
-        ('sue_data', 'sue_data'),  # Include sue_data folder
-        ('sue_data/json_data', 'sue_data/json_data'),  # Include json_data folder within sue_data
+        ('sue_data_1.0', 'sue_data_1.0'),  # Include sue_data folder
+        ('sue_data_1.0/json_data', 'sue_data_1.0/json_data'),  # Include json_data folder within sue_data
         ('sue_data_1.0/json_data/apt_group.json', 'sue_data/json_data'),  # Include apt_group.json within json_data
-        ('sue_data/txt_data', 'sue_data/txt_data'),  # Include txt_data folder within sue_data
+        ('sue_data_1.0/txt_data', 'sue_data_1.0/txt_data'),  # Include txt_data folder within sue_data
         ('frameworks', 'frameworks'),  # Include frameworks folder
         ('submissions', 'submissions'),  # Include submissions folder
     ],

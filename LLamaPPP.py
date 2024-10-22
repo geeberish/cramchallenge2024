@@ -187,7 +187,7 @@ def get_recommendations(best_practices_file, system_summaries_file,groq_api_path
 
 if __name__ == "__main__":
     best_practices_file = 'frameworks/CSF_Best_Prac_KV.json'
-    system_summaries_file = 'sue_data/json_data/summaries.json'
+    system_summaries_file = 'sue_data_1.0/json_data/summaries.json'
     
     scores = get_security_scores(best_practices_file, system_summaries_file)
     print("\nScores:", scores)
