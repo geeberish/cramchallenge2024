@@ -26,7 +26,7 @@ class Worker(QObject):
     # Signal to send results back to the main thread
     results_ready = Signal(object)
 
-    def __init__(self, selected_cfd, selected_cfm, selected_dv, selected_sum, selected_nvd, selected_groq):
+    def __init__(self, selected_cfd, selected_cfm, selected_dv, selected_sum, selected_nvd, selected_groq, selected_apt):
         super().__init__()
         self.selected_cfd = selected_cfd
         self.selected_cfm = selected_cfm
@@ -34,6 +34,7 @@ class Worker(QObject):
         self.selected_sum = selected_sum
         self.selected_nvd = selected_nvd
         self.selected_groq = selected_groq
+        self.selected_apt = selected_apt  # Store the selected APT group
 
     def run(self):
         try:
@@ -43,7 +44,8 @@ class Worker(QObject):
                 self.selected_dv,
                 self.selected_sum,
                 self.selected_nvd,
-                self.selected_groq 
+                self.selected_groq,
+                self.selected_apt  # Pass the selected APT group
             )
             self.results_ready.emit((base, physical, personnel, policies, average, apt, report))
         except Exception as e:
@@ -350,14 +352,10 @@ class SystemEvaluationApp(QWidget):
         self.submission_name_input.setFont(self.font)
         self.submission_name_input.setStyleSheet("color: white; background-color: #3E3E3E;")
         toplayout.addWidget(self.submission_name_input)
-
-        # Add throbber to layout
-        toplayout.addWidget(self.throbber_label)
-        # Add widgets to the layout
         toplayout.addWidget(self.labelapt)
         toplayout.addWidget(self.combo_box)
-
-        
+        # Add throbber to layout
+        toplayout.addWidget(self.throbber_label)
 
         self.cfd_file_name_label = QLabel("")
         self.cfd_file_name_label.setFont(self.font)
@@ -679,6 +677,7 @@ class SystemEvaluationApp(QWidget):
 
     def submit_file(self):
         self.start_throbber()
+
         # Check for required files
         if not self.selected_cfd_button or not self.selected_cfm_button or not self.selected_dv_button or not self.selected_sum_button or not self.selected_nvd_button or not self.selected_groq_button:
             missing_files = []
@@ -696,8 +695,13 @@ class SystemEvaluationApp(QWidget):
                 missing_files.append("Groq")
 
             QMessageBox.warning(self, "Missing Files", "Please select the following required files:\n" + "\n".join(missing_files))
-            #self.stop_throbber()  # Stop the throbber if files are missing
             return  # Exit if files are missing
+
+        # Get the selected APT group from the combo box
+        selected_apt_group = self.combo_box.currentText()
+        if not selected_apt_group:
+            QMessageBox.warning(self, "Missing Selection", "Please select an APT Group.")
+            return  # Exit if no APT group is selected
 
         # Prepare files to submit
         files_to_submit = {
@@ -707,15 +711,17 @@ class SystemEvaluationApp(QWidget):
             "sum": self.selected_sum_button,
             "nvd": self.selected_nvd_button,
             "groq": self.selected_groq_button,
+            "apt_group": selected_apt_group  # Add the selected APT group
         }
 
         worker = Worker(
-        self.selected_cfd_button,
-        self.selected_cfm_button,
-        self.selected_dv_button,
-        self.selected_sum_button,
-        self.selected_nvd_button,
-        self.selected_groq_button
+            self.selected_cfd_button,
+            self.selected_cfm_button,
+            self.selected_dv_button,
+            self.selected_sum_button,
+            self.selected_nvd_button,
+            self.selected_groq_button,
+            selected_apt_group  # Pass the APT group to the worker
         )
 
         # Connect the signal to process_results
@@ -723,8 +729,7 @@ class SystemEvaluationApp(QWidget):
 
         # Start the orchestration in a separate thread
         threading.Thread(target=worker.run).start()
-        #self.stop_throbber()
-        
+            
 
     def reset_file_selections(self):
         # Clear the selections for all file types
