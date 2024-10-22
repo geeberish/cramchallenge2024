@@ -1,0 +1,156 @@
+Some additional company facility and information system characteristics to consider are:
+
+  a. The company uses proprietary application software for all the engineering and production, test 
+    engineering, and company management functions. This proprietary application software will not 
+    be part of the system under evaluation for this challenge.
+  b. Information system boundary Firewall Intrusion Prevention System (IPS) rulesets are not 
+    up-to-date.
+  c. Some of the hardware and software components within the company information system have 
+    reached “end-of-life”. This means that the component manufacturer no longer supports the 
+    hardware or software item, and as a result will not provide security patches to firmware or 
+    software for any newly discovered vulnerabilities.
+  d. Nodes within the company information system have not had the latest security patches installed 
+    leaving open vulnerabilities. Some vulnerabilities have been known for some time but can not be 
+    patched since some of the application software providing critical functions will stop working.
+  e. Nessus vulnerability scanner has not been updated with the latest plugins, where a single 
+    plugin performs an automated test to detect the presence of a specific known vulnerability on a 
+    commercial hardware or software item. This has resulted in the IT staff performing 
+    vulnerability scans on the system in compliance with company policy but are not detecting the 
+    new vulnerabilities on the information system.
+  f. The Information Technology (IT) staff have implemented user accounts processes and monitoring 
+    procedures and have implemented Role Based Access Control (RBAC) with four defined roles:
+      - System Administrator (SA) – The SA role has “root” level privileges to all IT equipment, 
+        cybersecurity capability and tools, and all data stored on the workstations and laptops, 
+        servers, and SANS storage locations to include the Archive and Archive Backup locations. 
+        All IT staff are assigned the SA role and the IT staff is responsible for performing all 
+        cybersecurity tasks and data management tasks.
+      - Engineering and Production (EP) – The EP role has “owner” privileges to all software 
+        applications and tools used during product and system development, configuration 
+        management, integration, production, fielding, and sustainment. This role also has access 
+        to all the engineering and production data for all the company projects. All the company 
+        engineering and production staff are assigned the EP role.
+      - Test Engineering (TE) – The TE role has “owner” privileges to all the software applications 
+        used to test the company products during development and integration as well as the 
+        production units. The TE role also has “owner” privileges to all test plans, test 
+        procedures, product under test configuration information, and test data. All company test 
+        engineering staff are assigned the TE role.
+      - Company Management (CMgmt) – The CMgmt role has “owner” privileges to all the company 
+        sensitive information to include Human Resources records, Payroll records, Project 
+        Management records, Legal records, and personnel managers records to include the company 
+        Vice President and President records. All company management staff are assigned the CMgmt 
+        role.
+
+The following subsections describe the information system equipment racks and the hardware and 
+software installed in the racks that will be part of the system under evaluation for this 
+evaluation. The company has developed a suite of proprietary application software for their 
+engineering and production, test engineering, and company management work areas. The company 
+asserts that the application software does not have any vulnerabilities, so the application 
+software will not be part of the system under evaluation for this evaluation other than evaluating 
+the criticality of the functions the software performs. The evaluation will be limited in scope to 
+just the operating systems and specific commercial tools used for cybersecurity.
+
+  1. Boundary Defense and System Administration Rack.
+  The company facility will have a Boundary Defense and System Administration Rack that will  
+  include a Cisco Firepower Firewall with an Intrusion Prevention System (IPS). All external 
+  network traffic passing into or out of the facility will be routed through the Firewall and 
+  rulesets will be developed to only permit the required data flows. The IPS will be updated 
+  periodically with the latest Cisco signatures in order to detect well known cyber attacks, and 
+  specific alert types and automated response actions will be configured on the IPS by the facility 
+  Information Technology (IT) System Administrator for each signature category. The rack will 
+  include a Cisco Layer 3 Switch that will interconnect the internal rack components as well as 
+  provide the interface to the other equipment racks within the facility. External network traffic 
+  that successfully passes through the Firewall will then be routed through the Layer 3 Switch to 
+  the end node destination. The rack will include PowerEdge Servers with a dedicated server for the 
+  Virtualization Management, Cybersecurity Capability and Tools, and Computer and Network Audit Log 
+  Server functions. Each server will have a bulk data Storage Area Network (SANS) location. A 
+  built-in monitor, keyboard, and track ball will be part of the equipment rack and will provide 
+  the location where the System Administrator will configure and monitor the IT internal to the 
+  facility, perform cybersecurity tasks, and manage the user accounts. It will also be the location 
+  where the Virtualization Management will be performed when virtual machines are instantiated on 
+  the Server Racks for the production and test activities. A patch panel will provide a central 
+  cable management point for all the internal equipment interconnection in the rack. It will also 
+  allow for easier reconfiguration of the rack interconnect if it becomes necessary. The rack will 
+  include an Uninterruptible Power Supply with a power conditioner that will provide emergency 
+  power backup in the event of a primary facility power interruption.
+
+  The Cybersecurity Tools will consist of an Identity Management (IdM) server, a Splunk Security 
+  Information and Event Manager (SIEM), McAfee Anti-Virus scanner, and Nessus vulnerability scanner 
+  to monitor the facility operations and ensure the information systems are secure. The facility IT 
+  System Administrator will routinely monitor the SIEM for cybersecurity alerts and will initiate 
+  internal cybersecurity tests, such as Anti-Virus scans and Nessus vulnerability scans, of all 
+  installed IT in compliance with the company cybersecurity policy and procedures. The facility 
+  System Administrator will also perform user account management from the Boundary Defense and 
+  System Management rack through the IdM service. The System Administrator will validate all user 
+  accounts are still valid and that each user has the appropriate roles assigned at least monthly 
+  per the company cybersecurity policy and procedures. The file hardware.json and software.json 
+  provide the hardware and software list, respectively, for the Boundary Defense and System 
+  Administration Rack.
+
+  2. Server Rack
+  The Server Rack provides the common computing resources for the entire company to include the 
+  engineering and production, test engineering, and company management work areas. The IT and 
+  cybersecurity work area separated and is implemented on a dedicated Boundary Defense and System 
+  Administration Rack (section 1). The Server Rack contains multiple PowerEdge R750 ESXi Servers 
+  and PowerVault Storage Area Network (SANS) servers and they will be used within the facility to:
+    - Provides the product design, development, and test tools.
+    - Process and display technical data library artifacts that describe the systems and products 
+      under development and test within the organization to include sensitive Intellectual Property 
+      (IP) information.
+    - Product Help Desk Response Ticketing System application software and record database 
+      software. The engineering and production work area will provide a Help Desk to respond to 
+      customer questions and comments. The Help Desk operators will access the Ticketing System 
+      from their workstations.
+    - Virtualized product under development Test and Analysis Environment for software products.
+    - Company training environment that will be used to develop workforce knowledge and skills.
+    - Provide computer resources for company management functions (e.g., Human Resources, Payroll, 
+      Legal, Contracts, project managers, personnel managers, company vice president, and company 
+      president).
+  The rack also includes Cisco Catalyst Ethernet Switches that will interconnect the servers and 
+  SANS storage servers and a Cisco Meraki Layer 3 network switch will connect the server rack to 
+  any other server racks if they are installed in the future (not currently used). A patch panel is 
+  provided to allow for easier reconfiguration of the rack interconnect if it becomes necessary. An 
+  Uninterruptible Power Supply (UPS) will be included within the Server Rack that will provide 
+  temporary emergency power when the primary facility power circuit is interrupted allowing for a 
+  graceful shutdown or until any backup emergency power source is engaged. Files hardware.csv and 
+  software.csv provide the hardware and software list, respectively, for the Server Rack.
+
+  3. Bulk Data Storage Rack
+  The Bulk Data Storage Rack contains multiple Dell PowerVault Storage Area Network (SAN) units. 
+  This rack provides the archive storage the facility engineering and production, test engineering, 
+  IT and cybersecurity, and company management work areas. The IT cybersecurity data will be 
+  encrypted at rest on dedicated SANS drives. The company products technical data and test data 
+  assessed as sensitive Intellectual Property data and any other company sensitive data will be 
+  encrypted at rest and stored on dedicated SANS drives. The company also implements automatic 
+  archive replication to a backup SANS within the same equipment rack in the event of the primary 
+  archive failure. The SANS storage on the rack includes:
+    - Provide the bulk data storage location for all data collected during IT operations and 
+      cybersecurity monitoring and cyber incident response.
+    - Store product Intellectual Property and any other company sensitive data, such as financial 
+      records and contract agreements.
+    - Store product test and analysis data and test reports.
+    - Store company sensitive financial data, legal data to include contracts data, human resources 
+      data, payroll data, and any other company sensitive data.
+  The Cisco Catalyst Layer 2 (Ethernet) switches interconnect the SAN components and connect to the 
+  Layer 3 switch (router) in the Boundary Defense and System Administration Rack. A patch panel 
+  will provide a central cable management point for all the internal equipment interconnection in 
+  the rack. It will also allow for easier reconfiguration of the rack interconnect if it becomes 
+  necessary. An Uninterruptible Power Supply (UPS) will be included within the Bulk Data Storage 
+  Rack that will provide temporary emergency power when the primary facility power circuit is 
+  interrupted allowing for a graceful shutdown of the equipment within the rack or until any backup 
+  emergency power source is engaged. Tables hardware.csv and software.csv provide the hardware and 
+  software list, respectively, for the Bulk Data Storage Rack.
+
+  4. Company Workstations
+  The company implements the common workstation configuration depicted in the file hardware.json 
+  for the engineering and production and company management work areas. Files hardware.json and 
+  software.json provide the company workstation hardware and software configuration, respectively. 
+
+  5. Company Laptops
+  The test engineering work area uses the laptop configuration depicted in the file hardware.json. 
+  Laptops are used to allow for testing of the product items on the Test Lab table as well as on 
+  the production floor and in the field. The laptops will use a direct attached bulk storage tower 
+  when testing on the production floor or in the field. The collected test data will then be 
+  transferred onto the Test SANS once the laptops are reconnected to the company information 
+  system. The company does not have any kind of asset control process for the hard drives used 
+  within the direct attached bulk storage tower. Files hardware.json and software.json provide the 
+  test laptop hardware and software configuration, respectively.

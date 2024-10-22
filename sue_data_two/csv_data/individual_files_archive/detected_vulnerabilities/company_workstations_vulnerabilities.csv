@@ -1,0 +1,17 @@
+Node,Software Make,Software Description,Software Version,CVE Number,NVD Score
+Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+Engineering & Production (Workstations 1 thru 4),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+Engineering & Production (Workstations 1 thru 4),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8
+Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+Company Management (Workstations 5 and 6),RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2023-47804,8.8
+Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2022-37401,8.8
+Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2021-33035,7.8
+Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2020-13958,7.8
+Company Management (Workstations 5 and 6),OpenOffice,Apache OpenOffice,4.1.1.4,CVE-2017-12607,7.8

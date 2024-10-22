@@ -1,0 +1,47 @@
+[
+  {
+    "Make": "Cisco",
+    "Model Number": "4125 NGFW",
+    "Description": "Next Generation Firewall (NGFW) with Intrusion Protection Systems (IPS), rack mountable, 1U"
+  },
+  {
+    "Make": "Cisco",
+    "Model Number": "MS425-32",
+    "Description": "Meraki Layer 3 Switch (Router)"
+  },
+  {
+    "Make": "Cisco",
+    "Model Number": "Catalyst 2960-X",
+    "Description": "Layer 2 Gigabit Ethernet Network Switch"
+  },
+  {
+    "Make": "Tripp Lite",
+    "Model Number": "B030-008-17-IP",
+    "Description": "Rack Mounted Monitor, Keyboard, and Touchpad"
+  },
+  {
+    "Make": "Dell",
+    "Model Number": "PowerEdge R750",
+    "Description": "Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
+  },
+  {
+    "Make": "Dell",
+    "Model Number": "PowerVault ME5024",
+    "Description": "Storage Area Network (SAN)"
+  },
+  {
+    "Make": "Tripp Lite",
+    "Model Number": "N052-048-1U",
+    "Description": "48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+  },
+  {
+    "Make": "APC",
+    "Model Number": "SMT3000RM2UC",
+    "Description": "Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+  },
+  {
+    "Make": "Miscellaneous",
+    "Model Number": "Miscellaneous",
+    "Description": "Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+  }
+]
