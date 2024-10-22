@@ -2,13 +2,14 @@ from PySide6.QtWidgets import (
     QApplication, QWidget, QLabel, 
     QLineEdit, QPushButton, QVBoxLayout, 
     QFileDialog, QHBoxLayout, QListWidget, 
-    QMessageBox, QStackedWidget, QScrollArea
+    QMessageBox, QStackedWidget, QScrollArea, QComboBox
 )
 from PySide6.QtCore import Qt, QSize, Signal, QObject
 from PySide6.QtGui import QPalette, QColor, QFont, QIcon, QMovie
 import shutil
 import sys
 import os
+import json
 import csv
 import matplotlib.pyplot as plt
 import hashlib  # For hashing the CSV file
@@ -287,15 +288,52 @@ class SystemEvaluationApp(QWidget):
 
         return previous_submissions_widget
     
+
+    def on_selection_change(self, index):
+        selected_apt = self.combo_box.currentText()
+        print(f"Selected APT group: {selected_apt}")
+
+    def update_label(self, index):
+        selected_apt = self.combo_box.currentText()
+        print(f"Selected APT group: {selected_apt}")
+        
+    def load_apt_group(self):
+        apt_file_path = 'sue_data/json_data/apt_group.json'  # Update the path here
+        try:
+            with open(apt_file_path, 'r') as file:
+                apt_data = json.load(file)  # Load the APT data from JSON
+            return apt_data
+        except FileNotFoundError:
+            QMessageBox.critical(self, "Error", f"APT Groups file not found at {apt_file_path}")
+            return {}
+        except json.JSONDecodeError:
+            QMessageBox.critical(self, "Error", "Error parsing APT Groups JSON file")
+            return {}
+    
     def create_file_select_view(self):
         # Create a QWidget for the previous submissions view
         file_select_widget = QWidget()
 
         # Create a layout for the previous submissions view
-        toplayout = QHBoxLayout()
+        toplayout = QVBoxLayout()
         leftlayout = QVBoxLayout()
         rightlayout = QVBoxLayout()
         bottomlayout = QHBoxLayout()
+
+        # Create a label to display the selected item
+        self.labelapt = QLabel("Select an APT Group:", self)
+
+        # Load JSON data and handle potential errors
+        apt_data = self.load_apt_group()
+        if not apt_data:
+            self.labelapt.setText("Failed to load APT groups.")  # Error message if loading fails
+
+        # Create a dropdown (QComboBox)
+        self.combo_box = QComboBox()
+        self.combo_box.addItems(apt_data.keys())  # Add APT groups to dropdown
+
+        # Connect the combo box's signal to a slot to update the label when an option is selected
+        self.combo_box.currentIndexChanged.connect(self.update_label)
 
         # Create throbber
         self.throbber_label = QLabel(self)
@@ -315,6 +353,11 @@ class SystemEvaluationApp(QWidget):
 
         # Add throbber to layout
         toplayout.addWidget(self.throbber_label)
+        # Add widgets to the layout
+        toplayout.addWidget(self.labelapt)
+        toplayout.addWidget(self.combo_box)
+
+        
 
         self.cfd_file_name_label = QLabel("")
         self.cfd_file_name_label.setFont(self.font)
@@ -918,8 +961,10 @@ class SystemEvaluationApp(QWidget):
         # Switch to the previous submissions viewprevious_submissions_view
         self.stacked_widget.setCurrentWidget(self.select_file_view)
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    
     window = SystemEvaluationApp()
     app.setWindowIcon(QIcon("files/logo.ico"))
     window.show()  # Show the window first
