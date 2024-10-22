@@ -96,7 +96,8 @@ def analyze_vulnerabilities(vulnerabilities, given_apt: str, client) -> Dict[str
     apt_name, apt_info = get_apt_info(given_apt)
     results = {}
 
-    if not apt_info:
+    # Simplified check: APT info is missing or APT group is explicitly 'None'
+    if not apt_info or given_apt == 'None':
         print(f"APT group '{given_apt}' not found or not provided. Using default values.")
         for cve, description in vulnerabilities.items():
             results[cve] = {
