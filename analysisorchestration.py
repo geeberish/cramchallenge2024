@@ -35,9 +35,9 @@ def ppp_api(sum_file_path, groq_api_path):
 
     return security_best_prac
 
-def call_apt_api(cve_desc, groq_file_path):
+def call_apt_api(cve_desc, groq_file_path, apt_group_from_GUI):
      #cve_desc is a list of dictionaries with cve number and their description from combined dict
-     apt_scores_desc_dict = apt_main(cve_desc, "APT37 (Reaper)", groq_file_path)
+     apt_scores_desc_dict = apt_main(cve_desc, apt_group_from_GUI, groq_file_path)
      
      return apt_scores_desc_dict
 
@@ -60,10 +60,10 @@ def call_average_nvd(modified_combined_data):
      return average_scores
 
 # modify cvss base average score with criticality and 3 p's
-def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path):
+def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path, apt_group):
     combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
 
-    apt_scores_desc = call_apt_api(combined_vuln_data, groq_file_path)
+    apt_scores_desc = call_apt_api(combined_vuln_data, groq_file_path, apt_group)
     #print(apt_scores_desc)
 
     ppp_scores = ppp_api(sum_file_path, groq_file_path)
