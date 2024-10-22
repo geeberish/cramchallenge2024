@@ -1,10 +1,1 @@
-Some additional company facility and information system characteristics to consider are:
-
-  a. The IT staff has a mix of training and experience. Some IT staff have received IT and 
-    cybersecurity certifications in the past but they have since expired. Other staff have had some 
-    IT training but limited on-the-job experience and they have had no cybersecurity training. One 
-    IT staff member has years of IT and cybersecurity experience, has formal technical education, 
-    and has a number of IT and cybersecurity certifications. This single staff member seems to be 
-    doing the vast majority of the work and they are overworked. They were hired into the company 
-    within the past 6 months to improve the information system security, but the system 
-    architecture is already deployed and there is no funding to make improvements until next year.
+Some additional company facility and information system characteristics to consider are: -There is one IT staff member. They have years of IT and cybersecurity experience, formal technical education, and a number of IT and cybersecurity certifications. They were hired into the company within the past 6 months to improve the information system security, but the system architecture is already deployed and there is no funding to make improvements until next year.

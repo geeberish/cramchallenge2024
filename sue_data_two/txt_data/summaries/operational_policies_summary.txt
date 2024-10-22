@@ -1,4 +1,1 @@
-Equipment room is to be locked whenever there are no IT staff present in the room. Regular 
-vulnerabulity scans are to be conducted using Nessus. User accounts processes and monitoring 
-procedures will be created for all users. Roles will be assigned to all users based on their roles, 
-and permissions will be given to those roles as needed.
+Some additional company facility and information system characteristics to consider are: 
