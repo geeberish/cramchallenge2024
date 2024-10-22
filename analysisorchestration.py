@@ -154,5 +154,5 @@ def report_generation(base, physical, personnel, policies, average, apt, sum_fil
 
 if __name__ == "__main__":
     print("running")
-    report_generation('sue_data/json_data/summaries.json')
+    report_generation('sue_data_1.0/json_data/summaries.json')
     #main('sue_data/json_data/critical_functions_definition.json','sue_data/json_data/critical_functions_mapping.json','sue_data/json_data/detected_vulnerabilities.json','sue_data/json_data/summaries.json','sue_data/json_data/nvd_api.txt','sue_data/json_data/groq_api.txt')
