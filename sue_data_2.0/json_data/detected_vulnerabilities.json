@@ -1,0 +1,1514 @@
+[
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20269",
+    "NVD Score": 9.1
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20256",
+    "NVD Score": 5.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20247",
+    "NVD Score": 4.3
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20200",
+    "NVD Score": 6.3
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20095",
+    "NVD Score": 8.6
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20015",
+    "NVD Score": 6.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Firewall",
+    "Software Make": "Cisco",
+    "Software Description": "Fire Power 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
+    "Software Version": "6.6.7",
+    "CVE Number": "CVE-2023-20934",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "System Administrator Terminal",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2018-0284",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "System Administrator Terminal",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7999",
+    "NVD Score": 7.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "System Administrator Terminal",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7993",
+    "NVD Score": 3.3
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "System Administrator Terminal",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7994",
+    "NVD Score": 5.4
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "System Administrator Terminal",
+    "Software Make": "Cisco",
+    "Software Description": "Meraki MS425-32 Layer 3 Switch (firmware 2014-09-23)",
+    "Software Version": "9/23/2014",
+    "CVE Number": "CVE-2014-7995",
+    "NVD Score": 7.2
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Ethernet Switch",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Gitlab",
+    "Software Description": "Gitlab Enterprise Edition",
+    "Software Version": "v13.7.0",
+    "CVE Number": "CVE-2024-1495",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Gitlab",
+    "Software Description": "Gitlab Enterprise Edition",
+    "Software Version": "v13.7.0",
+    "CVE Number": "CVE-2024-2743",
+    "NVD Score": 9.1
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Gitlab",
+    "Software Description": "Gitlab Enterprise Edition",
+    "Software Version": "v13.7.0",
+    "CVE Number": "CVE-2024-2576",
+    "NVD Score": 4.3
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "Microsoft SQL Server",
+    "Software Version": "SQL Server 2008 SP2",
+    "CVE Number": "CVE-2012-0158",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "Microsoft SQL Server",
+    "Software Version": "SQL Server 2008 SP2",
+    "CVE Number": "CVE-2012-1856",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "Microsoft SQL Server",
+    "Software Version": "SQL Server 2008 SP2",
+    "CVE Number": "CVE-2015-1762",
+    "NVD Score": 7.1
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "Microsoft SQL Server",
+    "Software Version": "SQL Server 2008 SP2",
+    "CVE Number": "CVE-2015-1763",
+    "NVD Score": 8.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "IIS",
+    "Software Version": "ISS 7.5",
+    "CVE Number": "CVE-2010-1256",
+    "NVD Score": 8.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Microsoft",
+    "Software Description": "IIS",
+    "Software Version": "ISS 7.5",
+    "CVE Number": "CVE-2010-3972",
+    "NVD Score": 10
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "OpenVPN",
+    "Software Description": "VPN Server",
+    "Software Version": "v2.3",
+    "CVE Number": "CVE-2022-0547",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "OpenVPN",
+    "Software Description": "VPN Server",
+    "Software Version": "v2.3",
+    "CVE Number": "CVE-2020-15078",
+    "NVD Score": 7.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "OpenVPN",
+    "Software Description": "VPN Server",
+    "Software Version": "v2.3",
+    "CVE Number": "CVE-2020-20813",
+    "NVD Score": 7.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "OpenVPN",
+    "Software Description": "VPN Server",
+    "Software Version": "v2.3",
+    "CVE Number": "CVE-2017-12166",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Jenkins",
+    "Software Description": "CI/CD Pipeline",
+    "Software Version": "v2.32.3 LTS",
+    "CVE Number": "CVE-2017-1000353",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Jenkins",
+    "Software Description": "CI/CD Pipeline",
+    "Software Version": "v2.32.3 LTS",
+    "CVE Number": "CVE-2017-1000354",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager Server",
+    "Software Make": "Jenkins",
+    "Software Description": "CI/CD Pipeline",
+    "Software Version": "v2.32.3 LTS",
+    "CVE Number": "CVE-2017-1000356",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": "2.0.0",
+    "CVE Number": "CVE-2020-7337",
+    "NVD Score": 6.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": "2.0.0",
+    "CVE Number": "CVE-2009-5118",
+    "NVD Score": 9.3
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "McAfee",
+    "Software Description": "VirusScan Enterprise",
+    "Software Version": "2.0.0",
+    "CVE Number": "CVE-2007-2152",
+    "NVD Score": 7.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2023-0101",
+    "NVD Score": 3.8
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2021-20135",
+    "NVD Score": 1.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Tenable",
+    "Software Description": "Nessus Vulnerability Scanner",
+    "Software Version": "8.10.0",
+    "CVE Number": "CVE-2020-5765",
+    "NVD Score": 0.4
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": "8.6.0",
+    "CVE Number": "CVE-2024-23675",
+    "NVD Score": 4.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": "8.6.0",
+    "CVE Number": "CVE-2024-23676",
+    "NVD Score": 4.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": "8.6.0",
+    "CVE Number": "CVE-2023-40593",
+    "NVD Score": 3.5
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Cybersecurity Capability & Tools Server",
+    "Software Make": "Splunk",
+    "Software Description": "Enterprise Security Information and Event Manager (SIEM)",
+    "Software Version": "8.6.0",
+    "CVE Number": "CVE-2023-40592",
+    "NVD Score": 3.1
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Audit Log Server",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 5.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager SAN Archive",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 3.7
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager SAN Archive",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 3.9
+  },
+  {
+    "Node Category": "Boundary Defense and System Administrator Rack",
+    "Node Name": "Virtualization Manager SAN Archive",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 3.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Layer 2 Switches (Ethernet)",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #1 (SR1)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #2 (SR2)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #2 (SR2)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #2 (SR2)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux (RHEL)",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #3 (SR3)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #4 (SR4)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #5 (SR5)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #6 (SR6)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #6 (SR6)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #6 (SR6)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #7 (SR7)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #8 (SR8)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #9 (SR9)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #10 (SR10)",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2017-8543",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0301",
+    "NVD Score": 9.3
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0323",
+    "NVD Score": 6.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0315",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5058",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #11 (SR11)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5056",
+    "NVD Score": 9.3
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2017-8543",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0301",
+    "NVD Score": 9.3
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0323",
+    "NVD Score": 6.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2014-0315",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5058",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Server Rack, Server #12 (SR12)",
+    "Software Make": "Microsoft",
+    "Software Description": "Windows Server 2008 Service Pack 2",
+    "Software Version": "Windows Server 2008 SP2",
+    "CVE Number": "CVE-2013-5056",
+    "NVD Score": 9.3
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Software Development SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Software Development SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Software Development SAN 1",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Quality Assurance SAN",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 7.1",
+    "CVE Number": "CVE-2015-7833",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Server Rack",
+    "Node Name": "Company Management SAN",
+    "Software Make": "RedHat",
+    "Software Description": "Red Hat Enterpris Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 3)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Software Development (Workstation 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 5)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Workstations",
+    "Node Name": "Company Management (Workstation 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 1)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Company Laptops",
+    "Node Name": "Quality Assurance (Laptop 2)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node Category": "Companty Smart Locks",
+    "Node Name": "August Smart Lock Pro",
+    "Software Make": "August",
+    "Software Description": "August Connect Wi-Fi Bridge Phone Application",
+    "Software Version": "v10.11.0",
+    "CVE Number": "CVE-2019-17098",
+    "NVD Score": 3.1
+  },
+  {
+    "Node Category": "Companty Smart Locks",
+    "Node Name": "August Smart Lock Pro",
+    "Software Make": "August",
+    "Software Description": "August Connect Device Firmware",
+    "Software Version": "v2.2.12",
+    "CVE Number": "CVE-2019-17098",
+    "NVD Score": 3.1
+  },
+  {
+    "Node Category": "Companty Smart Locks",
+    "Node Name": "August Smart Lock Pro",
+    "Software Make": "August",
+    "Software Description": "August Connect Device Firmware",
+    "Software Version": "v2.2.12",
+    "CVE Number": "CVE-2019-17518",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21133",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21132",
+    "NVD Score": 9.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21131",
+    "NVD Score": 9.1
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21130",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21129",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21128",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21127",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21126",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21125",
+    "NVD Score": 8.8
+  },
+  {
+    "Node Category": "Wireless Access Point",
+    "Node Name": "WAC510 Wireless Access Point",
+    "Software Make": "Netgear",
+    "Software Description": "Netgear WAC510 Wireless Acecss Point Firmware",
+    "Software Version": "v5.0.0.16",
+    "CVE Number": "CVE-2018-21124",
+    "NVD Score": 8.8
+  }
+]

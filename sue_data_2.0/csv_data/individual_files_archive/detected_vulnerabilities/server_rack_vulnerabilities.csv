@@ -1,0 +1,29 @@
+Node,Software Make,Software Description,Software Version,CVE Number,NVD Score
+Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
+Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
+Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
+Layer 2 Switches (Ethernet),Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
+Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-2697,4.9
+Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVE-2012-3440,5.6
+Servers SR1 and SR2,RedHat,RedHat Enterprise Linux (RHEL),RHEL 5.0,CVD-2010-0727,4.9
+Servers SR3 and SR4,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-1935,5.7
+Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2224,6.9
+Servers SR5 and SR6,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
+Servers SR7 and SR8,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Severs SR9 and SR10,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2017-8543,9.8
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0301,9.3
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0323,6.6
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2014-0315,6.9
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5058,6.9
+Severs SR11 and SR12,Microsoft,Windows Server 2008 Service Pack 2,Windows Server 2008 SP2,CVE-2013-5056,9.3
+Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
+Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
+Engineering & Production SAN 1,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9
+Engineering & Production SAN 2,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Engineering & Production SAN 3,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Test SAN,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
+Company Management SAN,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-2697,4.9
+Company Management SAN,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVE-2012-3440,5.6
+Company Management SAN,RedHat,RedHat Enterprise Linux,RHEL 5.0,CVD-2010-0727,4.9

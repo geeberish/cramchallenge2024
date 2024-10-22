@@ -1,0 +1,130 @@
+[
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 1",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-2697",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVE-2012-3440",
+    "NVD Score": 5.6
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 5.0",
+    "CVE Number": "CVD-2010-0727",
+    "NVD Score": 4.9
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Test Engineering, Laptop 2",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  }
+]

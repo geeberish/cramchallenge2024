@@ -1,0 +1,130 @@
+[
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Engineering & Production (Workstations 1 thru 4)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-1935",
+    "NVD Score": 5.7
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2224",
+    "NVD Score": 6.9
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "RedHat",
+    "Software Description": "RedHat Enterprise Linux",
+    "Software Version": "RHEL 6.0",
+    "CVE Number": "CVE-2013-2188",
+    "NVD Score": 4.7
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2023-47804",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2022-37401",
+    "NVD Score": 8.8
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2021-33035",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2020-13958",
+    "NVD Score": 7.8
+  },
+  {
+    "Node": "Company Management (Workstations 5 and 6)",
+    "Software Make": "OpenOffice",
+    "Software Description": "Apache OpenOffice",
+    "Software Version": "4.1.1.4",
+    "CVE Number": "CVE-2017-12607",
+    "NVD Score": 7.8
+  }
+]

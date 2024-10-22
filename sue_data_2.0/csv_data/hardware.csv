@@ -1,0 +1,28 @@
+﻿Node Category,Hardware Make,Hardware Model Number,Hardware Description
+boundary defense and system administrator rack,Cisco,4125 NGFW,"Next Generation Firewall (NGFW) with Intrusion Protection Systems (IPS), rack mountable, 1U"
+boundary defense and system administrator rack,Cisco,MS425-32,Meraki Layer 3 Switch (Router)
+boundary defense and system administrator rack,Cisco,Catalyst 2960-X,Layer 2 Gigabit Ethernet Network Switch
+boundary defense and system administrator rack,Tripp Lite,B030-008-17-IP,"Rack Mounted Monitor, Keyboard, and Touchpad"
+boundary defense and system administrator rack,Dell,PowerEdge R750,"Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
+boundary defense and system administrator rack,Dell,PowerVault ME5024,Storage Area Network (SAN)
+boundary defense and system administrator rack,Tripp Lite,N052-048-1U,"48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+boundary defense and system administrator rack,APC,SMT3000RM2UC,"Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+boundary defense and system administrator rack,Miscellaneous,Miscellaneous,"Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+bulk data storage rack,Cisco,Catalyst 2960-X,Layer 2 Gigabit Ethernet Network Switch
+bulk data storage rack,Dell,PowerVault ME5024,Storage Area Network (SAN)
+bulk data storage rack,Tripp Lite,N052-048-1U,"48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+bulk data storage rack,Cisco,MS425-32,"Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+bulk data storage rack,APC,SMT3000RM2UC,"Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+bulk data storage rack,Miscellaneous,Miscellaneous,"Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"
+company laptops,Dell,7330,Rugged Latitude Extreme Laptop
+company laptops,Gator,None,"ATA TSA Molded Laptop Travel Case (Hard Shell, Exterior Dimensions: 19.38in W x 14.5in D x 9.75in H)"
+company laptops,Miscellaneous,Miscellaneous,"Miscellaneous Equipment (e.g., industrial grade power strip and power cord, various computer network cable types, cable adapters, etc.)"
+company workstations,Dell,Precision 5820,Computer Tower with Keyboard and Mouse
+company workstations,Samsung,S24C450DL,24in Widescreen LCD Display
+server rack,Cisco,Catalyst 2960-X,Layer 2 Gigabit Ethernet Network Switch
+server rack,Dell,PowerEdge R750,"Rack Server (2U, Intel C620 series chipset, up to two 3rd Generation Intel Xeon processors with up to 40 cores per processor)"
+server rack,Tripp Lite,N052-048-1U,"48-Port Patch Panel (1U Rack-Mount, 558B, Cat6/Cat5, RJ45)"
+server rack,Cisco,MS425-32,"Cisco Meraki Layer 3 Switch (32 ports, 10 Gb)"
+server rack,Dell,PowerVault ME5024,Storage Area Network (SAN)
+server rack,APC,SMT3000RM2UC,"Uninterruptible Power Supply (3kVA, 2U rackmount, Smart-UPS)"
+server rack,Miscellaneous,Miscellaneous,"Miscellaneous Components (e.g., rack cables, equipment rails, cable retractors, power strip, screws, etc.)"

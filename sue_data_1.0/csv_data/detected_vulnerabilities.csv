@@ -35,10 +35,18 @@ boundary defense and system administrator rack,Virtualization Manager SAN Archiv
 boundary defense and system administrator rack,Virtualization Manager SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 6.0,CVE-2013-2188,4.7
 boundary defense and system administrator rack,Cybersecurity Capability & Tools SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 boundary defense and system administrator rack,Audit Log SAN Archive,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
-bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
-bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
-bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
-bulk data storage rack,"Layer 2 Switches (Ethernet), Qty. 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 1",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 1",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
+bulk data storage rack,"Layer 2 Switches (Ethernet), 1",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
+bulk data storage rack,"Layer 2 Switches (Ethernet),1",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 2",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 2",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
+bulk data storage rack,"Layer 2 Switches (Ethernet), 2",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
+bulk data storage rack,"Layer 2 Switches (Ethernet), 2",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-6473,6.5
+bulk data storage rack,"Layer 2 Switches (Ethernet), 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-6606,6.4
+bulk data storage rack,"Layer 2 Switches (Ethernet), 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2017-3803,4.7
+bulk data storage rack,"Layer 2 Switches (Ethernet), 3",Cisco,Catalyst 2960-X,IOS 15.2(1)E,CVE-2016-1425,6.5
 bulk data storage rack,Engineering & Production SAN Archive 1,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 bulk data storage rack,Engineering & Production SAN Archive 2,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9
 bulk data storage rack,Engineering & Production SAN Archive 1 Backup,RedHat,RedHat Enterprise Linux,RHEL 7.1,CVD-2015-7833,4.9

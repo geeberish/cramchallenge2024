@@ -325,7 +325,7 @@
   },
   {
     "Node Category": "bulk data storage rack",
-    "Node Name": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Node Name": "Layer 2 Switches (Ethernet), 1",
     "Software Make": "Cisco",
     "Software Description": "Catalyst 2960-X",
     "Software Version": "IOS 15.2(1)E",
@@ -334,7 +334,7 @@
   },
   {
     "Node Category": "bulk data storage rack",
-    "Node Name": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Node Name": "Layer 2 Switches (Ethernet), 1",
     "Software Make": "Cisco",
     "Software Description": "Catalyst 2960-X",
     "Software Version": "IOS 15.2(1)E",
@@ -343,7 +343,7 @@
   },
   {
     "Node Category": "bulk data storage rack",
-    "Node Name": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Node Name": "Layer 2 Switches (Ethernet), 1",
     "Software Make": "Cisco",
     "Software Description": "Catalyst 2960-X",
     "Software Version": "IOS 15.2(1)E",
@@ -352,7 +352,79 @@
   },
   {
     "Node Category": "bulk data storage rack",
-    "Node Name": "Layer 2 Switches (Ethernet), Qty. 3",
+    "Node Name": "Layer 2 Switches (Ethernet), 1",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 2",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 2",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 2",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 2",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-1425",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2016-6473",
+    "NVD Score": 6.5
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-6606",
+    "NVD Score": 6.4
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 3",
+    "Software Make": "Cisco",
+    "Software Description": "Catalyst 2960-X",
+    "Software Version": "IOS 15.2(1)E",
+    "CVE Number": "CVE-2017-3803",
+    "NVD Score": 4.7
+  },
+  {
+    "Node Category": "bulk data storage rack",
+    "Node Name": "Layer 2 Switches (Ethernet), 3",
     "Software Make": "Cisco",
     "Software Description": "Catalyst 2960-X",
     "Software Version": "IOS 15.2(1)E",
