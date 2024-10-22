@@ -5,15 +5,6 @@
     "Software Make": "Cisco",
     "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
     "Software Version": "6.6.7",
-    "CVE Number": "CVE-2023-20269",
-    "NVD Score": 9.1
-  },
-  {
-    "Node Category": "boundary defense and system administrator rack",
-    "Node Name": "Firewall",
-    "Software Make": "Cisco",
-    "Software Description": "FirePower 4125 Next Generation Firewall with Firepower Threat Defense (FTD) Software",
-    "Software Version": "6.6.7",
     "CVE Number": "CVE-2023-20256",
     "NVD Score": 5.8
   },

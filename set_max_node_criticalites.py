@@ -118,7 +118,7 @@ def create_category_criticality_mapping(node_category_mapping, node_criticality_
       if node_criticality_mapping[node] > category_max_criticality:
         category_max_criticality = node_criticality_mapping[node]
     
-    category_criticality_mapping[category] = category_max_criticality
+    category_criticality_mapping[category] = category_max_criticality * 3
 
     category_max_criticality = 0
 
