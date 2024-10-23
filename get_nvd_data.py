@@ -87,8 +87,8 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
                 # Update the progress bar
                 progress_bar.update(1)
     except:
-        with open('./nist_nvd_data.pkl', 'rb') as file:
-            vulnerabilities_list = pickle.load(file)
+        with open('./nist_nvd_data.pkl', 'wb') as file:
+            pickle.dump(file, './nist_nvd_data.pkl')
         
     progress_bar.close()
     print(f"<TERMINAL MESSAGE> DOWNLOAD COMPLETE...")
@@ -208,7 +208,7 @@ def print_vulnerability_data(combined_vulnerabilities_data):
 # set file locations if this code is run directly/not called from another script
 if __name__ == "__main__":
     nvd_api_key_file_location = '../.aws/nvd_api_key.txt' # sets NIST NVD API key location
-    vulnerabilities_detected_file_location = './sue_data/json_data/detected_vulnerabilities.json' # sets vulnerabilities detected file location
+    vulnerabilities_detected_file_location = './sue_data_2.0/json_data/detected_vulnerabilities.json' # sets vulnerabilities detected file location
     critical_functions_mapping = './sue_data/json_data/critical_functions_mapping.json # ' # sets vulnerabilities detected file location
     combined_vulnerabilities_data = main(nvd_api_key_file_location, vulnerabilities_detected_file_location) # passes both variables to main() to run script
     # print_vulnerability_data(combined_vulnerabilities_data)

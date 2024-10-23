@@ -9,7 +9,7 @@ import json
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Construct the full path to the APT group file
-apt_group_file_path = os.path.join(base_dir, 'sue_data_1.0', 'json_data', 'apt_group.json')
+apt_group_file_path = os.path.join(base_dir, 'sue_data_2.0', 'json_data', 'apt_group.json')
 
 # Load APT groups dictionary
 try:
@@ -22,7 +22,7 @@ except json.JSONDecodeError:
     print("Error: Invalid JSON in APT group data file.")
     apt_groups = {}
 # try:
-#     with open('sue_data_1.0/json_data/apt_group.json', 'r') as f:
+#     with open('sue_data_2.0/json_data/apt_group.json', 'r') as f:
 #         apt_groups = json.load(f)
 # except FileNotFoundError:
 #     print("Error: APT group data file not found.")
