@@ -2,7 +2,6 @@ import subprocess # a module used to run new codes and applications by creating 
 import sys # a module that provides access to system-specific parameters and functions
 import json # a module to work with JSON data
 import pickle
-from requests.exceptions import Timeout, RequestException
 #from get_nvd_cpe_data import main as get_nvd_cpe_data_main
 
 # function to install a package
@@ -74,46 +73,28 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
     counter_cves = 0
     progress_bar = tqdm(total=length_cves, desc="<TERMINAL MESSAGE> DOWNLOADING FROM NIST NVD DATABASE", unit="CVE")
 
-    for cve_id in cves:
-        max_retries = 5
-        delay = 2  # Start with a 2-second delay
-        for attempt in range(max_retries):
-            try:
-                cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=delay)[0]
-                vulnerabilities_list.append(cve_search)
-                break  # Success, exit the retry loop
-            except Timeout:
-                print(f"Timeout occurred for {cve_id}. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff
-            except RequestException as e:
-                print(f"Error occurred for {cve_id}: {str(e)}. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                delay *= 2  # Exponential backoff
-            except Exception as e:
-                print(f"Unexpected error occurred for {cve_id}: {str(e)}. Skipping...")
-                break  # Skip this CVE and move to the next one
-            finally:
-                # Save the data regardless of whether an exception occurred
-                with open('./nist_nvd_data.pkl', 'wb') as file:
-                    pickle.dump(vulnerabilities_list, file)
+    #iterate through CVE's detected and pull data for each CVE
+    try:
+        for cve_id in cves:
+            cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=1.2)[0] # search current CVE
+            # cve_search = nvdlib.searchCVE(cveId=cve_id)[0] # options for searching without an NVD API key
+            vulnerabilities_list.append(cve_search) # append current CVE data to vulnerabilities list
 
-        counter_cves += 1
-        progress_bar.update(1)
-
-        # Add an additional delay between CVEs
-        time.sleep(1)  # 1-second delay between CVEs
-
+            if counter_cves < length_cves:
+                # Increment the counter
+                counter_cves += 1
+                
+                # Update the progress bar
+                progress_bar.update(1)
+    except:
+        with open('./nist_nvd_data.pkl', 'rb') as file:
+            vulnerabilities_list = pickle.load(file)
+        
     progress_bar.close()
     print(f"<TERMINAL MESSAGE> DOWNLOAD COMPLETE...")
-
-    # # Save the data to a pickle file
-    # with open('./nist_nvd_data.pkl', 'wb') as file:
-    #     pickle.dump(vulnerabilities_list, file)
-
-    return vulnerabilities_list
-    
-    
+    # with open('./sue_data/json_data/nvd_backup.json', 'w') as backup_cve_data:
+    #         json.dump(vulnerabilities_list) # load data from detected vulnerabilities json file
+    return vulnerabilities_list # return filled vulnerabilities_list to main function
 
 def build_vulnerability_data(vulnerabilities_list, vulnerability_data):
     print(f"<TERMINAL MESSAGE> ASSIGNING NVD METRICS TO DETECTED VULNERABILITIES...")
