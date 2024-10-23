@@ -75,6 +75,11 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
 
     #iterate through CVE's detected and pull data for each CVE
     try:
+        with open('./nist_nvd_data.pkl', 'rb') as file:
+            vulnerabilities_list = pickle.load(file)
+        
+            
+    except:
         for cve_id in cves:
             cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=1.2)[0] # search current CVE
             # cve_search = nvdlib.searchCVE(cveId=cve_id)[0] # options for searching without an NVD API key
@@ -86,9 +91,7 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
                 
                 # Update the progress bar
                 progress_bar.update(1)
-    except:
-        with open('./nist_nvd_data.pkl', 'rb') as file:
-            vulnerabilities_list = pickle.load(file)
+        
         
     progress_bar.close()
     print(f"<TERMINAL MESSAGE> DOWNLOAD COMPLETE...")
