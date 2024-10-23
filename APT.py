@@ -135,7 +135,7 @@ def main(vulnerabilities, given_apt, groq_api_path) -> Dict[str, Dict[str, Any]]
     with open(groq_api_path) as key_file:
         groq_api_key = key_file.read() # read API key file to variable
     client = Groq(api_key=groq_api_key)
-    vulnerabilities_dict = {item['CVE Number']: item['description'] for item in vulnerabilities}
+    vulnerabilities_dict = {item['CVE Number']: item['description'] for item in vulnerabilities if item is not None}
     return analyze_vulnerabilities(vulnerabilities_dict, given_apt, client)
 
 if __name__ == "__main__":
