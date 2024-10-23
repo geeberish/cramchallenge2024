@@ -17,7 +17,7 @@
   {
     "summary_theme": "operational policies",
     "data_type": "text",
-    "content": ""
+    "content": "The IT staff have established user account processes and monitoring procedures, implementing Role-Based Access Control (RBAC) with four defined roles. The System Administrator (SA) role grants root level privileges to all IT equipment, cybersecurity tools, and data stored on workstations, laptops, servers, and storage locations. All IT staff are assigned the SA role and handle cybersecurity and data management tasks. The Engineering and Production (EP) role provides owner privileges to software, tools, and data used in product development, configuration, and sustainment, with all engineering and production staff assigned to this role. The Test Engineering (TE) role grants owner privileges to software and data used for testing products, with all test engineering staff assigned to this role. The Company Management (CMgmt) role allows owner privileges to sensitive company information, including HR, payroll, project management, and legal records, with all management staff assigned to this role."
   },
   {
     "summary_theme": "personnel training",
