@@ -22,7 +22,7 @@ except json.JSONDecodeError:
     print("Error: Invalid JSON in APT group data file.")
     apt_groups = {}
 # try:
-#     with open('sue_data_1.0/json_data/apt_group.json', 'r') as f:
+#     with open('sue_data_2.0/json_data/apt_group.json', 'r') as f:
 #         apt_groups = json.load(f)
 # except FileNotFoundError:
 #     print("Error: APT group data file not found.")
@@ -190,7 +190,7 @@ client = Groq(api_key=GROQ_API_KEY)
 
 # Load APT groups dictionary
 import json
-with open('sue_data_1.0/json_data/apt_group.json', 'r') as f:
+with open('sue_data_2.0/json_data/apt_group.json', 'r') as f:
     apt_groups = json.load(f)
 
 def get_apt_info(given_apt):

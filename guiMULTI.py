@@ -300,7 +300,7 @@ class SystemEvaluationApp(QWidget):
         print(f"Selected APT group: {selected_apt}")
         
     def load_apt_group(self):
-        apt_file_path = 'sue_data_1.0/json_data/apt_group.json'  # Update the path here
+        apt_file_path = 'sue_data_2.0/json_data/apt_group.json'  # Update the path here
         try:
             with open(apt_file_path, 'r') as file:
                 apt_data = json.load(file)  # Load the APT data from JSON
