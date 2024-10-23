@@ -9,6 +9,7 @@ from average_nvd_data import main as average_main
 from LLamaPPP import get_explanations
 from LLamaPPP import get_recommendations
 import os
+from local_nvd import main as local_main
 
 
 
@@ -61,7 +62,7 @@ def call_average_nvd(modified_combined_data):
 
 # modify cvss base average score with criticality and 3 p's
 def main(cfd_file_path, cfm_file_path, dv_file_path, sum_file_path, nvd_file_path, groq_file_path, apt_group):
-    combined_vuln_data = call_get_nvd_data(nvd_file_path, dv_file_path)
+    combined_vuln_data = local_main(dv_file_path)
 
     apt_scores_desc = call_apt_api(combined_vuln_data, groq_file_path, apt_group)
     #print(apt_scores_desc)
