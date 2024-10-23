@@ -75,17 +75,38 @@ def get_detected_vulnerabilities_list(nvd_api_key, vulnerabilities_data, vulnera
 
     #iterate through CVE's detected and pull data for each CVE
     try:
+        directory = '../../Desktop/NIST NVD DATA'
         for cve_id in cves:
-            cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=1.2)[0] # search current CVE
-            # cve_search = nvdlib.searchCVE(cveId=cve_id)[0] # options for searching without an NVD API key
-            vulnerabilities_list.append(cve_search) # append current CVE data to vulnerabilities list
+            for filename in os.listdir(directory):
+                if filename.endswith('.json'):  # Only process JSON files
+                    filepath = os.path.join(directory, filename)
+                    cve_data = parse_cve_file(filepath)
+                    if cve_id == []:
+                        print(f"Processed file: {filename}")
 
-            if counter_cves < length_cves:
-                # Increment the counter
-                counter_cves += 1
+                        for item in cve_data.get('CVE_Items', []):
+                        # Extract CVE metadata
+                            cve_id = item['cve']['CVE_data_meta']['ID']
+                            description = item['cve']['description']['description_data'][0]['value']
+                            published_date = item.get('publishedDate', 'N/A')
+                            base_score = item['impact']['baseMetricV2']['cvssV2']['baseScore']
+                            severity = item['impact']['baseMetricV2']['severity']
+
+
+
+
+
+
+            # cve_search = nvdlib.searchCVE(cveId=cve_id, key=nvd_api_key, delay=1.2)[0] # search current CVE
+            # # cve_search = nvdlib.searchCVE(cveId=cve_id)[0] # options for searching without an NVD API key
+            # vulnerabilities_list.append(cve_search) # append current CVE data to vulnerabilities list
+
+            # if counter_cves < length_cves:
+            #     # Increment the counter
+            #     counter_cves += 1
                 
-                # Update the progress bar
-                progress_bar.update(1)
+            #     # Update the progress bar
+            #     progress_bar.update(1)
     except:
         with open('./nist_nvd_data.pkl', 'wb') as file:
             pickle.dump(file, './nist_nvd_data.pkl')
