@@ -27,41 +27,43 @@ cves = [
 ]
 
 
-
+my_data = {}
   
 
 for cve_id in cves:
-  print(f'cve_id = {cve_id}')
-  input()
-  print(f'os.listdir(directory) = {os.listdir(directory)}')
-  input()
+  new_entry = {}
   for filename in os.listdir(directory):
-    print(f'filename = {filename}')
-    input()
     if filename.endswith('.json'):  # Only process JSON files
       filepath = os.path.join(directory, filename)
-      print(f'filepath = {filepath}')
-      input()
       with open(filepath, 'r') as file:
         cve_data = json.load(file)
-        print(cve_data["CVE_Items"])
-        input()
-        for cve in cve_data["CVE_Items"]:
-          print(cve['cve'])
-          input()
+        if cve_id == cve_data["CVE_Items"][0]['cve']['CVE_data_meta']['ID']:
+          if 'baseMetricV3' in cve_data["CVE_Items"][0]['impact']:
+            print('is this working')
+            # new_entry["vector_string"] = "vectorString"
+            # new_entry["impact_integ"] = "integrityImpact"
+            # new_entry["cvss_version"] = "version"
+            # new_entry["user_interaction"] = "userInteraction"
+            # new_entry["base_score"] = "baseScore"
+            # new_entry["impact_conf"] = "confidentialityImpact"
+            # new_entry["impact_score"] = "impactScore"
+            # new_entry["privilege_required"] = "privilegesRequired"
+            # new_entry["attack_vector"] = "attackVector"
+            # new_entry["impact_avail"] = "availabilityImpact"
+            # new_entry["scope_changed"] = "scope"
+            # new_entry["exploitability_score"] = "exploitabilityScore"
+            # new_entry["base_severity"] = "baseSeverity"
+            # new_entry["attack_complexity"] = "attackComplexity"
+            # new_entry["description"] = "descriptions"
 
-
-
-        # if cve_id == []:
-        #   print(f"Processed file: {filename}")
-        #   input()
-
-        #   for item in cve_data.get('CVE_Items', []):
-        #     # Extract CVE metadata
-        #     cve_id = item['cve']['CVE_data_meta']['ID']
-        #     description = item['cve']['description']['description_data'][0]['value']
-        #     published_date = item.get('publishedDate', 'N/A')
-        #     base_score = item['impact']['baseMetricV2']['cvssV2']['baseScore']
-        #     severity = item['impact']['baseMetricV2']['severity']
-
-        #     print(cve_id, description)
+            # score_component_version_names = [ # ['component_variable', 'component_v3_name', 'component_v2_name']
+            # ["vector_string", "vectorString", "vectorString"], ["impact_integ", "integrityImpact", "integrityImpact"],
+            # ["cvss_version", "version", "version"], ["user_interaction", "userInteraction", "userInteractionRequired"],
+            # ["base_score", "baseScore", "baseScore"], ["impact_conf", "confidentialityImpact", "confidentialityImpact"],
+            # ["impact_score", "impactScore", "impactScore"], ["privilege_required", "privilegesRequired", "authentication"],
+            # ["attack_vector", "attackVector", "accessVector"], ["impact_avail", "availabilityImpact", "availabilityImpact"],
+            # ["scope_changed", "scope", "NA_METRIC"], ["exploitability_score", "exploitabilityScore", "exploitabilityScore"],
+            # ["base_severity", "baseSeverity", "baseSeverity"], ["attack_complexity", "attackComplexity", "accessComplexity"],
+            # ["description", "descriptions", "descriptions"]
+            
+          
