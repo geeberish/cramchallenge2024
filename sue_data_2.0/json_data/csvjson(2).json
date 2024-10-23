@@ -150,8 +150,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2011-1576",
-    "NVD Score": 5.7,
-    "": "CVE-2011-1576"
+    "NVD Score": 5.7
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -160,8 +159,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2011-0714",
-    "NVD Score": 5.7,
-    "": "CVE-2011-0714"
+    "NVD Score": 5.7
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -170,8 +168,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2010-1439",
-    "NVD Score": 3.6,
-    "": "CVE-2010-1439"
+    "NVD Score": 3.6
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -180,8 +177,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2016-9604",
-    "NVD Score": 4.4,
-    "": "CVE-2016-9604"
+    "NVD Score": 4.4
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -190,8 +186,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2016-3699",
-    "NVD Score": 7.4,
-    "": "CVE-2016-3699"
+    "NVD Score": 7.4
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -200,8 +195,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2015-7553",
-    "NVD Score": 4.7,
-    "": "CVE-2015-7553"
+    "NVD Score": 4.7
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -210,8 +204,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2015-3216",
-    "NVD Score": 4.3,
-    "": "CVE-2015-3216"
+    "NVD Score": 4.3
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -220,8 +213,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2014-5177",
-    "NVD Score": 1.2,
-    "": "CVE-2014-5177"
+    "NVD Score": 1.2
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -230,8 +222,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2012-0217",
-    "NVD Score": 7.2,
-    "": "CVE-2012-0217"
+    "NVD Score": 7.2
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -240,8 +231,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2012-1145",
-    "NVD Score": 5,
-    "": "CVE-2012-1145"
+    "NVD Score": 5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -250,8 +240,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2012-1568",
-    "NVD Score": 1.9,
-    "": "CVE-2012-1568"
+    "NVD Score": 1.9
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -260,8 +249,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2011-3347",
-    "NVD Score": 4.6,
-    "": "CVE-2011-3347"
+    "NVD Score": 4.6
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -270,8 +258,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2011-2942",
-    "NVD Score": 6.8,
-    "": "CVE-2011-2942"
+    "NVD Score": 6.8
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -280,8 +267,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2017-12193",
-    "NVD Score": 5.5,
-    "": "CVE-2017-12193"
+    "NVD Score": 5.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -290,8 +276,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2017-15121",
-    "NVD Score": 5.5,
-    "": "CVE-2017-15121"
+    "NVD Score": 5.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -300,8 +285,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2019-10171",
-    "NVD Score": 7.5,
-    "": "CVE-2019-10171"
+    "NVD Score": 7.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -310,8 +294,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2019-10214",
-    "NVD Score": 5.9,
-    "": "CVE-2019-10214"
+    "NVD Score": 5.9
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -320,8 +303,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2019-19768",
-    "NVD Score": 7.5,
-    "": "CVE-2019-19768"
+    "NVD Score": 7.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -330,8 +312,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2020-1702",
-    "NVD Score": 3.3,
-    "": "CVE-2020-1702"
+    "NVD Score": 3.3
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -340,8 +321,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2020-14312",
-    "NVD Score": 5.9,
-    "": "CVE-2020-14312"
+    "NVD Score": 5.9
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -350,8 +330,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2022-1665",
-    "NVD Score": 8.2,
-    "": "CVE-2022-1665"
+    "NVD Score": 8.2
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -360,8 +339,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2023-24998",
-    "NVD Score": 7.5,
-    "": "CVE-2023-24998"
+    "NVD Score": 7.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
@@ -370,8 +348,7 @@
     "Software Description": "RedHat Enterprise Linux (RHEL)",
     "Software Version": "RHEL 8.10",
     "CVE Number": "CVE-2023-4042",
-    "NVD Score": 5.5,
-    "": "CVE-2023-4042"
+    "NVD Score": 5.5
   },
   {
     "Node Category": "boundary defense and system administrator rack",
