@@ -24,3 +24,6 @@ We integrated **Llama 3.1** to enhance the assessment process by providing:
 - **Policy scores**, measuring the effectiveness of existing cybersecurity policies and compliance  
 
 By leveraging **Llama 3.1**, we improve threat modeling accuracy and generate dynamic risk assessments to enhance cyber resiliency planning.  
+
+## Usage
+- The tool is run through the guiMULTI.py file
